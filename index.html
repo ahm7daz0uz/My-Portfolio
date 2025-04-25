@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Ahmed Azouz | AI Engineer</title>
+ <!-- Bootstrap 5 CSS CDN (Stable Version) -->
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+ <!-- Bootstrap Icons -->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+ <!-- Google Fonts -->
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ <!-- Font Awesome -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ <!-- AOS Animation Library -->
+ <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+ <style>
+ :root {
+ /* Light Mode Colors */
+ --primary-color: #2563eb;
+ --secondary-color: #4f46e5;
+ --accent-color: #8b5cf6;
+ --accent-color-2: #7209b7;
+ --accent-color-3: #f72585;
+ --text-color: #1e293b;
+ --text-color-light: #64748b;
+ --bg-color: #f8fafc;
+ --bg-color-alt: #f1f5f9;
+ --card-bg: #ffffff;
+ --card-border: rgba(0, 0, 0, 0.07);
+ --navbar-bg: rgba(255, 255, 255, 0.85);
+ --gradient-start: #3b82f6;
+ --gradient-mid: #7209b7;
+ --gradient-end: #8b5cf6;
+ --gradient-alt-1: linear-gradient(135deg, #f72585, #7209b7, #3a0ca3);
+ --gradient-alt-2: linear-gradient(135deg, #4cc9f0, #4361ee, #3a0ca3);
+ --gradient-alt-3: linear-gradient(135deg, #7209b7, #3a0ca3, #4361ee);
+ --shadow-color: rgba(40, 50, 70, 0.08);
+ --shadow-color-hover: rgba(40, 50, 70, 0.12);
+ --timeline-line: #e2e8f0;
+ --certificate-bg: #f8fafc;
+ --footer-bg: #171e2b;
+ --footer-text: #f8fafc;
+ --glow-color: rgba(67, 97, 238, 0.4);
+
+ /* RGB values for gradients */
+ --gradient-start-rgb: 59, 130, 246;
+ --gradient-end-rgb: 139, 92, 246;
+ --primary-color-rgb: 37, 99, 235; /* Added for footer link hover */
+ }
+
+ /* RTL Support */
+ [dir="rtl"] { text-align: right; }
+ [dir="rtl"] .navbar-nav { padding-right: 0; margin-right: auto !important; margin-left: 0 !important; }
+ [dir="rtl"] .ms-auto { margin-left: auto !important; margin-right: 0 !important; }
+ [dir="rtl"] .ms-lg-4 { margin-right: 1.5rem !important; margin-left: 0 !important; }
+ [dir="rtl"] .me-2 { margin-left: 0.5rem !important; margin-right: 0 !important; }
+ [dir="rtl"] .contact-icon { margin-left: 15px; margin-right: 0; }
+ [dir="rtl"] .contact-btn i { margin-left: 10px; margin-right: 0; }
+ [dir="rtl"] .timeline::after { right: 31px; left: auto; }
+ [dir="rtl"] .category-title::after { right: 0; left: auto; }
+ [dir="rtl"] .award-icon { margin-left: 20px; margin-right: 0; }
+ [dir="rtl"] .skill-item i { margin-left: 0.5rem; margin-right: 0; }
+ /* RTL Navbar Brand Animation */
+ [dir="rtl"] .navbar-brand::before { animation-name: draw-horizontal-rtl; }
+ [dir="rtl"] .navbar-brand::after { animation-name: draw-vertical-rtl; }
+ @keyframes draw-horizontal-rtl { 0% { width: 0; right: 0; top: 0; } 25% { width: 100%; right: 0; top: 0; } 25.1% { bottom: 0; top: auto; right: 100%; width: 0; } 50% { width: 100%; right: 0; bottom: 0; top: auto; } 75% { width: 0; right: 0; bottom: 0; top: auto; } 100% { width: 0; right: 0; top: 0; } }
+ @keyframes draw-vertical-rtl { 0% { height: 0; top: 0; left: 0; } 25% { height: 100%; top: 0; left: 0; } 25.1% { right: 0; left: auto; top: 100%; height: 0; } 50% { height: 100%; top: 0; right: 0; left: auto; } 75% { height: 0; top: 0; right: 0; left: auto; } 100% { height: 0; top: 0; left: 0; } }
+
+
+ /* Global Styles */
+ * { margin: 0; padding: 0; box-sizing: border-box; }
+ body { font-family: 'Poppins', sans-serif; background-color: var(--bg-color); color: var(--text-color); overflow-x: hidden; scroll-behavior: smooth; transition: background-color 0.3s ease, color 0.3s ease; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; position: relative; }
+ section { padding: 100px 0; position: relative; overflow: hidden; }
+ section.bg-light { background-color: var(--bg-color-alt) !important; }
+
+ .section-title { font-size: clamp(2rem, 5vw, 2.5rem); font-weight: 700; margin-bottom: 60px; text-align: center; position: relative; z-index: 1; }
+ .section-title::after { content: ''; position: absolute; width: 80px; height: 4px; background: linear-gradient(to right, var(--gradient-start), var(--gradient-end)); bottom: -15px; left: 50%; transform: translateX(-50%); border-radius: 2px; }
+ .text-gradient { background: linear-gradient(to right, var(--gradient-start), var(--gradient-end)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
+
+ /* Decorative Elements */
+ .shape { position: absolute; z-index: -1; opacity: 0.1; animation: float 22s ease-in-out infinite alternate; transition: opacity 0.5s ease; will-change: transform; }
+ .shape-1 { top: 10%; left: 5%; width: 250px; height: 250px; border-radius: 50%; background: var(--gradient-alt-1); filter: blur(60px); animation-delay: 0s; }
+ .shape-2 { bottom: 10%; right: 5%; width: 200px; height: 200px; border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; background: var(--gradient-alt-2); filter: blur(50px); animation-delay: 5s; }
+ .shape-3 { top: 40%; right: 15%; width: 180px; height: 180px; border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; background: var(--gradient-alt-3); filter: blur(45px); animation-delay: 10s; }
+ .shape-4 { top: 65%; left: 15%; width: 160px; height: 160px; border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%; background: var(--gradient-alt-1); filter: blur(50px); animation-delay: 15s; }
+ .shape-5 { top: 25%; right: 40%; width: 130px; height: 130px; border-radius: 59% 41% 38% 62% / 50% 45% 55% 50%; background: var(--gradient-alt-2); filter: blur(40px); animation-delay: 20s; }
+ @keyframes float { 0% { transform: translateY(0) rotate(0deg) scale(1); } 50% { transform: translateY(-15px) rotate(4deg) scale(1.02); } 100% { transform: translateY(0) rotate(0deg) scale(1); } }
+
+ /* Background Grid */
+ .bg-grid { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; background-size: 60px 60px; background-image: linear-gradient(to right, rgba(var(--gradient-start-rgb), 0.025) 1px, transparent 1px), linear-gradient(to bottom, rgba(var(--gradient-start-rgb), 0.025) 1px, transparent 1px); animation: grid-move 50s linear infinite; opacity: 0.7; }
+ @keyframes grid-move { 0% { background-position: 0 0; } 100% { background-position: 60px 60px; } }
+
+ /* Particle Background */
+ .particles-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; }
+ .particle-js { position: absolute; border-radius: 50%; pointer-events: none; will-change: transform, opacity; }
+ @keyframes float-particle { 0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: var(--start-opacity); } 25% { transform: translateY(-18vh) translateX(8vw) rotate(80deg); opacity: calc(var(--start-opacity) * 0.6); } 50% { transform: translateY(-35vh) translateX(-12vw) rotate(190deg); opacity: calc(var(--start-opacity) * 0.9); } 75% { transform: translateY(-15vh) translateX(6vw) rotate(280deg); opacity: calc(var(--start-opacity) * 0.4); } 100% { transform: translateY(0) translateX(0) rotate(360deg); opacity: var(--start-opacity); } }
+
+ /* Navbar Styles */
+ .navbar { padding: 15px 0; background-color: var(--navbar-bg); backdrop-filter: blur(14px); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07); position: fixed; width: 100%; top: 0; z-index: 1030; transition: background-color 0.3s ease, box-shadow 0.3s ease; }
+ .navbar-brand { font-weight: 700; font-size: 1.6rem; color: var(--text-color); transition: color 0.3s ease; position: relative; padding: 5px 10px; display: inline-block; z-index: 1; }
+ .navbar-brand::before,
+ .navbar-brand::after { content: ''; position: absolute; background: linear-gradient(to right, var(--gradient-start), var(--gradient-end)); z-index: -1; pointer-events: none; }
+ .navbar-brand::before { width: 0; height: 2px; top: 0; left: 0; animation: draw-horizontal 4s linear infinite; }
+ .navbar-brand::after { width: 2px; height: 0; top: 0; right: 0; animation: draw-vertical 4s linear infinite; animation-delay: 1s; }
+ @keyframes draw-horizontal { 0% { width: 0; left: 0; top: 0; } 25% { width: 100%; left: 0; top: 0; } 25.1% { bottom: 0; top: auto; left: 100%; width: 0;} 50% { width: 100%; left: 0; bottom: 0; top: auto; } 75% { width: 0; left: 0; bottom: 0; top: auto; } 100% { width: 0; left: 0; top: 0; } }
+ @keyframes draw-vertical { 0% { height: 0; top: 0; right: 0; } 25% { height: 100%; top: 0; right: 0; } 25.1% { left: 0; right: auto; top: 100%; height: 0; } 50% { height: 100%; top: 0; left: 0; right: auto; } 75% { height: 0; top: 0; left: 0; right: auto; } 100% { height: 0; top: 0; right: 0; } }
+ .navbar-nav .nav-link { color: var(--text-color); font-weight: 500; margin: 0 12px; position: relative; padding: 8px 0; transition: color 0.3s ease; }
+ .navbar-nav .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; background: linear-gradient(to right, var(--gradient-start), var(--gradient-end)); bottom: 0; left: 0; transition: width 0.3s ease; }
+ [dir="rtl"] .navbar-nav .nav-link::after { right: 0; left: auto; }
+ .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active { color: var(--primary-color); }
+ .navbar-nav .nav-link:hover::after, .navbar-nav .nav-link.active::after { width: 100%; }
+ .navbar-toggler { border: none; padding: 0; }
+ .navbar-toggler:focus { box-shadow: none; outline: none; }
+ .navbar-toggler-icon { background-image: none; display: inline-block; width: 1.5em; height: 1.5em; vertical-align: middle; position: relative; }
+ .navbar-toggler-icon::before, .navbar-toggler-icon::after, .navbar-toggler-icon span { content: ''; position: absolute; left: 0; width: 100%; height: 2px; background-color: var(--text-color); transition: all 0.3s ease; border-radius: 1px; }
+ .navbar-toggler-icon::before { top: 25%; }
+ .navbar-toggler-icon span { top: 50%; transform: translateY(-50%); }
+ .navbar-toggler-icon::after { bottom: 25%; }
+ .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before { transform: translateY(calc(0.75em / 2 - 1px)) rotate(45deg); top: 50%; }
+ .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon span { opacity: 0; }
+ .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after { transform: translateY(calc(-0.75em / 2 + 1px)) rotate(-45deg); bottom: auto; top: 50%; }
+ .lang-toggle { display: flex; align-items: center; margin-right: 15px; cursor: pointer; background-color: var(--bg-color-alt); padding: 5px 8px; border-radius: 20px; border: 1px solid var(--card-border); transition: background-color 0.3s ease; }
+ .lang-toggle:hover { background-color: #e2e8f0; }
+ [dir="rtl"] .lang-toggle { margin-left: 15px; margin-right: 0; }
+ .lang-toggle span { font-weight: 500; padding: 0 8px; color: var(--text-color-light); transition: color 0.3s ease, font-weight 0.3s ease; font-size: 0.9rem; }
+ .lang-toggle span.active { color: var(--primary-color); font-weight: 600; }
+ .lang-toggle .divider { width: 1px; height: 15px; background-color: var(--timeline-line); margin: 0 5px; }
+
+ /* Hero Section */
+ #hero { min-height: 100vh; display: flex; align-items: center; position: relative; padding-top: 120px; padding-bottom: 60px; background: radial-gradient(circle at 10% 20%, rgba(var(--gradient-start-rgb), 0.06) 0%, rgba(var(--gradient-end-rgb), 0.06) 90%); overflow: hidden; }
+ .hero-content { position: relative; z-index: 1; }
+ .hero-title { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 700; margin-bottom: 20px; line-height: 1.2; position: relative; display: inline-block; padding-bottom: 15px; }
+ .hero-title::after { content: ''; position: absolute; width: 100px; height: 4px; background: linear-gradient(to right, var(--gradient-start), var(--gradient-end)); bottom: -5px; left: 50%; transform: translateX(-50%); border-radius: 2px; }
+ .hero-subtitle { font-size: clamp(1.2rem, 3vw, 1.5rem); font-weight: 500; margin-bottom: 30px; min-height: 45px; /* Adjust min-height if needed for longer titles */ color: var(--secondary-color); }
+ .hero-text { font-size: 1.1rem; color: var(--text-color-light); margin-bottom: 40px; max-width: 600px; line-height: 1.75; }
+ .hero-buttons { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 30px; }
+ .hero-btn { padding: 12px 30px; font-size: 1rem; font-weight: 500; border-radius: 30px; background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end)); color: white !important; border: none; box-shadow: 0 10px 25px rgba(var(--gradient-start-rgb), 0.2); position: relative; overflow: hidden; z-index: 1; transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
+ .hero-btn::before { content: ''; position: absolute; top: 0; left: 0; width: 0; height: 100%; background: linear-gradient(90deg, var(--gradient-end), var(--gradient-start)); transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); z-index: -1; }
+ .hero-btn:hover { transform: translateY(-5px) scale(1.03); box-shadow: 0 16px 35px rgba(var(--gradient-start-rgb), 0.3); color: white !important; }
+ .hero-btn:hover::before { width: 100%; }
+ .hero-btn i { transition: transform 0.3s ease; }
+ .hero-btn:hover i { transform: scale(1.1); }
+ .hero-image { position: relative; z-index: 1; display: flex; justify-content: center; align-items: center; }
+ .profile-img-container { width: clamp(250px, 50vw, 350px); height: clamp(250px, 50vw, 350px); position: relative; }
+ .profile-img { width: 100%; height: 100%; border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; background-color: var(--card-bg); box-shadow: 0 20px 40px var(--shadow-color), 0 0 40px var(--glow-color); overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center; border: 6px solid rgba(255, 255, 255, 0.3); animation: profile-pulse 6s infinite alternate ease-in-out; }
+ @keyframes profile-pulse { 0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; box-shadow: 0 20px 40px var(--shadow-color), 0 0 35px var(--glow-color); transform: scale(1) rotate(-2deg); } 50% { border-radius: 60% 40% 40% 60% / 60% 40% 60% 40%; box-shadow: 0 25px 50px var(--shadow-color-hover), 0 0 55px var(--glow-color); transform: scale(1.03) rotate(2deg); } 100% { border-radius: 40% 60% 30% 70% / 50% 60% 40% 50%; box-shadow: 0 20px 40px var(--shadow-color), 0 0 35px var(--glow-color); transform: scale(1) rotate(-2deg); } }
+ .profile-img img.profile-pic-hero { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+
+ /* About Section */
+ #about { background-color: var(--bg-color-alt); position: relative; }
+ .about-content { background-color: var(--card-bg); border-radius: 20px; padding: 50px; box-shadow: 0 15px 40px var(--shadow-color); position: relative; z-index: 1; border: 1px solid var(--card-border); }
+ .about-text { font-size: 1.1rem; line-height: 1.9; color: var(--text-color); text-align: justify; margin-bottom: 40px; }
+ .video-container { border-radius: 10px; }
+
+ /* Education & Training Sections (Timeline) */
+ #training { /* Uses default bg */ }
+ .timeline { position: relative; max-width: 900px; margin: 0 auto; }
+ .timeline::after { content: ''; position: absolute; width: 4px; background-color: var(--timeline-line); top: 0; bottom: 0; left: 50%; margin-left: -2px; border-radius: 2px; z-index: 0; }
+ [dir="rtl"] .timeline::after { right: 50%; left: auto; margin-right: -2px; margin-left: 0; }
+ .timeline-item { padding: 15px 40px; position: relative; width: 50%; box-sizing: border-box; margin-bottom: 40px; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+ .timeline-item.aos-animate { opacity: 1; transform: translateY(0); }
+ .timeline-item::after { content: ''; position: absolute; width: 22px; height: 22px; background: linear-gradient(to bottom right, var(--gradient-start), var(--gradient-end)); border-radius: 50%; top: 25px; z-index: 1; box-shadow: 0 0 0 5px rgba(var(--gradient-start-rgb), 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+ .timeline-item:hover::after { transform: scale(1.2); box-shadow: 0 0 15px rgba(var(--gradient-start-rgb), 0.3); }
+ .timeline-item:nth-child(odd) { left: 0; }
+ .timeline-item:nth-child(even) { left: 50%; }
+ .timeline-item:nth-child(odd)::after { right: -11px; }
+ .timeline-item:nth-child(even)::after { left: -11px; }
+ .timeline-item:nth-child(odd) .timeline-content { text-align: right; }
+ .timeline-item:nth-child(even) .timeline-content { text-align: left; }
+ [dir="rtl"] .timeline-item:nth-child(odd) { left: 50%; text-align: left;}
+ [dir="rtl"] .timeline-item:nth-child(even) { left: 0; text-align: left;}
+ [dir="rtl"] .timeline-item:nth-child(odd)::after { left: -11px; right: auto; }
+ [dir="rtl"] .timeline-item:nth-child(even)::after { right: -11px; left: auto; }
+ [dir="rtl"] .timeline-item:nth-child(odd) .timeline-content { text-align: left; padding-right: 20px; padding-left: 0; }
+ [dir="rtl"] .timeline-item:nth-child(even) .timeline-content { text-align: left; padding-right: 30px; padding-left: 0; }
+ .timeline-content { padding: 25px; background-color: var(--card-bg); border-radius: 12px; box-shadow: 0 8px 25px var(--shadow-color); position: relative; border: 1px solid var(--card-border); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+ .timeline-item:hover .timeline-content { transform: translateY(-6px); box-shadow: 0 14px 35px var(--shadow-color-hover); }
+ .timeline-date { font-size: 0.9rem; color: var(--primary-color); font-weight: 600; margin-bottom: 10px; display: block; }
+ .timeline-title { font-size: 1.25rem; font-weight: 600; margin-bottom: 10px; color: var(--text-color); }
+ .timeline-text { font-size: 1rem; color: var(--text-color-light); line-height: 1.7; }
+
+ /* Projects Section */
+ #projects { background-color: var(--bg-color-alt); }
+ .project-card { background-color: var(--card-bg); border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px var(--shadow-color); margin-bottom: 30px; border: 1px solid var(--card-border); height: 100%; display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+ .project-card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 18px 45px var(--shadow-color-hover); }
+ .project-header { padding: 25px; background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end)); color: white; }
+ .project-title { font-size: 1.3rem; font-weight: 600; margin-bottom: 5px; }
+ .project-date { font-size: 0.9rem; opacity: 0.85; }
+ .project-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+ .project-description { font-size: 1rem; color: var(--text-color); margin-bottom: 20px; line-height: 1.7; flex-grow: 1; }
+ .project-tech { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; }
+ .tech-tag { padding: 6px 14px; background-color: var(--bg-color-alt); color: var(--secondary-color); border-radius: 20px; font-size: 0.8rem; font-weight: 500; border: 1px solid var(--card-border); transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; }
+ .tech-tag:hover { background-color: var(--secondary-color); color: white; transform: translateY(-2px); }
+
+ /* Skills Section */
+ #skills { background-color: var(--bg-color); }
+ /* Skill Category Selector */
+ .skill-category-selector { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+ .skill-category-selector .btn { font-weight: 500; border-radius: 20px; padding: 8px 20px; transition: all 0.3s ease; border: 1px solid var(--timeline-line); background-color: var(--card-bg); color: var(--text-color-light); }
+ .skill-category-selector .btn:hover { background-color: var(--bg-color-alt); color: var(--primary-color); border-color: var(--primary-color); transform: translateY(-2px); }
+ .skill-category-selector .btn.active { background: linear-gradient(to right, var(--gradient-start), var(--gradient-end)); color: white !important; border-color: transparent; box-shadow: 0 5px 15px rgba(var(--gradient-start-rgb), 0.2); }
+ /* Skills Container and Categories */
+ .skills-container { margin-top: 40px; /* Add space below selector */ }
+ .skill-category {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    border: 1px solid var(--card-border);
+    display: none; /* Hide categories by default */
+    animation: fadeIn 0.5s ease-out; /* Simple fade-in animation */
+ }
+ .skill-category.active-skills { display: block; /* Show the active category */ }
+ @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+ .category-title { font-size: 1.4rem; font-weight: 600; margin-bottom: 25px; color: var(--primary-color); position: relative; padding-bottom: 12px; }
+ .category-title::after { content: ''; position: absolute; width: 60px; height: 3px; background: linear-gradient(to right, var(--gradient-start), var(--gradient-end)); bottom: 0; left: 0; border-radius: 2px; }
+ [dir="rtl"] .category-title::after { right: 0; left: auto; }
+ .skill-item { margin-bottom: 10px; padding: 10px 5px; border-bottom: 1px solid var(--bg-color-alt); transition: background-color 0.2s ease; } /* Adjusted padding */
+ .skill-item:hover { background-color: rgba(var(--gradient-start-rgb), 0.03); }
+ .skill-item:last-child { margin-bottom: 0; border-bottom: none; }
+ .skill-info { display: flex; align-items: center; }
+ .skill-name { font-weight: 500; font-size: 1rem; }
+ .skill-item i.fa-check-circle {
+     font-size: 1.1em;
+     color: var(--primary-color); /* Changed color */
+     opacity: 0.85; /* Slightly increased opacity */
+     transition: color 0.3s ease, opacity 0.3s ease, transform 0.2s ease;
+     margin-right: 0.5rem; /* LTR spacing */
+ }
+ [dir="rtl"] .skill-item i.fa-check-circle { margin-left: 0.5rem; margin-right: 0; } /* RTL spacing */
+ .skill-item:hover i.fa-check-circle { transform: scale(1.1); opacity: 1; } /* Hover effect */
+
+
+ /* Certificates Section */
+ #certificates { background-color: var(--bg-color-alt); }
+ .certificates-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+ .certificate-card { background-color: var(--card-bg); border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px var(--shadow-color); border: 1px solid var(--card-border); transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; overflow: hidden; display: flex; flex-direction: column; height: 100%; }
+ .certificate-card::before { content: '\f0a3'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; top: -20px; right: -15px; font-size: 80px; color: var(--gradient-start); opacity: 0.05; z-index: 0; transform: rotate(-15deg); transition: transform 0.4s ease; }
+ [dir="rtl"] .certificate-card::before { right: auto; left: -15px; transform: rotate(15deg); }
+ .certificate-card:hover { transform: translateY(-8px) scale(1.01); box-shadow: 0 18px 45px var(--shadow-color-hover); }
+ .certificate-card:hover::before { transform: scale(1.1) rotate(-20deg); }
+ [dir="rtl"] .certificate-card:hover::before { transform: scale(1.1) rotate(20deg); }
+ .certificate-icon { font-size: 2.2rem; color: var(--primary-color); margin-bottom: 20px; width: 50px; height: 50px; background: linear-gradient(135deg, rgba(var(--gradient-start-rgb), 0.1), rgba(var(--gradient-end-rgb), 0.1)); border-radius: 10px; display: flex; align-items: center; justify-content: center; z-index: 1; }
+ .certificate-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 10px; line-height: 1.5; flex-grow: 1; z-index: 1; }
+ .certificate-issuer { font-size: 0.9rem; color: var(--text-color-light); margin-bottom: 20px; z-index: 1; }
+ .certificate-link { display: inline-block; padding: 10px 20px; background: linear-gradient(to right, var(--gradient-start), var(--gradient-end)); color: white !important; border-radius: 25px; font-size: 0.9rem; font-weight: 500; text-decoration: none; transition: all 0.3s ease; margin-top: auto; text-align: center; z-index: 1; border: none; }
+ .certificate-link.disabled { background: var(--bs-gray-400); cursor: not-allowed; box-shadow: none; opacity: 0.7; pointer-events: none; }
+ .certificate-link:not(.disabled):hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 8px 20px rgba(var(--gradient-start-rgb), 0.25); color: white !important; }
+
+ /* Honors Section */
+ #honors-awards { background-color: var(--bg-color); }
+ .award-card { background-color: var(--card-bg); border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px var(--shadow-color); border: 1px solid var(--card-border); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; align-items: center; height: 100%; }
+ .award-card:hover { transform: translateY(-8px); box-shadow: 0 18px 45px var(--shadow-color-hover); }
+ .award-icon { font-size: 2.5rem; color: var(--primary-color); margin-right: 20px; flex-shrink: 0; width: 60px; height: 60px; background: linear-gradient(135deg, rgba(var(--gradient-start-rgb), 0.1), rgba(var(--gradient-end-rgb), 0.1)); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease; }
+ .award-card:hover .award-icon { transform: scale(1.1) rotate(5deg); }
+ [dir="rtl"] .award-icon { margin-left: 20px; margin-right: 0; }
+ .award-details { flex-grow: 1; }
+ .award-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 5px; }
+ .award-issuer { font-size: 1rem; color: var(--text-color-light); }
+ .honors-images { margin-top: 40px; }
+ .honors-images img { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+ .honors-images img:hover { transform: scale(1.03); box-shadow: 0 10px 25px var(--shadow-color-hover); }
+
+
+ /* Contact Section */
+ #contact { background-color: var(--bg-color-alt); }
+ .contact-container { background-color: var(--card-bg); border-radius: 20px; padding: 50px; box-shadow: 0 15px 40px var(--shadow-color); position: relative; z-index: 1; border: 1px solid var(--card-border); }
+ .contact-info { margin-bottom: 40px; }
+ .contact-item { display: flex; align-items: center; margin-bottom: 25px; }
+ .contact-icon { width: 55px; height: 55px; background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 20px; color: white; font-size: 1.3rem; flex-shrink: 0; transition: transform 0.3s ease; }
+ .contact-item:hover .contact-icon { transform: scale(1.1) rotate(5deg); }
+ [dir="rtl"] .contact-icon { margin-left: 20px; margin-right: 0; }
+ .contact-text { flex-grow: 1; }
+ .contact-label { font-size: 0.9rem; color: var(--text-color-light); margin-bottom: 5px; display: block; }
+ .contact-value { font-size: 1.1rem; font-weight: 500; color: var(--text-color); word-break: break-all; }
+ .contact-value a { color: var(--text-color); text-decoration: none; transition: color 0.3s ease, border-bottom 0.3s ease; border-bottom: 1px solid transparent; }
+ .contact-value a:hover { color: var(--primary-color); border-bottom: 1px solid var(--primary-color); }
+ .contact-buttons { /* Container for the new button layout */ }
+ .contact-btn { /* Shared button styles */ display: flex; align-items: center; justify-content: center; padding: 14px 25px; /* Slightly increased padding */ border-radius: 30px; /* More rounded */ color: white !important; font-weight: 500; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); border: none; text-align: center; }
+ .contact-btn i { margin-right: 10px; font-size: 1.3rem; transition: transform 0.3s ease; }
+ [dir="rtl"] .contact-btn i { margin-left: 10px; margin-right: 0; }
+ .contact-btn.whatsapp { background: linear-gradient(135deg, #25D366, #128C7E); }
+ .contact-btn.telegram { background: linear-gradient(135deg, #0088cc, #005f99); }
+ .contact-btn.email { background: linear-gradient(135deg, #EA4335, #c4302b); }
+ .contact-btn:hover { transform: translateY(-6px) scale(1.03); box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18); color: white !important; }
+ .contact-btn:hover i { transform: scale(1.15) rotate(5deg); } /* Added rotate */
+
+ /* Footer */
+ footer { background-color: var(--footer-bg); color: var(--footer-text); padding: 50px 0 25px; position: relative; overflow: hidden; }
+ .footer-content { position: relative; z-index: 1; }
+ .footer-logo {
+     font-size: 2rem; /* Kept for potential fallback or sizing reference */
+     font-weight: 700;
+     margin-bottom: 25px;
+     display: inline-block;
+     /* Removed text gradient styles */
+     color: var(--footer-text); /* Set a fallback color */
+ }
+ .footer-logo img { /* Style for the logo image */
+     display: block; /* Prevents extra space below image */
+     max-width: 100%; /* Ensure responsiveness */
+ }
+ .social-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; margin-bottom: 35px; }
+ .social-link { width: 45px; height: 45px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.1); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.3rem; transition: all 0.3s ease; text-decoration: none; }
+ .social-link:hover { background-color: var(--primary-color); transform: translateY(-4px) scale(1.1); color: white; box-shadow: 0 5px 15px rgba(var(--primary-color-rgb, 37, 99, 235), 0.3); }
+ .copyright { font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); text-align: center; margin-top: 30px; }
+
+ /* Reading Progress Bar */
+ #reading-progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 4px; background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end), var(--accent-color)); /* Added accent */ z-index: 1031; transition: width 0.15s ease-out; box-shadow: 0 1px 4px rgba(var(--gradient-start-rgb), 0.2); }
+
+ /* Responsive Styles */
+ @media (max-width: 991px) {
+ .hero-content { text-align: center; margin-bottom: 40px; }
+ .hero-image { margin-top: 0; }
+ .profile-img-container { margin: 0 auto; }
+ .timeline::after { left: 31px; right: auto; margin-left: -2px; margin-right: 0; }
+ [dir="rtl"] .timeline::after { right: 31px; left: auto; margin-right: -2px; margin-left: 0;}
+ .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; left: 0 !important; }
+ .timeline-item:nth-child(odd), .timeline-item:nth-child(even) { text-align: left !important; }
+ .timeline-item::after { left: 20px !important; right: auto !important; }
+ [dir="rtl"] .timeline-item { padding-right: 70px; padding-left: 25px; }
+ [dir="rtl"] .timeline-item::after { right: 20px !important; left: auto !important; }
+ [dir="rtl"] .timeline-content { padding-right: 20px; padding-left: 0; }
+ .skills-container { grid-template-columns: 1fr; } /* Stack skill categories on smaller screens */
+ .certificates-container { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+ .award-card { flex-direction: column; align-items: flex-start; text-align: left; }
+ .award-icon { margin-bottom: 15px; margin-right: 0; margin-left: 0;}
+ [dir="rtl"] .award-icon { margin-bottom: 15px; }
+ .navbar-brand::before, .navbar-brand::after { animation: none; border: none; background: none; width: 100%; height: 2px; bottom: 0; left: 0; background: linear-gradient(to right, var(--gradient-start), var(--gradient-end)); }
+ [dir="rtl"] .navbar-brand::before, [dir="rtl"] .navbar-brand::after { right: 0; left:auto; }
+ }
+ @media (max-width: 767px) {
+ section { padding: 80px 0; }
+ .section-title { font-size: 2rem; margin-bottom: 50px; }
+ .hero-title { font-size: 2.8rem; }
+ .hero-subtitle { font-size: 1.3rem; min-height: 60px; } /* Increased min-height for longer titles */
+ .about-content, .contact-container { padding: 30px; }
+ .about-text { text-align: left; }
+ [dir="rtl"] .about-text { text-align: right; }
+ .profile-img-container { width: 280px; height: 280px; }
+ /* Contact button layout on small screens */
+ .contact-buttons .row.g-3 { flex-direction: column; align-items: center; margin-bottom: 0 !important; } /* Stack top row */
+ .contact-buttons .col-sm-6 { width: 100%; max-width: 300px; margin-bottom: 1rem; } /* Full width for stacked buttons */
+ .contact-buttons .col-sm-8 { width: 100%; max-width: 300px; }
+ .navbar-nav { background-color: rgba(255, 255, 255, 0.97); padding: 15px; margin-top: 10px; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+ .navbar-nav .nav-item { margin-bottom: 5px; }
+ .navbar-nav .nav-link { margin: 0; padding: 10px 15px; }
+ .lang-toggle { margin: 10px auto; }
+ #honors-awards .honors-images .col-md-6 { flex-basis: 100%; max-width: 100%; }
+ #honors-awards .honors-images .col-md-6:last-child img { margin-bottom: 0; }
+ .skill-category-selector .btn { font-size: 0.9rem; padding: 6px 15px; } /* Smaller buttons on mobile */
+ }
+ @media (max-width: 575px) {
+ section { padding: 60px 0; }
+ .section-title { font-size: 1.8rem; margin-bottom: 40px; }
+ .hero-title { font-size: 2.2rem; }
+ .hero-title::after { width: 80px; bottom: 0;}
+ .hero-subtitle { font-size: 1.1rem; min-height: 50px; } /* Adjust if needed */
+ .profile-img-container { width: 220px; height: 220px; }
+ .timeline-content { padding: 20px; }
+ .contact-item { flex-direction: column; align-items: flex-start; text-align: left; }
+ .contact-icon { margin-right: 0; margin-left:0; margin-bottom: 15px; }
+ .footer-logo img { width: 50px !important; margin: 0 auto 20px; } /* Center logo on small screens */
+ .social-link { width: 40px; height: 40px; font-size: 1.1rem; }
+ .award-card { padding: 25px; }
+ .award-icon { width: 50px; height: 50px; font-size: 2rem; }
+ .award-title { font-size: 1.1rem; }
+ .award-issuer { font-size: 0.9rem; }
+ }
+
+ /* Scroll to Top Button */
+ .scroll-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background: linear-gradient(to top, var(--gradient-start), var(--gradient-end)); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; cursor: pointer; opacity: 0; visibility: hidden; transition: all 0.4s ease; z-index: 999; box-shadow: 0 8px 20px rgba(var(--gradient-start-rgb), 0.3); border: none; }
+ [dir="rtl"] .scroll-top { right: auto; left: 30px; }
+ .scroll-top.active { opacity: 1; visibility: visible; }
+ .scroll-top:hover { transform: translateY(-6px) scale(1.1); box-shadow: 0 12px 25px rgba(var(--gradient-start-rgb), 0.4); }
+
+ /* Preloader */
+ .preloader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: var(--bg-color); display: flex; align-items: center; justify-content: center; z-index: 9999; transition: opacity 0.6s ease, visibility 0.6s ease; }
+ .preloader.fade-out { opacity: 0; visibility: hidden; }
+ .loader { width: 60px; height: 60px; border: 4px solid rgba(var(--primary-color-rgb, 37, 99, 235), 0.2); border-radius: 50%; border-top-color: var(--primary-color); border-left-color: var(--secondary-color); animation: spin 0.8s linear infinite; }
+ @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+ /* Custom Scrollbar */
+ ::-webkit-scrollbar { width: 10px; height: 10px; }
+ ::-webkit-scrollbar-track { background: var(--bg-color-alt); border-radius: 5px; }
+ ::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-end)); border-radius: 5px; border: 2px solid var(--bg-color-alt); }
+ ::-webkit-scrollbar-thumb:hover { background: linear-gradient(to bottom, var(--gradient-end), var(--gradient-start)); }
+
+ /* AOS Animation Delays */
+ [data-aos-delay="100"] { transition-delay: 0.1s; }
+ [data-aos-delay="200"] { transition-delay: 0.2s; }
+ [data-aos-delay="300"] { transition-delay: 0.3s; }
+ [data-aos-delay="400"] { transition-delay: 0.4s; }
+ [data-aos-delay="500"] { transition-delay: 0.5s; }
+
+ </style>
+</head>
+<body>
+ <!-- Reading Progress Bar -->
+ <div id="reading-progress-bar"></div>
+
+ <!-- Preloader -->
+ <div class="preloader">
+ <div class="loader"></div>
+ </div>
+
+ <!-- Background Elements -->
+ <div class="particles-container"></div>
+ <div class="bg-grid"></div>
+ <div class="shape shape-1"></div>
+ <div class="shape shape-2"></div>
+ <div class="shape shape-3"></div>
+ <div class="shape shape-4"></div>
+ <div class="shape shape-5"></div>
+
+ <!-- Navbar -->
+ <nav class="navbar navbar-expand-lg fixed-top">
+ <div class="container">
+ <a class="navbar-brand" href="#hero" data-en="Ahmed Azouz" data-ar="أحمد عزوز">Ahmed Azouz</a>
+ <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+ <span class="navbar-toggler-icon"><span></span></span>
+ </button>
+ <div class="collapse navbar-collapse" id="navbarNav">
+ <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+ <li class="nav-item">
+ <a class="nav-link active" href="#hero" data-en="Home" data-ar="الرئيسية">Home</a>
+ </li>
+ <li class="nav-item">
+ <a class="nav-link" href="#about" data-en="About" data-ar="نبذة عني">About</a>
+ </li>
+ <li class="nav-item">
+ <a class="nav-link" href="#education" data-en="Education" data-ar="التعليم">Education</a>
+ </li>
+ <li class="nav-item">
+ <a class="nav-link" href="#training" data-en="Training" data-ar="التدريب">Training</a>
+ </li>
+ <li class="nav-item">
+ <a class="nav-link" href="#projects" data-en="Projects" data-ar="المشاريع">Projects</a>
+ </li>
+ <li class="nav-item">
+ <a class="nav-link" href="#skills" data-en="Skills" data-ar="المهارات">Skills</a>
+ </li>
+ <li class="nav-item">
+ <a class="nav-link" href="#certificates" data-en="Certificates" data-ar="الشهادات">Certificates</a>
+ </li>
+ <li class="nav-item">
+ <a class="nav-link" href="#honors-awards" data-en="Honors" data-ar="التكريمات">Honors</a>
+ </li>
+ <li class="nav-item">
+ <a class="nav-link" href="#contact" data-en="Contact" data-ar="التواصل">Contact</a>
+ </li>
+ </ul>
+ <div class="d-flex align-items-center ms-lg-4 mt-3 mt-lg-0">
+ <div class="lang-toggle" id="langToggle">
+ <span class="active" data-lang="en">EN</span>
+ <div class="divider"></div>
+ <span data-lang="ar">AR</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ </nav>
+
+ <!-- Hero Section -->
+ <section id="hero">
+ <div class="container">
+ <div class="row align-items-center gy-5 gy-lg-0">
+ <div class="col-lg-7 hero-content" data-aos="fade-right">
+ <h1 class="hero-title" data-en="Ahmed Azouz" data-ar="أحمد عزوز">Ahmed Azouz</h1>
+ <div class="hero-subtitle" id="typingText"
+      data-en-phrases='["Microsoft Machine Learning Engineer", "Deep Learning Specialist", "NLP & Computer Vision Developer"]'
+      data-ar-phrases='["مهندس تعلم آلة من مايكروسوفت", "متخصص في التعلم العميق", "مطور معالجة لغات طبيعية ورؤية حاسوبية"]'>
+ </div>
+ <p class="hero-text" data-en="Ambitious and dedicated Artificial Intelligence professional with a strong foundation in machine learning, data analysis, and programming." data-ar="محترف طموح ومتفاني في مجال الذكاء الاصطناعي مع أساس قوي في تعلم الآلة وتحليل البيانات والبرمجة.">
+ </p>
+ <div class="hero-buttons">
+ <a href="#contact" class="hero-btn" data-en="Contact Me" data-ar="تواصل معي">Contact Me</a>
+ <a href="https://drive.google.com/file/d/1L3n2bETw83fecudW0i8JWECZCJcqilKh/view?usp=sharing" class="hero-btn" target="_blank" rel="noopener noreferrer">
+     <i class="fas fa-eye me-2"></i> <span data-en="View CV" data-ar="عرض السيرة الذاتية">View CV</span>
+ </a>
+ </div>
+ </div>
+ <div class="col-lg-5 hero-image" data-aos="fade-left" data-aos-delay="200">
+    <div class="profile-img-container">
+        <div class="profile-img">
+            <img src="images/profile-picture.webp" alt="Ahmed Azouz - AI Engineer" class="img-fluid profile-pic-hero" loading="eager">
+        </div>
+    </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- About Section -->
+ <section id="about" class="bg-light">
+ <div class="container">
+ <h2 class="section-title" data-en="About Me" data-ar="نبذة عني">About Me</h2>
+ <div class="about-content" data-aos="fade-up">
+ <p class="about-text" data-en="Passionate about technology and innovation with proven abilities in problem-solving, teamwork, and rapid adaptation to new challenges. Eager to apply hands-on experience from academic projects in developing and implementing AI models in a professional setting. Committed to contributing to cutting-edge AI solutions and driving technological advancements." data-ar="شغوف بالتكنولوجيا والابتكار مع قدرات مثبتة في حل المشكلات والعمل الجماعي والتكيف السريع مع التحديات الجديدة. متحمس لتطبيق الخبرة العملية من المشاريع الأكاديمية في تطوير وتنفيذ نماذج الذكاء الاصطناعي في بيئة احترافية. ملتزم بالمساهمة في حلول الذكاء الاصطناعي المتطورة ودفع التقدم التكنولوجي.">
+ </p>
+ <!-- YouTube Video Embed -->
+ <div class="ratio ratio-16x9 mt-4 rounded shadow-sm overflow-hidden video-container" data-aos="zoom-in" data-aos-delay="100">
+    <iframe src="https://www.youtube.com/embed/ETW1lSdU6n4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Education Section -->
+ <section id="education">
+ <div class="container">
+ <h2 class="section-title" data-en="Education" data-ar="التعليم">Education</h2>
+ <div class="timeline">
+ <div class="timeline-item" data-aos="fade-up">
+ <div class="timeline-content">
+ <span class="timeline-date" data-en="Sep 2021 - Jun 2025 (Expected)" data-ar="سبتمبر 2021 - يونيو 2025 (متوقع)">Sep 2021 - Jun 2025 (Expected)</span>
+ <h3 class="timeline-title" data-en="Bachelor's Degree in Artificial Intelligence" data-ar="بكالوريوس في الذكاء الاصطناعي">Bachelor's Degree in Artificial Intelligence</h3>
+ <p class="timeline-text" data-en="Egyptian Russian University" data-ar="الجامعة المصرية الروسية">Egyptian Russian University</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Training Section -->
+ <section id="training" class="bg-light">
+ <div class="container">
+ <h2 class="section-title" data-en="Training" data-ar="التدريب">Training</h2>
+ <div class="timeline">
+ <div class="timeline-item" data-aos="fade-up">
+ <div class="timeline-content">
+ <span class="timeline-date" data-en="October 2024 – May 2025" data-ar="أكتوبر 2024 - مايو 2025">October 2024 – May 2025</span>
+ <h3 class="timeline-title" data-en="Trainee | DEPI" data-ar="متدرب | DEPI">Trainee | DEPI</h3>
+ </div>
+ </div>
+ <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+ <div class="timeline-content">
+ <span class="timeline-date" data-en="June 2024 - September 2024" data-ar="يونيو 2024 - سبتمبر 2024">June 2024 - September 2024</span>
+ <h3 class="timeline-title" data-en="Trainee | Zewail City" data-ar="متدرب | مدينة زويل">Trainee | Zewail City</h3>
+ </div>
+ </div>
+ <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+ <div class="timeline-content">
+ <span class="timeline-date" data-en="June 2023 - September 2023" data-ar="يونيو 2023 - سبتمبر 2023">June 2023 - September 2023</span>
+ <h3 class="timeline-title" data-en="Trainee | Huawei" data-ar="متدرب | هواوي">Trainee | Huawei</h3>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Projects Section -->
+ <section id="projects">
+ <div class="container">
+ <h2 class="section-title" data-en="Projects & Experience" data-ar="المشاريع والخبرات">Projects & Experience</h2>
+ <div class="row gy-4">
+  <div class="col-lg-4 col-md-6 d-flex">
+ <div class="project-card w-100" data-aos="fade-up">
+ <div class="project-header">
+ <h3 class="project-title" data-en="Real-time Face Mask Detection" data-ar="كشف قناع الوجه في الوقت الفعلي">Real-time Face Mask Detection</h3>
+ <div class="project-date" data-en="Feb 2023 - May 2024" data-ar="فبراير 2023 - مايو 2024">Feb 2023 - May 2024</div>
+ </div>
+ <div class="project-body">
+ <p class="project-description" data-en="Developed a real-time automated system using CNNs to detect face masks in live video streams or images, achieving 99% accuracy." data-ar="تطوير نظام آلي فوري باستخدام شبكات CNN لكشف أقنعة الوجه في بث الفيديو المباشر أو الصور، محققًا دقة 99%."></p>
+ <div class="project-tech">
+ <span class="tech-tag">Computer Vision</span>
+ <span class="tech-tag">Deep Learning</span>
+ <span class="tech-tag">CNN</span>
+ <span class="tech-tag">Real-time</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="col-lg-4 col-md-6 d-flex">
+ <div class="project-card w-100" data-aos="fade-up" data-aos-delay="100">
+ <div class="project-header">
+ <h3 class="project-title" data-en="Malaria Disease Detection" data-ar="كشف مرض الملاريا">Malaria Disease Detection</h3>
+ <div class="project-date" data-en="Feb 2023 - May 2024" data-ar="فبراير 2023 - مايو 2024">Feb 2023 - May 2024</div>
+ </div>
+ <div class="project-body">
+ <p class="project-description" data-en="AI-powered analysis of cell images to classify malaria infection (infected/non-infected) with 95% accuracy." data-ar="نظام تحليل صور خلايا مدعوم بالذكاء الاصطناعي لتصنيف الإصابة بالملاريا (مصابة/غير مصابة) بدقة 95%."></p>
+ <div class="project-tech">
+ <span class="tech-tag">Image Analysis</span>
+ <span class="tech-tag">Machine Learning</span>
+ <span class="tech-tag">Healthcare AI</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="col-lg-4 col-md-6 d-flex">
+ <div class="project-card w-100" data-aos="fade-up" data-aos-delay="200">
+ <div class="project-header">
+ <h3 class="project-title" data-en="Lung Cancer Prediction" data-ar="التنبؤ بسرطان الرئة">Lung Cancer Prediction</h3>
+ <div class="project-date" data-en="Feb 2023 - May 2024" data-ar="فبراير 2023 - مايو 2024">Feb 2023 - May 2024</div>
+ </div>
+ <div class="project-body">
+ <p class="project-description" data-en="AI system analyzing X-ray images for lung cancer detection and classification, achieving 97% accuracy." data-ar="نظام ذكاء اصطناعي يحلل صور الأشعة السينية لكشف وتصنيف سرطان الرئة، محققًا دقة 97%."></p>
+ <div class="project-tech">
+ <span class="tech-tag">Medical Imaging</span>
+ <span class="tech-tag">Deep Learning</span>
+ <span class="tech-tag">Classification</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="col-lg-4 col-md-6 d-flex">
+ <div class="project-card w-100" data-aos="fade-up">
+ <div class="project-header">
+ <h3 class="project-title" data-en="Real-time Object Detection" data-ar="كشف الأجسام في الوقت الفعلي">Real-time Object Detection</h3>
+ <div class="project-date" data-en="Feb 2023 - May 2024" data-ar="فبراير 2023 - مايو 2024">Feb 2023 - May 2024</div>
+ </div>
+ <div class="project-body">
+ <p class="project-description" data-en="Implemented an AI-based system using models like YOLO for real-time identification and localization of multiple objects within images or video streams." data-ar="تطبيق نظام قائم على الذكاء الاصطناعي يستخدم نماذج مثل YOLO للتعرف وتحديد مواقع أجسام متعددة في الوقت الفعلي ضمن الصور أو بث الفيديو."></p>
+ <div class="project-tech">
+ <span class="tech-tag">Computer Vision</span>
+ <span class="tech-tag">CNN</span>
+ <span class="tech-tag">YOLO</span>
+ <span class="tech-tag">Real-time</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="col-lg-4 col-md-6 d-flex">
+ <div class="project-card w-100" data-aos="fade-up" data-aos-delay="100">
+ <div class="project-header">
+ <h3 class="project-title" data-en="Spam Message Detection" data-ar="كشف الرسائل المزعجة">Spam Message Detection</h3>
+ <div class="project-date" data-en="Feb 2023 - May 2024" data-ar="فبراير 2023 - مايو 2024">Feb 2023 - May 2024</div>
+ </div>
+ <div class="project-body">
+ <p class="project-description" data-en="NLP system using Naive Bayes and TF-IDF to classify messages as spam or non-spam based on textual patterns." data-ar="نظام معالجة لغات طبيعية يستخدم Naive Bayes و TF-IDF لتصنيف الرسائل كمزعجة أو غير مزعجة بناءً على الأنماط النصية."></p>
+ <div class="project-tech">
+ <span class="tech-tag">NLP</span>
+ <span class="tech-tag">Text Classification</span>
+ <span class="tech-tag">Machine Learning</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="col-lg-4 col-md-6 d-flex">
+ <div class="project-card w-100" data-aos="fade-up" data-aos-delay="200">
+ <div class="project-header">
+ <h3 class="project-title" data-en="Speaker Recognition" data-ar="التعرف على المتحدث">Speaker Recognition</h3>
+ <div class="project-date" data-en="Feb 2023 - May 2024" data-ar="فبراير 2023 - مايو 2024">Feb 2023 - May 2024</div>
+ </div>
+ <div class="project-body">
+ <p class="project-description" data-en="AI system identifying speakers from voice patterns using MFCCs and deep learning models." data-ar="نظام ذكاء اصطناعي يحدد المتحدثين من أنماط أصواتهم باستخدام MFCCs ونماذج التعلم العميق."></p>
+ <div class="project-tech">
+ <span class="tech-tag">Speech Recognition</span>
+ <span class="tech-tag">Audio Processing</span>
+ <span class="tech-tag">Deep Learning</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="col-lg-6 col-md-6 d-flex">
+ <div class="project-card w-100" data-aos="fade-up">
+ <div class="project-header">
+ <h3 class="project-title" data-en="Pharmaceutical Company System" data-ar="نظام شركة أدوية">Pharmaceutical Company System</h3>
+ <div class="project-date" data-en="Sep 2021 - May 2022" data-ar="سبتمبر 2021 - مايو 2022">Sep 2021 - May 2022</div>
+ </div>
+ <div class="project-body">
+ <p class="project-description" data-en="Internal communication platform (Java, OOP, Data Structures) for better coordination and secure data management." data-ar="منصة اتصال داخلية (Java، OOP، هياكل بيانات) لتحسين التنسيق وإدارة البيانات الآمنة."></p>
+ <div class="project-tech">
+ <span class="tech-tag">Java</span>
+ <span class="tech-tag">OOP</span>
+ <span class="tech-tag">Database</span>
+ <span class="tech-tag">Data Structures</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="col-lg-6 col-md-6 d-flex">
+ <div class="project-card w-100" data-aos="fade-up" data-aos-delay="100">
+ <div class="project-header">
+ <h3 class="project-title" data-en="E-Commerce Clothes Mobile App" data-ar="تطبيق جوال لبيع الملابس">E-Commerce Clothes Mobile App</h3>
+ <div class="project-date" data-en="Sep 2022 - Jan 2023" data-ar="سبتمبر 2022 - يناير 2023">Sep 2022 - Jan 2023</div>
+ </div>
+ <div class="project-body">
+ <p class="project-description" data-en="User-friendly mobile app for browsing and purchasing clothes, focusing on intuitive UI/UX design." data-ar="تطبيق جوال سهل الاستخدام لتصفح وشراء الملابس، يركز على تصميم واجهة مستخدم وتجربة مستخدم بديهية."></p>
+ <div class="project-tech">
+ <span class="tech-tag">Mobile Development</span>
+ <span class="tech-tag">UI/UX Design</span>
+ <span class="tech-tag">E-Commerce</span>
+ <span class="tech-tag">Java</span> 
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Skills Section -->
+<section id="skills" class="bg-light">
+  <div class="container">
+  <h2 class="section-title" data-en="Skills" data-ar="المهارات">Skills</h2>
+  
+  <!-- Skill Category Selector Buttons -->
+  <div class="skill-category-selector mb-5 text-center" data-aos="fade-up">
+     <button class="btn btn-outline-primary mx-1 active" data-target="#core-ai-ml" data-en="AI & Machine Learning" data-ar="الذكاء الاصطناعي وتعلم الآلة">AI & Machine Learning</button>
+     <button class="btn btn-outline-primary mx-1" data-target="#data-science-frameworks" data-en="Frameworks & Libraries" data-ar="الأطر والمكتبات">Frameworks & Libraries</button>
+     <button class="btn btn-outline-primary mx-1" data-target="#programming-languages" data-en="Programming Languages" data-ar="لغات البرمجة">Programming Languages</button>
+     <button class="btn btn-outline-primary mx-1" data-target="#web-mobile-dev" data-en="Web & Mobile Development" data-ar="تطوير الويب والجوال">Web & Mobile Development</button>
+     <button class="btn btn-outline-primary mx-1" data-target="#tools-environments" data-en="Tools & Environments" data-ar="الأدوات والبيئات">Tools & Environments</button>
+     <button class="btn btn-outline-primary mx-1" data-target="#core-programming" data-en="Software Engineering" data-ar="هندسة البرمجيات">Software Engineering</button>
+     <button class="btn btn-outline-primary mx-1" data-target="#productivity-tools" data-en="Productivity Tools" data-ar="أدوات الإنتاجية">Productivity Tools</button>
+     <button class="btn btn-outline-primary mx-1" data-target="#soft-skills" data-en="Soft Skills" data-ar="المهارات الشخصية">Soft Skills</button>
+  </div>
+  
+  <div class="skills-container">
+     <!-- AI & ML Core Concepts -->
+     <div class="skill-category active-skills" id="core-ai-ml" data-aos="fade-up">
+        <h3 class="category-title visually-hidden" data-en="AI & Machine Learning" data-ar="الذكاء الاصطناعي وتعلم الآلة">AI & Machine Learning</h3>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Linear Algebra" data-ar="الجبر الخطي">Linear Algebra</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Probability" data-ar="الاحتمالات">Probability</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Statistics" data-ar="الإحصاء">Statistics</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Data Preprocessing" data-ar="المعالجة المسبقة للبيانات">Data Preprocessing</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Data Visualization" data-ar="تصور البيانات">Data Visualization</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Machine Learning (ML)" data-ar="تعلم الآلة (ML)">Machine Learning (ML)</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Deep Learning (DL)" data-ar="التعلم العميق (DL)">Deep Learning (DL)</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Natural Language Processing (NLP)" data-ar="معالجة اللغات الطبيعية (NLP)">Natural Language Processing (NLP)</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Attention Models" data-ar="نماذج الانتباه">Attention Models</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Computer Vision" data-ar="رؤية الحاسوب">Computer Vision</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Transfer Learning" data-ar="التعلم بالنقل">Transfer Learning</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Speech Recognition" data-ar="التعرف على الكلام">Speech Recognition</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Intelligence Algorithms" data-ar="خوارزميات الذكاء">Intelligence Algorithms</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Multi-Agent Systems" data-ar="الأنظمة متعددة الوكلاء">Multi-Agent Systems</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Model Deployment" data-ar="نشر النماذج">Model Deployment</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Azure AI Fundamentals" data-ar="أساسيات الذكاء الاصطناعي في Azure">Azure AI Fundamentals</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Cloud Computing" data-ar="الحوسبة السحابية">Cloud Computing</span></div></div>
+     </div>
+  
+     <!-- Data Science & AI Frameworks/Libraries -->
+     <div class="skill-category" id="data-science-frameworks" data-aos="fade-up">
+        <h3 class="category-title visually-hidden" data-en="Frameworks & Libraries" data-ar="الأطر والمكتبات">Frameworks & Libraries</h3>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Pandas" data-ar="Pandas">Pandas</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="NumPy" data-ar="NumPy">NumPy</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Scikit-Learn" data-ar="Scikit-Learn">Scikit-Learn</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="TensorFlow" data-ar="TensorFlow">TensorFlow</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Keras" data-ar="Keras">Keras</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="PyTorch" data-ar="PyTorch">PyTorch</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="NLTK" data-ar="NLTK">NLTK</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="spaCy" data-ar="spaCy">spaCy</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Gensim" data-ar="Gensim">Gensim</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Transformers" data-ar="Transformers">Transformers</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="OpenCV" data-ar="OpenCV">OpenCV</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Pillow (PIL)" data-ar="Pillow (PIL)">Pillow (PIL)</span></div></div>
+     </div>
+  
+     <!-- Programming Languages -->
+     <div class="skill-category" id="programming-languages" data-aos="fade-up">
+        <h3 class="category-title visually-hidden" data-en="Programming Languages" data-ar="لغات البرمجة">Programming Languages</h3>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Python" data-ar="Python">Python</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="SQL" data-ar="SQL">SQL</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="C++" data-ar="C++">C++</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Java" data-ar="Java">Java</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Dart" data-ar="Dart">Dart</span></div></div>
+     </div>
+  
+     <!-- Web & Mobile Development -->
+     <div class="skill-category" id="web-mobile-dev" data-aos="fade-up">
+        <h3 class="category-title visually-hidden" data-en="Web & Mobile Dev" data-ar="تطوير الويب والجوال">Web & Mobile Dev</h3>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="HTML" data-ar="HTML">HTML</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="CSS" data-ar="CSS">CSS</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="JavaScript" data-ar="JavaScript">JavaScript</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Flask" data-ar="Flask">Flask</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="FastAPI" data-ar="FastAPI">FastAPI</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Streamlit" data-ar="Streamlit">Streamlit</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Dart" data-ar="Dart">Dart</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="UI/UX Design" data-ar="تصميم واجهة/تجربة المستخدم">UI/UX Design</span></div></div>
+     </div>
+  
+     <!-- Tools & Environments -->
+     <div class="skill-category" id="tools-environments" data-aos="fade-up">
+        <h3 class="category-title visually-hidden" data-en="Tools & Environments" data-ar="الأدوات والبيئات">Tools & Environments</h3>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Visual Studio Community" data-ar="Visual Studio Community">Visual Studio Community</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Visual Studio Code" data-ar="Visual Studio Code">Visual Studio Code</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Spyder" data-ar="Spyder">Spyder</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Jupyter" data-ar="Jupyter">Jupyter</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Google Colab" data-ar="Google Colab">Google Colab</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Kaggle" data-ar="Kaggle">Kaggle</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Postman" data-ar="Postman">Postman</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="NetBeans" data-ar="NetBeans">Postman</span></div></div>
+     </div>
+  
+     <!-- Core Programming Concepts / Software Engineering -->
+     <div class="skill-category" id="core-programming" data-aos="fade-up">
+        <h3 class="category-title visually-hidden" data-en="Software Engineering" data-ar="هندسة البرمجيات">Software Engineering</h3>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="System Analysis and Design" data-ar="تحليل وتصميم النظم">System Analysis and Design</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Object Oriented Programming (OOP)" data-ar="البرمجة كائنية التوجه (OOP)">Object Oriented Programming (OOP)</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Data Structures" data-ar="هياكل البيانات">Data Structures</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Algorithms" data-ar="الخوارزميات">Algorithms</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Databases" data-ar="قواعد البيانات">Databases</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Software Testing & Quality Assurance" data-ar="اختبار البرمجيات وضمان الجودة">Software Testing & Quality Assurance</span></div></div>      </div>
+  
+     <!-- Productivity & Collaboration Tools -->
+     <div class="skill-category" id="productivity-tools" data-aos="fade-up">
+        <h3 class="category-title visually-hidden" data-en="Productivity and Design Tools" data-ar="أدوات الإنتاجية والتصميم">Productivity and Design Tools</h3>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Adobe Photoshop" data-ar="Adobe Photoshop">Adobe Photoshop</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Adobe Premiere" data-ar="Adobe Premiere">Adobe Premiere</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="CapCut" data-ar="CapCut">CapCut</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Canva" data-ar="Canva">Canva</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Microsoft PowerPoint" data-ar="Microsoft PowerPoint">Microsoft PowerPoint</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Microsoft Word" data-ar="Microsoft Word">Microsoft Word</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Microsoft Excel" data-ar="Microsoft Excel">Microsoft Excel</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Notion" data-ar="Notion">Notion</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Miro" data-ar="Miro">Miro</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Google Forms" data-ar="Google Forms">Google Forms</span></div></div>
+     </div>
+  
+     <!-- Soft Skills -->
+     <div class="skill-category" id="soft-skills" data-aos="fade-up">
+        <h3 class="category-title visually-hidden" data-en="Soft Skills" data-ar="المهارات الشخصية">Soft Skills</h3>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Problem Solving" data-ar="حل المشكلات">Problem Solving</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Prompt Engineering" data-ar="هندسة الأوامر النصية">Prompt Engineering</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Scientific Thinking" data-ar="التفكير العلمي">Scientific Thinking</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Leadership" data-ar="القيادة">Leadership</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Team Work" data-ar="العمل الجماعي">Team Work</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Communication" data-ar="الاتصال">Communication</span></div></div>
+     </div>
+  </div>
+  </div>
+  </section>
+
+
+ <!-- Certificates Section -->
+<section id="certificates">
+ <div class="container">
+ <h2 class="section-title" data-en="Certificates" data-ar="الشهادات">Certificates</h2>
+ <div class="certificates-container">
+    <!-- AI Training Certificate - IAO Accredited -->
+    <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up"> <div class="certificate-icon"><i class="fas fa-award"></i></div> <h3 class="certificate-title" data-en="AI Training Certificate - IAO Accredited" data-ar="شهادة تدريب ذكاء اصطناعي - اعتماد IAO">AI Training Certificate - IAO Accredited</h3> <p class="certificate-issuer" data-en="International Accreditation Organization (IAO)" data-ar="منظمة الاعتماد الدولية (IAO)">International Accreditation Organization (IAO)</p> <a href="https://drive.google.com/file/d/19qPRZZbz4_F8xPfUl9wqFa-mfGoxno7o/view?usp=sharing" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
+    <!-- Microsoft Machine Learning Engineer - DEPI -->
+    <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="100"> <div class="certificate-icon"><i class="fa-brands fa-microsoft"></i></div> <h3 class="certificate-title" data-en="Microsoft Machine Learning Engineer - DEPI" data-ar="مهندس تعلم آلة من مايكروسوفت - DEPI">Microsoft Machine Learning Engineer - DEPI</h3> <p class="certificate-issuer" data-en="Microsoft & DEPI" data-ar="مايكروسوفت و DEPI">Microsoft & DEPI</p> <a href="#" class="certificate-link disabled" target="_blank" rel="noopener noreferrer" data-en="View Certificate (Soon)" data-ar="عرض الشهادة (قريباً)">View Certificate (Soon)</a> </div> </div>
+    <!-- AI Training Certificate - Zewail City -->
+    <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="200"> <div class="certificate-icon"><i class="fas fa-flask"></i></div> <h3 class="certificate-title" data-en="AI Training Certificate - Zewail City" data-ar="شهادة تدريب ذكاء اصطناعي - مدينة زويل">AI Training Certificate - Zewail City</h3> <p class="certificate-issuer" data-en="Zewail City of Science and Technology" data-ar="مدينة زويل للعلوم والتكنولوجيا">Zewail City of Science and Technology</p> <a href="https://drive.google.com/file/d/1-eTLjmR93hQTowWtgKoPtDNTrfvONHfn/view?usp=drive_link" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
+    <!-- AI Career Essentials – ALX -->
+    <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up"> <div class="certificate-icon"><i class="fas fa-chalkboard-teacher"></i></div> <h3 class="certificate-title" data-en="AI Career Essentials – ALX" data-ar="أساسيات مهنة الذكاء الاصطناعي – ALX">AI Career Essentials – ALX</h3> <p class="certificate-issuer" data-en="ALX" data-ar="ALX">ALX</p> <a href="https://drive.google.com/file/d/1n3mEB_79YKVNyYtQa95S7f9gWJVB_23J/view?usp=drive_link" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
+    <!-- One Million AI Prompters -->
+    <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="100"> <div class="certificate-icon"><i class="fas fa-brain"></i></div> <h3 class="certificate-title" data-en="One Million AI Prompters" data-ar="مليون محفز للذكاء الاصطناعي">One Million AI Prompters</h3> <p class="certificate-issuer" data-en="Dubai Center for Artificial Intelligence" data-ar="مركز دبي للذكاء الاصطناعي">Dubai Center for Artificial Intelligence</p> <a href="https://drive.google.com/file/d/1PTpGNaoNXhS1MqdQfMVZuv9cML_U34ZH/view?usp=drive_link" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
+    <!-- IT Essential Certificate -->
+    <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="200"> <div class="certificate-icon"><i class="fas fa-network-wired"></i></div> <h3 class="certificate-title" data-en="IT Essential Certificate" data-ar="شهادة أساسيات تكنولوجيا المعلومات">IT Essential Certificate</h3> <p class="certificate-issuer" data-en="Cisco Networking Academy" data-ar="أكاديمية سيسكو للشبكات">Cisco Networking Academy</p> <a href="https://drive.google.com/file/d/1iZq5rAqz97RlQdL5RlYFKF4oUdM8ztXU/view?usp=drive_link" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
+    <!-- IT Essentials Badge -->
+    <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="300"> <div class="certificate-icon"><i class="fas fa-id-badge"></i></div> <h3 class="certificate-title" data-en="IT Essentials Badge" data-ar="شارة أساسيات تكنولوجيا المعلومات">IT Essentials Badge</h3> <p class="certificate-issuer" data-en="Cisco" data-ar="سيسكو">Cisco</p> <a href="https://www.credly.com/badges/834bf688-8e6e-442e-83ad-ffa6c0b1c716" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Badge" data-ar="عرض الشارة">View Badge</a> </div> </div>
+    <!-- Pharmaceutical Company Project -->
+    <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="400"> <div class="certificate-icon"><i class="fas fa-file-prescription"></i></div> <h3 class="certificate-title" data-en="Pharmaceutical Company Project Certificate" data-ar="شهادة مشروع شركة الأدوية">Pharmaceutical Company Project Certificate</h3> <p class="certificate-issuer" data-en="ERU" data-ar="الجامعة المصرية الروسية">ERU</p> <a href="https://drive.google.com/file/d/169GEdTzg8bAdQcZcyZZK2dV28zFhnZTL/view?usp=drive_link" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
+    <!-- Python For AI Training -->
+    <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="500"> <div class="certificate-icon"><i class="fab fa-python"></i></div> <h3 class="certificate-title" data-en="Python For AI Training" data-ar="تدريب بايثون للذكاء الاصطناعي">Python For AI Training</h3> <p class="certificate-issuer" data-en="Huawei ICT Academy-Egypt" data-ar="أكاديمية هواوي لتكنولوجيا المعلومات والاتصالات - مصر">Huawei ICT Academy-Egypt</p> <a href="https://drive.google.com/file/d/1-5dlmQ4ZDpScrrJut3M82HatbpZNUlNe/view?usp=drive_link" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
+    <!-- Python Programming -->
+    <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up"> <div class="certificate-icon"><i class="fa-brands fa-python"></i></div> <h3 class="certificate-title" data-en="Python Programming" data-ar="برمجة بايثون">Python Programming</h3> <p class="certificate-issuer" data-en="Information Technology Institute (ITI)" data-ar="معهد تكنولوجيا المعلومات (ITI)">Information Technology Institute (ITI)</p> <a href="https://drive.google.com/file/d/1VyuJeBnt8uEr3u1RtUcvdnd6Ui91OUqH/view?usp=drive_link" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
+    <!-- Introduction to Programming with Python -->
+    <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="100"> <div class="certificate-icon"><i class="fa-solid fa-laptop-code"></i></div> <h3 class="certificate-title" data-en="Introduction to Programming with Python" data-ar="مقدمة في البرمجة باستخدام بايثون">Introduction to Programming with Python</h3> <p class="certificate-issuer" data-en="Ministry of Youth and Sports" data-ar="وزارة الشباب والرياضة">Ministry of Youth and Sports</p> <a href="https://drive.google.com/file/d/15xFNWSv1ASuLD0LBIP745IM4xhZBAVNZ/view?usp=drive_link" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
+    <!-- Python Programming Language - Intermediate Level -->
+    <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="200"> <div class="certificate-icon"><i class="fa-brands fa-python"></i></div> <h3 class="certificate-title" data-en="Python Programming Language - Intermediate Level" data-ar="لغة برمجة بايثون - المستوى المتوسط">Python Programming Language - Intermediate Level</h3> <p class="certificate-issuer" data-en="Ministry of Youth and Sports" data-ar="وزارة الشباب والرياضة">Ministry of Youth and Sports</p> <a href="https://drive.google.com/file/d/15ygt91DX5dT_luCMBGwrvjsVO0pq5Bt1/view?usp=drive_link" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
+    <!-- SQL Certificate -->
+    <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="300"> <div class="certificate-icon"><i class="fas fa-database"></i></div> <h3 class="certificate-title" data-en="SQL Certificate" data-ar="شهادة SQL">SQL Certificate</h3> <p class="certificate-issuer" data-en="Sololearn" data-ar="Sololearn">Sololearn</p> <a href="https://drive.google.com/file/d/162VLZv4L-LST2U4XvVqDsX419tOZhJDh/view" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
+    <!-- Digital Transformation -->
+    <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="400"> <div class="certificate-icon"><i class="fa-solid fa-sync-alt"></i></div> <h3 class="certificate-title" data-en="Digital Transformation" data-ar="التحول الرقمي">Digital Transformation</h3> <p class="certificate-issuer" data-en="Ministry of Youth and Sports" data-ar="وزارة الشباب والرياضة">Ministry of Youth and Sports</p> <a href="https://drive.google.com/file/d/162NyMHjAM8eGiCWLxG7xVbkvI1MhC2yB/view?usp=drive_link" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
+    <!-- Cloud Computing -->
+    <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="500"> <div class="certificate-icon"><i class="fa-brands fa-aws"></i></div> <h3 class="certificate-title" data-en="Cloud Computing" data-ar="الحوسبة السحابية">Cloud Computing</h3> <p class="certificate-issuer" data-en="Amazon Web Services (AWS)" data-ar="خدمات أمازون ويب (AWS)">Amazon Web Services (AWS)</p> <a href="https://www.credly.com/badges/c7231a6e-bd65-4c6c-8595-3a7ad2cfa7ab" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Badge" data-ar="عرض الشارة">View Badge</a> </div> </div>
+    <!-- AWS Storage -->
+    <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up"> <div class="certificate-icon"><i class="fa-solid fa-database"></i></div> <h3 class="certificate-title" data-en="AWS Storage" data-ar="التخزين السحابي AWS">AWS Storage</h3> <p class="certificate-issuer" data-en="Amazon Web Services (AWS)" data-ar="خدمات أمازون ويب (AWS)">Amazon Web Services (AWS)</p> <a href="https://www.credly.com/badges/8a57c051-b746-4ebe-923b-ad39e9802fd2" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Badge" data-ar="عرض الشارة">View Badge</a> </div> </div>
+    <!-- Innovation and Entrepreneurship -->
+    <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="100"> <div class="certificate-icon"><i class="fa-solid fa-lightbulb"></i></div> <h3 class="certificate-title" data-en="Innovation and Entrepreneurship" data-ar="الابتكار وريادة الأعمال">Innovation and Entrepreneurship</h3> <p class="certificate-issuer" data-en="ITIDA" data-ar="هيئة تنمية صناعة تكنولوجيا المعلومات (ITIDA)">ITIDA</p> <a href="https://drive.google.com/file/d/1Xd_ePweUd19NcnNeOpjreTDyGEyJulmD/view" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Honors Section -->
+<section id="honors-awards" class="bg-light">
+  <div class="container">
+  <h2 class="section-title" data-en="Honors" data-ar="التكريمات">Honors</h2>
+ 
+  <!-- Awards Cards Row -->
+  <div class="row justify-content-center gy-4 mb-4">
+  <div class="col-md-6 d-flex">
+  <div class="award-card w-100" data-aos="fade-up">
+  <div class="award-icon">
+  <i class="fas fa-trophy"></i>
+  </div>
+  <div class="award-details">
+  <h3 class="award-title" data-en="Pharmaceutical Company System Award" data-ar="جائزة نظام شركة الأدوية">Pharmaceutical Company System Award</h3>
+  <p class="award-issuer" data-en="Egyptian Russian University" data-ar="الجامعة المصرية الروسية">Egyptian Russian University</p>
+  </div>
+  </div>
+  </div>
+  <div class="col-md-6 d-flex">
+  <div class="award-card w-100" data-aos="fade-up" data-aos-delay="100">
+  <div class="award-icon">
+  <i class="fas fa-award"></i>
+  </div>
+  <div class="award-details">
+  <h3 class="award-title" data-en="The Best in Python Training" data-ar="الأفضل في تدريب بايثون">The Best in Python Training</h3>
+  <p class="award-issuer" data-en="Huawei Academy" data-ar="أكاديمية هواوي">Huawei Academy</p>
+  </div>
+  </div>
+  </div>
+  </div> <!-- End of Awards Cards Row -->
+ 
+<!-- Honors Media Row (Centered Group) -->
+<div class="row justify-content-center align-items-center gy-4 mt-4 honors-media"> <!-- justify-content-center will now center the col-md-5 pair -->
+
+  <!-- GIF Column (Narrower) -->
+  <div class="col-md-5" data-aos="zoom-in-right" data-aos-delay="200"> <!-- Changed from col-md-6 to col-md-5 -->
+      <!-- ====> تأكد من أن مسار GIF هذا صحيح <==== -->
+      <img src="images/honors-animation.gif"
+           class="img-fluid rounded shadow-sm"
+           alt="Animation showing honors and awards"
+           loading="lazy">
+  </div>
+
+  <!-- Static Image Column (Narrower) -->
+  <div class="col-md-5" data-aos="zoom-in-left" data-aos-delay="300"> <!-- Changed from col-md-6 to col-md-5 -->
+      <!-- TODO: استبدل رابط الصورة الثابتة هنا -->
+      <img src="images/honor-image.webp"
+           class="img-fluid rounded shadow-sm"
+           alt="Image related to honors"
+           loading="lazy">
+  </div>
+
+</div> <!-- End of Honors Media Row -->
+ </section> <!-- End of Honors Section -->
+
+ <!-- Contact Section -->
+ <section id="contact">
+ <div class="container">
+ <h2 class="section-title" data-en="Contact Me" data-ar="تواصل معي">Contact Me</h2>
+ <div class="contact-container" data-aos="fade-up">
+ <div class="row gy-4">
+ <div class="col-lg-6">
+ <div class="contact-info">
+ <div class="contact-item">
+ <div class="contact-icon"><i class="fas fa-phone"></i></div>
+ <div class="contact-text">
+ <div class="contact-label" data-en="Phone" data-ar="الهاتف">Phone</div>
+ <div class="contact-value"><a href="tel:+201090253225" data-en="+20 109 025 3225" data-ar="01090253225 20+">+20 109 025 3225</a></div>
+ </div>
+ </div>
+ <div class="contact-item">
+ <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+ <div class="contact-text">
+ <div class="contact-label" data-en="Email" data-ar="البريد الإلكتروني">Email</div>
+ <div class="contact-value"><a href="mailto:ahmedazouz.laptop@gmail.com" data-en="ahmedazouz.laptop@gmail.com" data-ar="ahmedazouz.laptop@gmail.com">ahmedazouz.laptop@gmail.com</a></div>
+ </div>
+ </div>
+ <div class="contact-item">
+ <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+ <div class="contact-text">
+ <div class="contact-label" data-en="LinkedIn" data-ar="لينكد إن">LinkedIn</div>
+ <div class="contact-value"><a href="https://linkedin.com/in/ahm7daz0uz" target="_blank" rel="noopener noreferrer" data-en="linkedin.com/in/ahm7daz0uz" data-ar="linkedin.com/in/ahm7daz0uz">linkedin.com/in/ahm7daz0uz</a></div>
+ </div>
+ </div>
+ <div class="contact-item">
+ <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+ <div class="contact-text">
+ <div class="contact-label" data-en="Location" data-ar="الموقع">Location</div>
+ <div class="contact-value" data-en="Cairo, Egypt" data-ar="القاهرة، مصر">Cairo, Egypt</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center align-items-lg-start"> 
+ <h4 data-en="Get in Touch" data-ar="تواصل مباشرة" class="mb-3 text-center text-lg-start">Get in Touch</h4>
+ <div class="contact-buttons w-100">
+     <div class="row justify-content-center g-3 mb-3">
+         <div class="col-sm-6 col-md-5 col-lg-6">
+             <a href="https://wa.me/201090253225" class="contact-btn whatsapp w-100" target="_blank" rel="noopener noreferrer">
+                 <i class="fab fa-whatsapp"></i><span data-en="WhatsApp" data-ar="واتساب">WhatsApp</span>
+             </a>
+         </div>
+         <div class="col-sm-6 col-md-5 col-lg-6">
+              <a href="https://t.me/ahm7daz0uz" class="contact-btn telegram w-100" target="_blank" rel="noopener noreferrer">
+                 <i class="fab fa-telegram-plane"></i><span data-en="Telegram" data-ar="تليجرام">Telegram</span>
+             </a>
+         </div>
+     </div>
+     <div class="row justify-content-center">
+         <div class="col-sm-8 col-md-7 col-lg-8">
+              <a href="mailto:ahmedazouz.laptop@gmail.com" class="contact-btn email w-100">
+                 <i class="fas fa-envelope"></i><span data-en="Email" data-ar="البريد الإلكتروني">Email</span>
+             </a>
+          </div>
+     </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Footer -->
+ <footer>
+ <div class="container">
+ <div class="footer-content text-center">
+ <!-- Replaced text with placeholder image -->
+ <div class="footer-logo">
+     <img src="images/logo.png" alt="Ahmed Azouz Logo" style="width: 100px; height: 100px; margin-bottom: 2px;">
+ </div>
+ <p class="mb-4" data-en="AI Engineer | Let's connect and build something amazing." data-ar="مهندس ذكاء اصطناعي | لنتواصل ونبني شيئًا مذهلاً.">AI Engineer | Let's connect and build something amazing.</p>
+ <div class="social-links">
+ <a href="https://wa.me/201090253225" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+ <a href="https://t.me/ahm7daz0uz" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+ <a href="mailto:ahmedazouz.laptop@gmail.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Email"><i class="fas fa-envelope"></i></a>
+ <a href="https://linkedin.com/in/ahm7daz0uz" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+ <a href="https://github.com/ahm7daz0uz" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+ <a href="https://www.behance.net/ahmedazouz3" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Behance"><i class="fab fa-behance"></i></a>
+ </div>
+ <div class="copyright" data-en="© 2025 Ahmed Azouz. All Rights Reserved." data-ar="© 2025 أحمد عزوز. جميع الحقوق محفوظة.">© 2025 Ahmed Azouz. All Rights Reserved.</div>
+ </div>
+ </div>
+ </footer>
+
+ <!-- Scroll to Top Button -->
+ <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+ <i class="fas fa-arrow-up"></i>
+ </button>
+
+ <!-- Bootstrap 5 JS Bundle with Popper -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+ <!-- AOS Animation Library -->
+ <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+ <script>
+ document.addEventListener('DOMContentLoaded', () => {
+
+  // --- DOM Elements ---
+  const langToggle = document.getElementById('langToggle');
+  const scrollTopBtn = document.getElementById('scrollTop');
+  const preloader = document.querySelector('.preloader');
+  const typingTextElement = document.getElementById('typingText');
+  const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+  const navbar = document.querySelector('.navbar');
+  const particlesContainer = document.querySelector('.particles-container');
+  const readingProgressBar = document.getElementById('reading-progress-bar');
+  const categoryButtons = document.querySelectorAll('.skill-category-selector .btn'); // Skill category buttons
+  const skillCategories = document.querySelectorAll('.skills-container .skill-category'); // Skill category content divs
+
+  // --- Initial Settings & Variables ---
+  const defaultLang = 'en';
+  let currentLang = localStorage.getItem('language') || defaultLang;
+  let typingInterval;
+  let currentPhraseIndex = 0;
+  let currentCharIndex = 0;
+  let isDeleting = false;
+  const typingSpeed = 100;
+  const deletingSpeed = 50;
+  const pauseDuration = 1500;
+  const particleCount = 35;
+
+  // --- Preloader ---
+  function hidePreloader() {
+    if (preloader) {
+      preloader.classList.add('fade-out');
+      preloader.addEventListener('transitionend', () => preloader.remove());
+    }
+  }
+
+  // --- Initialize AOS ---
+  function initAOS() {
+    AOS.init({
+      duration: 800,
+      offset: 120,
+      once: true, // Set to false if you want animations to repeat on scroll up/down
+      easing: 'ease-out-cubic',
+    });
+  }
+
+  // --- Language Handling ---
+  function setLanguage(lang) {
+    currentLang = lang;
+    document.documentElement.setAttribute('lang', lang);
+    document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+    localStorage.setItem('language', lang);
+
+    const elements = document.querySelectorAll('[data-en], [data-ar]');
+    elements.forEach(el => {
+      const text = el.getAttribute(`data-${lang}`);
+      if (text !== null) {
+        // Handle specific elements like placeholders or value attributes
+        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+            if (el.placeholder) el.placeholder = text;
+            else el.value = text;
+        }
+        // Handle elements where only text content should change (like skill names next to icons or category buttons)
+        else if ((el.classList.contains('skill-name') && el.previousElementSibling?.tagName === 'I') || el.closest('.skill-category-selector')) {
+             el.textContent = text; // Use textContent to avoid breaking the icon/button structure
+        }
+        // Handle certificate links where text might include "(Soon)" or similar
+        else if (el.classList.contains('certificate-link')) {
+             // Check if it's disabled, keep the '(Soon)' or similar text if it is.
+             if (el.classList.contains('disabled')) {
+                 const disabledTextEn = el.getAttribute('data-en');
+                 const disabledTextAr = el.getAttribute('data-ar');
+                 el.textContent = (lang === 'ar' ? disabledTextAr : disabledTextEn) || text;
+             } else {
+                  el.textContent = text; // Set normal text if not disabled
+             }
+        }
+        // Default case: Use innerHTML for elements that might contain other HTML (like titles)
+        else {
+            el.innerHTML = text;
+        }
+      }
+    });
+
+
+    if (langToggle) {
+      const langButtons = langToggle.querySelectorAll('span[data-lang]');
+      langButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+      });
+    }
+
+    if (typingTextElement) {
+      stopTypingAnimation();
+      initTypingAnimation();
+    }
+     setTimeout(() => AOS.refresh(), 50); // Refresh AOS after language change
+     updateReadingProgress(); // Update progress bar after layout might change
+  }
+
+
+  function setupLangToggle() {
+    if (!langToggle) return;
+    const langButtons = langToggle.querySelectorAll('span[data-lang]');
+    langButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const lang = button.getAttribute('data-lang');
+        if (lang && lang !== currentLang) {
+          setLanguage(lang);
+        }
+      });
+    });
+    setLanguage(currentLang); // Set initial language on load
+  }
+
+  // --- Typing Animation ---
+  function typeEffect(phrases) {
+    if (!phrases || phrases.length === 0 || !typingTextElement) return;
+    const currentPhrase = phrases[currentPhraseIndex];
+    let effectiveTypingSpeed = typingSpeed;
+
+    if (isDeleting) {
+      // Deleting characters
+      typingTextElement.textContent = currentPhrase.substring(0, currentCharIndex - 1);
+      currentCharIndex--;
+      effectiveTypingSpeed = deletingSpeed;
+    } else {
+      // Typing characters
+      typingTextElement.textContent = currentPhrase.substring(0, currentCharIndex + 1);
+      currentCharIndex++;
+      effectiveTypingSpeed = typingSpeed;
+    }
+
+    // State transitions
+    if (!isDeleting && currentCharIndex === currentPhrase.length) {
+      // Finished typing the phrase, start deleting after pause
+      isDeleting = true;
+      effectiveTypingSpeed = pauseDuration;
+    } else if (isDeleting && currentCharIndex === 0) {
+      // Finished deleting, move to the next phrase
+      isDeleting = false;
+      currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+      effectiveTypingSpeed = 500; // Short pause before typing next phrase
+    }
+
+    // Schedule next character action
+    typingInterval = setTimeout(() => typeEffect(phrases), effectiveTypingSpeed);
+  }
+
+  function initTypingAnimation() {
+    if (!typingTextElement) return;
+    const phrasesAttr = typingTextElement.getAttribute(`data-${currentLang}-phrases`);
+    if (!phrasesAttr) return;
+
+    try {
+      const phrases = JSON.parse(phrasesAttr);
+      if (!Array.isArray(phrases) || phrases.length === 0) {
+          console.error("Typing phrases are empty or not an array.");
+          return;
+      }
+      stopTypingAnimation(); // Clear any existing interval
+      typingTextElement.textContent = ''; // Clear existing text
+      currentPhraseIndex = 0;
+      currentCharIndex = 0;
+      isDeleting = false;
+      typeEffect(phrases); // Start the animation
+    } catch (e) {
+      console.error("Failed to parse typing phrases JSON:", e, `Attribute content: ${phrasesAttr}`);
+    }
+  }
+
+
+  function stopTypingAnimation() {
+    clearTimeout(typingInterval);
+    typingInterval = null; // Reset interval ID
+  }
+
+  // --- Reading Progress Bar ---
+  function updateReadingProgress() {
+      if (!readingProgressBar) return;
+      const scrollTotal = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      // Prevent division by zero or negative percentage if content is shorter than viewport
+      if (scrollTotal <= 0) {
+          readingProgressBar.style.width = '0%'; // Or '100%' if you prefer full bar when no scroll needed
+          return;
+      }
+      const scrollCurrent = document.documentElement.scrollTop || document.body.scrollTop;
+      const scrollPercent = Math.min( (scrollCurrent / scrollTotal) * 100, 100); // Cap at 100%
+      readingProgressBar.style.width = `${scrollPercent}%`;
+  }
+
+
+  // --- Scroll Animations & Navbar Handling ---
+  function handleScroll() {
+    const scrollY = window.scrollY;
+
+    // Toggle Scroll Top Button
+    if (scrollTopBtn) {
+      scrollTopBtn.classList.toggle('active', scrollY > 300);
+    }
+
+    // Toggle Scrolled Class for Navbar Styling
+    if (navbar) {
+       navbar.classList.toggle('navbar-scrolled', scrollY > 50); // Add class if scrolled more than 50px
+    }
+
+    // Active Nav Link Highlighting
+    let currentSectionId = '';
+    const navbarHeight = navbar?.offsetHeight || 70; // Get navbar height or use a default
+    const scrollBuffer = 80; // Increased buffer to activate link slightly earlier
+
+    document.querySelectorAll('section[id]').forEach(section => {
+      const sectionTop = section.offsetTop - navbarHeight - scrollBuffer;
+      const sectionBottom = sectionTop + section.offsetHeight; // No need for bottom buffer usually
+
+      // Check if current scroll position is within the section boundaries
+       if (scrollY >= sectionTop && scrollY < sectionBottom) {
+         currentSectionId = section.getAttribute('id');
+       }
+    });
+
+     // Handle edge case: bottom of the page might not trigger last section correctly
+     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) { // Check if near bottom
+        const lastSection = document.querySelector('section[id]:last-of-type');
+        if(lastSection) {
+             currentSectionId = lastSection.id;
+         }
+     }
+
+
+    // Update active class on nav links
+    navLinks.forEach(link => {
+        // Clear existing active class first
+        link.classList.remove('active');
+        // Add active class if the link's href matches the current section ID
+        if (link.getAttribute('href') === `#${currentSectionId}`) {
+            link.classList.add('active');
+        }
+    });
+
+    // Special case for the top of the page (Hero section)
+    if (!currentSectionId && scrollY < 300) {
+        navLinks.forEach(link => link.classList.remove('active')); // Ensure others are inactive
+        const homeLink = document.querySelector('.navbar-nav .nav-link[href="#hero"]');
+        if (homeLink) homeLink.classList.add('active');
+     }
+
+     updateReadingProgress(); // Update progress bar on scroll
+  }
+
+  // --- Scroll to Top Button ---
+  function setupScrollTop() {
+    if (!scrollTopBtn) return;
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // --- Smooth Scrolling for Nav Links ---
+  function setupSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        // Ensure it's a valid internal link
+        if (!targetId || targetId === '#' || targetId.startsWith('#!') ) return;
+
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault(); // Prevent default jump
+
+          const navbarHeight = navbar?.offsetHeight || 70; // Get current navbar height
+          let targetPosition = targetElement.offsetTop - navbarHeight;
+
+          // Optional: Add a small offset for non-hero sections for better spacing
+          if (targetId !== '#hero') {
+              targetPosition += 5; // Adjust as needed
+          }
+
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+
+          // Close mobile navbar menu if open and the link clicked is inside the nav
+          const navbarCollapseElement = document.querySelector('.navbar-collapse');
+          if (navbarCollapseElement && navbarCollapseElement.classList.contains('show') && this.closest('.navbar-nav')) {
+             const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapseElement);
+             if (bsCollapse) { bsCollapse.hide(); }
+          }
+        }
+      });
+    });
+  }
+
+  // --- Skill Category Switching ---
+  function setupSkillTabs() {
+     if (!categoryButtons || categoryButtons.length === 0 || !skillCategories || skillCategories.length === 0) return;
+
+     categoryButtons.forEach(button => {
+         button.addEventListener('click', () => {
+             // Remove active class from all buttons and categories
+             categoryButtons.forEach(btn => btn.classList.remove('active'));
+             skillCategories.forEach(cat => cat.classList.remove('active-skills'));
+
+             // Add active class to the clicked button
+             button.classList.add('active');
+
+             // Add active-skills class to the target category
+             const targetId = button.dataset.target;
+             const targetCategory = document.querySelector(targetId);
+             if (targetCategory) {
+                 targetCategory.classList.add('active-skills');
+                 // Refresh AOS to trigger animations for newly displayed elements
+                 AOS.refresh();
+             }
+         });
+     });
+
+     // Ensure the first category is active on load (redundant if HTML is set correctly, but safe)
+     if (!document.querySelector('.skill-category-selector .btn.active')) {
+         categoryButtons[0]?.classList.add('active');
+     }
+     if (!document.querySelector('.skills-container .skill-category.active-skills')) {
+          const firstTarget = categoryButtons[0]?.dataset.target;
+          if(firstTarget) {
+              document.querySelector(firstTarget)?.classList.add('active-skills');
+          }
+     }
+ }
+
+
+ // --- Dynamic Particle Background ---
+ function createParticles() {
+    if (!particlesContainer) return;
+    particlesContainer.innerHTML = ''; // Clear existing particles
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle-js'; // Use a class for potential shared styling
+        const size = Math.random() * 3.5 + 1; // Random size between 1px and 4.5px
+        const startOpacity = Math.random() * 0.25 + 0.05; // Random opacity between 0.05 and 0.3
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        // Use CSS variable for color, fallback if needed
+        particle.style.background = `rgba(var(--primary-color-rgb, 59, 130, 246), ${Math.random() * 0.35 + 0.15})`;
+        particle.style.position = 'absolute'; // Needed for positioning
+        particle.style.left = `${Math.random() * 100}vw`; // Random horizontal start
+        particle.style.top = `${Math.random() * 100}vh`; // Random vertical start
+        particle.style.setProperty('--start-opacity', startOpacity); // Set custom property for animation
+        const duration = Math.random() * 45 + 30; // Random duration between 30s and 75s
+        const delay = Math.random() * 20; // Random delay up to 20s
+        particle.style.animation = `float-particle ${duration}s linear ${delay}s infinite`;
+        particlesContainer.appendChild(particle);
+    }
+}
+
+ // --- Initialization ---
+ function init() {
+    hidePreloader();
+    setupLangToggle(); // Must run before things that depend on language text
+    setupScrollTop();
+    setupSmoothScroll();
+    setupSkillTabs(); // Initialize the skill category switching logic
+    createParticles();
+    window.addEventListener('scroll', handleScroll, { passive: true }); // Use passive listener for scroll performance
+    handleScroll(); // Initial call to set navbar state and active link
+    updateReadingProgress(); // Initial progress bar state
+    // Delay AOS initialization slightly to ensure elements are ready
+    setTimeout(() => {
+        initAOS();
+        initTypingAnimation(); // Initialize typing animation after language is set
+    }, 50);
+ }
+
+ // Run initialization
+ init();
+
+ });
+ </script>
+
+</body>
+</html>
