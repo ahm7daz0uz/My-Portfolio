@@ -4,15 +4,10 @@
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Ahmed Azouz | AI Engineer</title>
- <!-- Bootstrap 5 CSS CDN (Stable Version) -->
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
- <!-- Bootstrap Icons -->
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
- <!-- Google Fonts -->
  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
- <!-- Font Awesome -->
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
- <!-- AOS Animation Library -->
  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
  <style>
@@ -310,6 +305,12 @@
  /* Reading Progress Bar */
  #reading-progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 4px; background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end), var(--accent-color)); /* Added accent */ z-index: 1031; transition: width 0.15s ease-out; box-shadow: 0 1px 4px rgba(var(--gradient-start-rgb), 0.2); }
 
+ /* Custom Scrollbar */
+ ::-webkit-scrollbar { width: 10px; height: 10px; }
+ ::-webkit-scrollbar-track { background: var(--bg-color-alt); border-radius: 5px; }
+ ::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-end)); border-radius: 5px; border: 2px solid var(--bg-color-alt); }
+ ::-webkit-scrollbar-thumb:hover { background: linear-gradient(to bottom, var(--gradient-end), var(--gradient-start)); }
+
  /* Responsive Styles */
  @media (max-width: 991px) {
  .hero-content { text-align: center; margin-bottom: 40px; }
@@ -398,15 +399,12 @@
  </style>
 </head>
 <body>
- <!-- Reading Progress Bar -->
  <div id="reading-progress-bar"></div>
 
- <!-- Preloader -->
  <div class="preloader">
  <div class="loader"></div>
  </div>
 
- <!-- Background Elements -->
  <div class="particles-container"></div>
  <div class="bg-grid"></div>
  <div class="shape shape-1"></div>
@@ -415,7 +413,6 @@
  <div class="shape shape-4"></div>
  <div class="shape shape-5"></div>
 
- <!-- Navbar -->
  <nav class="navbar navbar-expand-lg fixed-top">
  <div class="container">
  <a class="navbar-brand" href="#hero" data-en="Ahmed Azouz" data-ar="أحمد عزوز">Ahmed Azouz</a>
@@ -463,7 +460,6 @@
  </div>
  </nav>
 
- <!-- Hero Section -->
  <section id="hero">
  <div class="container">
  <div class="row align-items-center gy-5 gy-lg-0">
@@ -493,14 +489,12 @@
  </div>
  </section>
 
- <!-- About Section -->
  <section id="about" class="bg-light">
  <div class="container">
  <h2 class="section-title" data-en="About Me" data-ar="نبذة عني">About Me</h2>
  <div class="about-content" data-aos="fade-up">
  <p class="about-text" data-en="Passionate about technology and innovation with proven abilities in problem-solving, teamwork, and rapid adaptation to new challenges. Eager to apply hands-on experience from academic projects in developing and implementing AI models in a professional setting. Committed to contributing to cutting-edge AI solutions and driving technological advancements." data-ar="شغوف بالتكنولوجيا والابتكار مع قدرات مثبتة في حل المشكلات والعمل الجماعي والتكيف السريع مع التحديات الجديدة. متحمس لتطبيق الخبرة العملية من المشاريع الأكاديمية في تطوير وتنفيذ نماذج الذكاء الاصطناعي في بيئة احترافية. ملتزم بالمساهمة في حلول الذكاء الاصطناعي المتطورة ودفع التقدم التكنولوجي.">
  </p>
- <!-- YouTube Video Embed -->
  <div class="ratio ratio-16x9 mt-4 rounded shadow-sm overflow-hidden video-container" data-aos="zoom-in" data-aos-delay="100">
     <iframe src="https://www.youtube.com/embed/ETW1lSdU6n4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
  </div>
@@ -508,14 +502,13 @@
  </div>
  </section>
 
- <!-- Education Section -->
  <section id="education">
  <div class="container">
  <h2 class="section-title" data-en="Education" data-ar="التعليم">Education</h2>
  <div class="timeline">
  <div class="timeline-item" data-aos="fade-up">
  <div class="timeline-content">
- <span class="timeline-date" data-en="Sep 2021 - Jun 2025 (Expected)" data-ar="سبتمبر 2021 - يونيو 2025 (متوقع)">Sep 2021 - Jun 2025 (Expected)</span>
+ <span class="timeline-date" data-en="Sep 2021 - Jun 2025" data-ar="سبتمبر 2021 - يونيو 2025">Sep 2021 - Jun 2025 (Expected)</span>
  <h3 class="timeline-title" data-en="Bachelor's Degree in Artificial Intelligence" data-ar="بكالوريوس في الذكاء الاصطناعي">Bachelor's Degree in Artificial Intelligence</h3>
  <p class="timeline-text" data-en="Egyptian Russian University" data-ar="الجامعة المصرية الروسية">Egyptian Russian University</p>
  </div>
@@ -524,24 +517,29 @@
  </div>
  </section>
 
- <!-- Training Section -->
  <section id="training" class="bg-light">
  <div class="container">
  <h2 class="section-title" data-en="Training" data-ar="التدريب">Training</h2>
  <div class="timeline">
  <div class="timeline-item" data-aos="fade-up">
  <div class="timeline-content">
+ <span class="timeline-date" data-en="October 2024 – Present" data-ar="أكتوبر 2024 - حالي">October 2024 – Present</span>
+ <h3 class="timeline-title" data-en="Space Technology AI Researcher | EgSA" data-ar="باحث ذكاء اصطناعي في تكنولوجيا الفضاء | وكالة الفضاء المصرية">Space Technology AI Researcher | Egyptian Space Agency (EgSA)</h3>
+ </div>
+ </div>
+ <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+ <div class="timeline-content">
  <span class="timeline-date" data-en="October 2024 – May 2025" data-ar="أكتوبر 2024 - مايو 2025">October 2024 – May 2025</span>
  <h3 class="timeline-title" data-en="Trainee | DEPI" data-ar="متدرب | DEPI">Trainee | DEPI</h3>
  </div>
  </div>
- <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+ <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
  <div class="timeline-content">
  <span class="timeline-date" data-en="June 2024 - September 2024" data-ar="يونيو 2024 - سبتمبر 2024">June 2024 - September 2024</span>
  <h3 class="timeline-title" data-en="Trainee | Zewail City" data-ar="متدرب | مدينة زويل">Trainee | Zewail City</h3>
  </div>
  </div>
- <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+ <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
  <div class="timeline-content">
  <span class="timeline-date" data-en="June 2023 - September 2023" data-ar="يونيو 2023 - سبتمبر 2023">June 2023 - September 2023</span>
  <h3 class="timeline-title" data-en="Trainee | Huawei" data-ar="متدرب | هواوي">Trainee | Huawei</h3>
@@ -551,153 +549,219 @@
  </div>
  </section>
 
- <!-- Projects Section -->
- <section id="projects">
- <div class="container">
- <h2 class="section-title" data-en="Projects & Experience" data-ar="المشاريع والخبرات">Projects & Experience</h2>
- <div class="row gy-4">
-  <div class="col-lg-4 col-md-6 d-flex">
- <div class="project-card w-100" data-aos="fade-up">
- <div class="project-header">
- <h3 class="project-title" data-en="Real-time Face Mask Detection" data-ar="كشف قناع الوجه في الوقت الفعلي">Real-time Face Mask Detection</h3>
- <div class="project-date" data-en="Feb 2023 - May 2024" data-ar="فبراير 2023 - مايو 2024">Feb 2023 - May 2024</div>
- </div>
- <div class="project-body">
- <p class="project-description" data-en="Developed a real-time automated system using CNNs to detect face masks in live video streams or images, achieving 99% accuracy." data-ar="تطوير نظام آلي فوري باستخدام شبكات CNN لكشف أقنعة الوجه في بث الفيديو المباشر أو الصور، محققًا دقة 99%."></p>
- <div class="project-tech">
- <span class="tech-tag">Computer Vision</span>
- <span class="tech-tag">Deep Learning</span>
- <span class="tech-tag">CNN</span>
- <span class="tech-tag">Real-time</span>
- </div>
- </div>
- </div>
- </div>
- <div class="col-lg-4 col-md-6 d-flex">
- <div class="project-card w-100" data-aos="fade-up" data-aos-delay="100">
- <div class="project-header">
- <h3 class="project-title" data-en="Malaria Disease Detection" data-ar="كشف مرض الملاريا">Malaria Disease Detection</h3>
- <div class="project-date" data-en="Feb 2023 - May 2024" data-ar="فبراير 2023 - مايو 2024">Feb 2023 - May 2024</div>
- </div>
- <div class="project-body">
- <p class="project-description" data-en="AI-powered analysis of cell images to classify malaria infection (infected/non-infected) with 95% accuracy." data-ar="نظام تحليل صور خلايا مدعوم بالذكاء الاصطناعي لتصنيف الإصابة بالملاريا (مصابة/غير مصابة) بدقة 95%."></p>
- <div class="project-tech">
- <span class="tech-tag">Image Analysis</span>
- <span class="tech-tag">Machine Learning</span>
- <span class="tech-tag">Healthcare AI</span>
- </div>
- </div>
- </div>
- </div>
- <div class="col-lg-4 col-md-6 d-flex">
- <div class="project-card w-100" data-aos="fade-up" data-aos-delay="200">
- <div class="project-header">
- <h3 class="project-title" data-en="Lung Cancer Prediction" data-ar="التنبؤ بسرطان الرئة">Lung Cancer Prediction</h3>
- <div class="project-date" data-en="Feb 2023 - May 2024" data-ar="فبراير 2023 - مايو 2024">Feb 2023 - May 2024</div>
- </div>
- <div class="project-body">
- <p class="project-description" data-en="AI system analyzing X-ray images for lung cancer detection and classification, achieving 97% accuracy." data-ar="نظام ذكاء اصطناعي يحلل صور الأشعة السينية لكشف وتصنيف سرطان الرئة، محققًا دقة 97%."></p>
- <div class="project-tech">
- <span class="tech-tag">Medical Imaging</span>
- <span class="tech-tag">Deep Learning</span>
- <span class="tech-tag">Classification</span>
- </div>
- </div>
- </div>
- </div>
- <div class="col-lg-4 col-md-6 d-flex">
- <div class="project-card w-100" data-aos="fade-up">
- <div class="project-header">
- <h3 class="project-title" data-en="Real-time Object Detection" data-ar="كشف الأجسام في الوقت الفعلي">Real-time Object Detection</h3>
- <div class="project-date" data-en="Feb 2023 - May 2024" data-ar="فبراير 2023 - مايو 2024">Feb 2023 - May 2024</div>
- </div>
- <div class="project-body">
- <p class="project-description" data-en="Implemented an AI-based system using models like YOLO for real-time identification and localization of multiple objects within images or video streams." data-ar="تطبيق نظام قائم على الذكاء الاصطناعي يستخدم نماذج مثل YOLO للتعرف وتحديد مواقع أجسام متعددة في الوقت الفعلي ضمن الصور أو بث الفيديو."></p>
- <div class="project-tech">
- <span class="tech-tag">Computer Vision</span>
- <span class="tech-tag">CNN</span>
- <span class="tech-tag">YOLO</span>
- <span class="tech-tag">Real-time</span>
- </div>
- </div>
- </div>
- </div>
- <div class="col-lg-4 col-md-6 d-flex">
- <div class="project-card w-100" data-aos="fade-up" data-aos-delay="100">
- <div class="project-header">
- <h3 class="project-title" data-en="Spam Message Detection" data-ar="كشف الرسائل المزعجة">Spam Message Detection</h3>
- <div class="project-date" data-en="Feb 2023 - May 2024" data-ar="فبراير 2023 - مايو 2024">Feb 2023 - May 2024</div>
- </div>
- <div class="project-body">
- <p class="project-description" data-en="NLP system using Naive Bayes and TF-IDF to classify messages as spam or non-spam based on textual patterns." data-ar="نظام معالجة لغات طبيعية يستخدم Naive Bayes و TF-IDF لتصنيف الرسائل كمزعجة أو غير مزعجة بناءً على الأنماط النصية."></p>
- <div class="project-tech">
- <span class="tech-tag">NLP</span>
- <span class="tech-tag">Text Classification</span>
- <span class="tech-tag">Machine Learning</span>
- </div>
- </div>
- </div>
- </div>
- <div class="col-lg-4 col-md-6 d-flex">
- <div class="project-card w-100" data-aos="fade-up" data-aos-delay="200">
- <div class="project-header">
- <h3 class="project-title" data-en="Speaker Recognition" data-ar="التعرف على المتحدث">Speaker Recognition</h3>
- <div class="project-date" data-en="Feb 2023 - May 2024" data-ar="فبراير 2023 - مايو 2024">Feb 2023 - May 2024</div>
- </div>
- <div class="project-body">
- <p class="project-description" data-en="AI system identifying speakers from voice patterns using MFCCs and deep learning models." data-ar="نظام ذكاء اصطناعي يحدد المتحدثين من أنماط أصواتهم باستخدام MFCCs ونماذج التعلم العميق."></p>
- <div class="project-tech">
- <span class="tech-tag">Speech Recognition</span>
- <span class="tech-tag">Audio Processing</span>
- <span class="tech-tag">Deep Learning</span>
- </div>
- </div>
- </div>
- </div>
- <div class="col-lg-6 col-md-6 d-flex">
- <div class="project-card w-100" data-aos="fade-up">
- <div class="project-header">
- <h3 class="project-title" data-en="Pharmaceutical Company System" data-ar="نظام شركة أدوية">Pharmaceutical Company System</h3>
- <div class="project-date" data-en="Sep 2021 - May 2022" data-ar="سبتمبر 2021 - مايو 2022">Sep 2021 - May 2022</div>
- </div>
- <div class="project-body">
- <p class="project-description" data-en="Internal communication platform (Java, OOP, Data Structures) for better coordination and secure data management." data-ar="منصة اتصال داخلية (Java، OOP، هياكل بيانات) لتحسين التنسيق وإدارة البيانات الآمنة."></p>
- <div class="project-tech">
- <span class="tech-tag">Java</span>
- <span class="tech-tag">OOP</span>
- <span class="tech-tag">Database</span>
- <span class="tech-tag">Data Structures</span>
- </div>
- </div>
- </div>
- </div>
- <div class="col-lg-6 col-md-6 d-flex">
- <div class="project-card w-100" data-aos="fade-up" data-aos-delay="100">
- <div class="project-header">
- <h3 class="project-title" data-en="E-Commerce Clothes Mobile App" data-ar="تطبيق جوال لبيع الملابس">E-Commerce Clothes Mobile App</h3>
- <div class="project-date" data-en="Sep 2022 - Jan 2023" data-ar="سبتمبر 2022 - يناير 2023">Sep 2022 - Jan 2023</div>
- </div>
- <div class="project-body">
- <p class="project-description" data-en="User-friendly mobile app for browsing and purchasing clothes, focusing on intuitive UI/UX design." data-ar="تطبيق جوال سهل الاستخدام لتصفح وشراء الملابس، يركز على تصميم واجهة مستخدم وتجربة مستخدم بديهية."></p>
- <div class="project-tech">
- <span class="tech-tag">Mobile Development</span>
- <span class="tech-tag">UI/UX Design</span>
- <span class="tech-tag">E-Commerce</span>
- <span class="tech-tag">Java</span> 
- </div>
- </div>
- </div>
- </div>
- </div>
- </div>
- </section>
+<section id="projects">
+    <div class="container">
+        <h2 class="section-title" data-en="Projects & Experience" data-ar="المشاريع والخبرات">Projects & Experience</h2>
 
- <!-- Skills Section -->
-<section id="skills" class="bg-light">
+              <div class="row gy-4 justify-content-center mb-4">
+            <div class="col-lg-6 col-md-8 d-flex">
+                <div class="project-card w-100" data-aos="fade-up">
+                    <div class="project-header">
+                        <h3 class="project-title"
+                            data-en="SpaVigil - On-board AI System for Space Debris Detection & Decision-Making"
+                            data-ar="SpaVigil - نظام ذكاء اصطناعي مدمج لكشف الحطام الفضائي واتخاذ القرار">
+                            SpaVigil - On-board AI System for Space Debris Detection & Decision-Making
+                        </h3>
+                        <div class="project-date"
+                             data-en="Oct 2024 - Jun 2025"
+                             data-ar="أكتوبر 2024 - يونيو 2025">
+                             Oct 2024 - Jun 2025
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description description-justified"  
+                           data-en="Engineered an autonomous on-board camera system to detect, track, and analyze space debris in real-time. Developed in collaboration with the Egyptian Space Agency (EgSA), this capstone project aligns with Egypt's Vision 2030. It utilized curated datasets and optimized YOLOv12 model for 98.8% accuracy, deployed on a Raspberry Pi 4 prototype to simulate an edge computing environment for space applications."
+                           data-ar="تم تصميم نظام كاميرا مدمج ومستقل لكشف وتتبع وتحليل الحطام الفضائي في الوقت الفعلي. تم تطوير هذا المشروع بالتعاون مع وكالة الفضاء المصرية (EgSA)، ويتوافق مع رؤية مصر 2030. استخدم المشروع مجموعات بيانات مُعدة خصيصًا ونموذج YOLOv12 المحسّن لتحقيق دقة 98.8%، وتم نشره على نموذج أولي Raspberry Pi 4 لمحاكاة بيئة الحوسبة الطرفية للتطبيقات الفضائية.">
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Deep Learning</span>
+                            <span class="tech-tag">YOLOv12</span>
+                            <span class="tech-tag">Computer Vision</span>
+                            <span class="tech-tag">Edge Computing</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">Streamlit</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-8 d-flex">
+                <div class="project-card w-100" data-aos="fade-up">
+                    <div class="project-header">
+                        <h3 class="project-title"
+                            data-en="Automated Land Cover Classification in Egypt"
+                            data-ar="التصنيف الآلي للغطاء الأرضي في مصر">
+                            Automated Land Cover Classification in Egypt
+                        </h3>
+                        <div class="project-date"
+                             data-en="Feb 2025 - May 2025"
+                             data-ar="فبراير 2025 - مايو 2025">
+                             Feb 2025 - May 2025
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description description-justified"  
+                           data-en="Developed an automated land cover classification system for Egypt using deep learning (VGG16 CNN) with Sentinel-2 satellite imagery. Adapted EuroSAT for 5 key Egyptian classes, optimized via Bayesian tuning, achieving 97.65% accuracy. Features an intuitive UI for geospatial analysis, supporting Egypt’s Vision 2030."
+                           data-ar="تم تطوير نظام آلي لتصنيف الغطاء الأرضي في مصر باستخدام التعلم العميق (VGG16 CNN) وصور الأقمار الصناعية Sentinel-2. تم تكييف مجموعة بيانات EuroSAT لخمس فئات مصرية رئيسية، مع تحسين النموذج باستخدام الضبط البايزي، مما أدى إلى دقة 97.65%. يتميز بواجهة مستخدم سهلة الاستخدام للتحليل الجغرافي المكاني، ويدعم رؤية مصر 2030.">
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Deep Learning</span>
+                            <span class="tech-tag">CNN (VGG16)</span>
+                            <span class="tech-tag">Satellite Imagery</span>
+                            <span class="tech-tag">Geospatial Analysis</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Sustainable Development</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row gy-4">
+            <div class="col-lg-4 col-md-6 d-flex">
+                <div class="project-card w-100" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-header">
+                        <h3 class="project-title" data-en="Real-time Face Mask Detection" data-ar="كشف قناع الوجه في الوقت الفعلي">Real-time Face Mask Detection</h3>
+                        <div class="project-date" data-en="Oct 2024 - Jan 2025" data-ar="أكتوبر 2024 - يناير 2025">Oct 2024 - Jan 2025</div>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description" data-en="Developed a real-time automated system using CNNs to detect face masks in live video streams or images, achieving 99% accuracy." data-ar="تطوير نظام آلي فوري باستخدام شبكات CNN لكشف أقنعة الوجه في بث الفيديو المباشر أو الصور، محققًا دقة 99%."></p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Computer Vision</span>
+                            <span class="tech-tag">Deep Learning</span>
+                            <span class="tech-tag">CNN</span>
+                            <span class="tech-tag">Real-time</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 d-flex">
+                <div class="project-card w-100" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-header">
+                        <h3 class="project-title" data-en="Malaria Disease Detection" data-ar="كشف مرض الملاريا">Malaria Disease Detection</h3>
+                        <div class="project-date" data-en="Feb 2024 - May 2024" data-ar="فبراير 2024 - مايو 2024">Feb 2024 - May 2024</div>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description" data-en="AI-powered analysis of cell images to classify malaria infection (infected/non-infected) with 95% accuracy." data-ar="نظام تحليل صور خلايا مدعوم بالذكاء الاصطناعي لتصنيف الإصابة بالملاريا (مصابة/غير مصابة) بدقة 95%."></p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Image Analysis</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Healthcare AI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="col-lg-4 col-md-6 d-flex">
+                <div class="project-card w-100" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-header">
+                        <h3 class="project-title" data-en="Lung Cancer Prediction" data-ar="التنبؤ بسرطان الرئة">Lung Cancer Prediction</h3>
+                        <div class="project-date" data-en="Feb 2024 - May 2024" data-ar="فبراير 2024 - مايو 2024">Feb 2024 - May 2024</div>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description" data-en="AI system analyzing X-ray images for lung cancer detection and classification, achieving 97% accuracy." data-ar="نظام ذكاء اصطناعي يحلل صور الأشعة السينية لكشف وتصنيف سرطان الرئة، محققًا دقة 97%."></p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Medical Imaging</span>
+                            <span class="tech-tag">Deep Learning</span>
+                            <span class="tech-tag">Classification</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 d-flex">
+                <div class="project-card w-100" data-aos="fade-up">
+                    <div class="project-header">
+                    <h3 class="project-title" data-en="Real-time Object Detection" data-ar="كشف الأجسام في الوقت الفعلي">Real-time Object Detection</h3>
+                    <div class="project-date" data-en="Oct 2023 - Jan 2024" data-ar="أكتوبر 2023 - يناير 2024">Oct 2023 - Jan 2024</div>
+                    </div>
+                    <div class="project-body">
+                    <p class="project-description" data-en="Implemented an AI-based system using models like YOLO for real-time identification and localization of multiple objects within images or video streams." data-ar="تطبيق نظام قائم على الذكاء الاصطناعي يستخدم نماذج مثل YOLO للتعرف وتحديد مواقع أجسام متعددة في الوقت الفعلي ضمن الصور أو بث الفيديو."></p>
+                    <div class="project-tech">
+                    <span class="tech-tag">Computer Vision</span>
+                    <span class="tech-tag">CNN</span>
+                    <span class="tech-tag">YOLO</span>
+                    <span class="tech-tag">Real-time</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 d-flex">
+                <div class="project-card w-100" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-header">
+                    <h3 class="project-title" data-en="Spam Message Detection" data-ar="كشف الرسائل المزعجة">Spam Message Detection</h3>
+                    <div class="project-date" data-en="Feb 2023 - May 2023" data-ar="فبراير 2023 - مايو 2023">Feb 2023 - May 2023</div>
+                    </div>
+                    <div class="project-body">
+                    <p class="project-description" data-en="NLP system using Naive Bayes and TF-IDF to classify messages as spam or non-spam based on textual patterns." data-ar="نظام معالجة لغات طبيعية يستخدم Naive Bayes و TF-IDF لتصنيف الرسائل كمزعجة أو غير مزعجة بناءً على الأنماط النصية."></p>
+                    <div class="project-tech">
+                    <span class="tech-tag">NLP</span>
+                    <span class="tech-tag">Text Classification</span>
+                    <span class="tech-tag">Machine Learning</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 d-flex">
+                <div class="project-card w-100" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-header">
+                    <h3 class="project-title" data-en="Fraud Detection System for Financial Transactions" data-ar="نظام كشف الاحتيال للمعاملات المالية">Fraud Detection System for Financial Transactions</h3>
+                    <div class="project-date" data-en="Oct 2024 - Jan 2025" data-ar="أكتوبر 2024 - يناير 2025">Oct 2024 - Jan 2025</div>
+                    </div>
+                    <div class="project-body">
+                    <p class="project-description" data-en="Developed a machine learning-based fraud detection system for financial transactions using a Random Forest Classifier. The project involved data preprocessing, feature engineering, and graph-based analysis to identify key transaction entities." data-ar="تم تطوير نظام للكشف عن الاحتيال في المعاملات المالية باستخدام التعلم الآلي وتصنيف Random Forest. تضمن المشروع معالجة البيانات الأولية، وهندسة الميزات، والتحليل القائم على الرسوم البيانية لتحديد كيانات المعاملات الرئيسية."></p>
+                    <div class="project-tech">
+                    <span class="tech-tag">Machine Learning</span>
+                    <span class="tech-tag">Random Forest</span>
+                    <span class="tech-tag">Data Preprocessing</span>
+                    <span class="tech-tag">Graph Analysis</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 d-flex">
+                <div class="project-card w-100" data-aos="fade-up">
+                    <div class="project-header">
+                    <h3 class="project-title" data-en="E-Commerce Clothes Mobile App" data-ar="تطبيق جوال لبيع الملابس">E-Commerce Clothes Mobile App</h3>
+                    <div class="project-date" data-en="Sep 2022 - Jan 2023" data-ar="سبتمبر 2022 - يناير 2023">Sep 2022 - Jan 2023</div>
+                    </div>
+                    <div class="project-body">
+                    <p class="project-description" data-en="User-friendly mobile app for Browse and purchasing clothes, focusing on intuitive UI/UX design." data-ar="تطبيق جوال سهل الاستخدام لتصفح وشراء الملابس، يركز على تصميم واجهة مستخدم وتجربة مستخدم بديهية."></p>
+                    <div class="project-tech">
+                    <span class="tech-tag">Mobile Development</span>
+                    <span class="tech-tag">UI/UX Design</span>
+                    <span class="tech-tag">E-Commerce</span>
+                    <span class="tech-tag">Java</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 d-flex">
+                <div class="project-card w-100" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-header">
+                    <h3 class="project-title" data-en="Pharmaceutical Company System" data-ar="نظام شركة أدوية">Pharmaceutical Company System</h3>
+                    <div class="project-date" data-en="Sep 2021 - May 2022" data-ar="سبتمبر 2021 - مايو 2022">Sep 2021 - May 2022</div>
+                    </div>
+                    <div class="project-body">
+                    <p class="project-description" data-en="Internal communication platform (Java, OOP, Data Structures) for better coordination and secure data management." data-ar="منصة اتصال داخلية (Java، OOP، هياكل بيانات) لتحسين التنسيق وإدارة البيانات الآمنة."></p>
+                    <div class="project-tech">
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">OOP</span>
+                    <span class="tech-tag">Database</span>
+                    <span class="tech-tag">Data Structures</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+ <section id="skills" class="bg-light">
   <div class="container">
   <h2 class="section-title" data-en="Skills" data-ar="المهارات">Skills</h2>
   
-  <!-- Skill Category Selector Buttons -->
   <div class="skill-category-selector mb-5 text-center" data-aos="fade-up">
      <button class="btn btn-outline-primary mx-1 active" data-target="#core-ai-ml" data-en="AI & Machine Learning" data-ar="الذكاء الاصطناعي وتعلم الآلة">AI & Machine Learning</button>
      <button class="btn btn-outline-primary mx-1" data-target="#data-science-frameworks" data-en="Frameworks & Libraries" data-ar="الأطر والمكتبات">Frameworks & Libraries</button>
@@ -710,7 +774,6 @@
   </div>
   
   <div class="skills-container">
-     <!-- AI & ML Core Concepts -->
      <div class="skill-category active-skills" id="core-ai-ml" data-aos="fade-up">
         <h3 class="category-title visually-hidden" data-en="AI & Machine Learning" data-ar="الذكاء الاصطناعي وتعلم الآلة">AI & Machine Learning</h3>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Linear Algebra" data-ar="الجبر الخطي">Linear Algebra</span></div></div>
@@ -732,7 +795,6 @@
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Cloud Computing" data-ar="الحوسبة السحابية">Cloud Computing</span></div></div>
      </div>
   
-     <!-- Data Science & AI Frameworks/Libraries -->
      <div class="skill-category" id="data-science-frameworks" data-aos="fade-up">
         <h3 class="category-title visually-hidden" data-en="Frameworks & Libraries" data-ar="الأطر والمكتبات">Frameworks & Libraries</h3>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Pandas" data-ar="Pandas">Pandas</span></div></div>
@@ -749,7 +811,6 @@
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Pillow (PIL)" data-ar="Pillow (PIL)">Pillow (PIL)</span></div></div>
      </div>
   
-     <!-- Programming Languages -->
      <div class="skill-category" id="programming-languages" data-aos="fade-up">
         <h3 class="category-title visually-hidden" data-en="Programming Languages" data-ar="لغات البرمجة">Programming Languages</h3>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Python" data-ar="Python">Python</span></div></div>
@@ -759,7 +820,6 @@
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Dart" data-ar="Dart">Dart</span></div></div>
      </div>
   
-     <!-- Web & Mobile Development -->
      <div class="skill-category" id="web-mobile-dev" data-aos="fade-up">
         <h3 class="category-title visually-hidden" data-en="Web & Mobile Dev" data-ar="تطوير الويب والجوال">Web & Mobile Dev</h3>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="HTML" data-ar="HTML">HTML</span></div></div>
@@ -772,7 +832,6 @@
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="UI/UX Design" data-ar="تصميم واجهة/تجربة المستخدم">UI/UX Design</span></div></div>
      </div>
   
-     <!-- Tools & Environments -->
      <div class="skill-category" id="tools-environments" data-aos="fade-up">
         <h3 class="category-title visually-hidden" data-en="Tools & Environments" data-ar="الأدوات والبيئات">Tools & Environments</h3>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Visual Studio Community" data-ar="Visual Studio Community">Visual Studio Community</span></div></div>
@@ -785,7 +844,6 @@
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="NetBeans" data-ar="NetBeans">Postman</span></div></div>
      </div>
   
-     <!-- Core Programming Concepts / Software Engineering -->
      <div class="skill-category" id="core-programming" data-aos="fade-up">
         <h3 class="category-title visually-hidden" data-en="Software Engineering" data-ar="هندسة البرمجيات">Software Engineering</h3>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="System Analysis and Design" data-ar="تحليل وتصميم النظم">System Analysis and Design</span></div></div>
@@ -795,7 +853,6 @@
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Databases" data-ar="قواعد البيانات">Databases</span></div></div>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Software Testing & Quality Assurance" data-ar="اختبار البرمجيات وضمان الجودة">Software Testing & Quality Assurance</span></div></div>      </div>
   
-     <!-- Productivity & Collaboration Tools -->
      <div class="skill-category" id="productivity-tools" data-aos="fade-up">
         <h3 class="category-title visually-hidden" data-en="Productivity and Design Tools" data-ar="أدوات الإنتاجية والتصميم">Productivity and Design Tools</h3>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Adobe Photoshop" data-ar="Adobe Photoshop">Adobe Photoshop</span></div></div>
@@ -810,7 +867,6 @@
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Google Forms" data-ar="Google Forms">Google Forms</span></div></div>
      </div>
   
-     <!-- Soft Skills -->
      <div class="skill-category" id="soft-skills" data-aos="fade-up">
         <h3 class="category-title visually-hidden" data-en="Soft Skills" data-ar="المهارات الشخصية">Soft Skills</h3>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Problem Solving" data-ar="حل المشكلات">Problem Solving</span></div></div>
@@ -825,55 +881,35 @@
   </section>
 
 
- <!-- Certificates Section -->
-<section id="certificates">
+ <section id="certificates">
  <div class="container">
  <h2 class="section-title" data-en="Certificates" data-ar="الشهادات">Certificates</h2>
  <div class="certificates-container">
-    <!-- AI Training Certificate - IAO Accredited -->
     <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up"> <div class="certificate-icon"><i class="fas fa-award"></i></div> <h3 class="certificate-title" data-en="AI Training Certificate - IAO Accredited" data-ar="شهادة تدريب ذكاء اصطناعي - اعتماد IAO">AI Training Certificate - IAO Accredited</h3> <p class="certificate-issuer" data-en="International Accreditation Organization (IAO)" data-ar="منظمة الاعتماد الدولية (IAO)">International Accreditation Organization (IAO)</p> <a href="https://drive.google.com/file/d/19qPRZZbz4_F8xPfUl9wqFa-mfGoxno7o/view?usp=sharing" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
-    <!-- Microsoft Machine Learning Engineer - DEPI -->
     <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="100"> <div class="certificate-icon"><i class="fa-brands fa-microsoft"></i></div> <h3 class="certificate-title" data-en="Microsoft Machine Learning Engineer - DEPI" data-ar="مهندس تعلم آلة من مايكروسوفت - DEPI">Microsoft Machine Learning Engineer - DEPI</h3> <p class="certificate-issuer" data-en="Microsoft & DEPI" data-ar="مايكروسوفت و DEPI">Microsoft & DEPI</p> <a href="#" class="certificate-link disabled" target="_blank" rel="noopener noreferrer" data-en="View Certificate (Soon)" data-ar="عرض الشهادة (قريباً)">View Certificate (Soon)</a> </div> </div>
-    <!-- AI Training Certificate - Zewail City -->
     <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="200"> <div class="certificate-icon"><i class="fas fa-flask"></i></div> <h3 class="certificate-title" data-en="AI Training Certificate - Zewail City" data-ar="شهادة تدريب ذكاء اصطناعي - مدينة زويل">AI Training Certificate - Zewail City</h3> <p class="certificate-issuer" data-en="Zewail City of Science and Technology" data-ar="مدينة زويل للعلوم والتكنولوجيا">Zewail City of Science and Technology</p> <a href="https://drive.google.com/file/d/1-eTLjmR93hQTowWtgKoPtDNTrfvONHfn/view?usp=drive_link" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
-    <!-- AI Career Essentials – ALX -->
     <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up"> <div class="certificate-icon"><i class="fas fa-chalkboard-teacher"></i></div> <h3 class="certificate-title" data-en="AI Career Essentials – ALX" data-ar="أساسيات مهنة الذكاء الاصطناعي – ALX">AI Career Essentials – ALX</h3> <p class="certificate-issuer" data-en="ALX" data-ar="ALX">ALX</p> <a href="https://drive.google.com/file/d/1n3mEB_79YKVNyYtQa95S7f9gWJVB_23J/view?usp=drive_link" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
-    <!-- One Million AI Prompters -->
     <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="100"> <div class="certificate-icon"><i class="fas fa-brain"></i></div> <h3 class="certificate-title" data-en="One Million AI Prompters" data-ar="مليون محفز للذكاء الاصطناعي">One Million AI Prompters</h3> <p class="certificate-issuer" data-en="Dubai Center for Artificial Intelligence" data-ar="مركز دبي للذكاء الاصطناعي">Dubai Center for Artificial Intelligence</p> <a href="https://drive.google.com/file/d/1PTpGNaoNXhS1MqdQfMVZuv9cML_U34ZH/view?usp=drive_link" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
-    <!-- IT Essential Certificate -->
     <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="200"> <div class="certificate-icon"><i class="fas fa-network-wired"></i></div> <h3 class="certificate-title" data-en="IT Essential Certificate" data-ar="شهادة أساسيات تكنولوجيا المعلومات">IT Essential Certificate</h3> <p class="certificate-issuer" data-en="Cisco Networking Academy" data-ar="أكاديمية سيسكو للشبكات">Cisco Networking Academy</p> <a href="https://drive.google.com/file/d/1iZq5rAqz97RlQdL5RlYFKF4oUdM8ztXU/view?usp=drive_link" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
-    <!-- IT Essentials Badge -->
     <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="300"> <div class="certificate-icon"><i class="fas fa-id-badge"></i></div> <h3 class="certificate-title" data-en="IT Essentials Badge" data-ar="شارة أساسيات تكنولوجيا المعلومات">IT Essentials Badge</h3> <p class="certificate-issuer" data-en="Cisco" data-ar="سيسكو">Cisco</p> <a href="https://www.credly.com/badges/834bf688-8e6e-442e-83ad-ffa6c0b1c716" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Badge" data-ar="عرض الشارة">View Badge</a> </div> </div>
-    <!-- Pharmaceutical Company Project -->
     <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="400"> <div class="certificate-icon"><i class="fas fa-file-prescription"></i></div> <h3 class="certificate-title" data-en="Pharmaceutical Company Project Certificate" data-ar="شهادة مشروع شركة الأدوية">Pharmaceutical Company Project Certificate</h3> <p class="certificate-issuer" data-en="ERU" data-ar="الجامعة المصرية الروسية">ERU</p> <a href="https://drive.google.com/file/d/169GEdTzg8bAdQcZcyZZK2dV28zFhnZTL/view?usp=drive_link" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
-    <!-- Python For AI Training -->
     <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="500"> <div class="certificate-icon"><i class="fab fa-python"></i></div> <h3 class="certificate-title" data-en="Python For AI Training" data-ar="تدريب بايثون للذكاء الاصطناعي">Python For AI Training</h3> <p class="certificate-issuer" data-en="Huawei ICT Academy-Egypt" data-ar="أكاديمية هواوي لتكنولوجيا المعلومات والاتصالات - مصر">Huawei ICT Academy-Egypt</p> <a href="https://drive.google.com/file/d/1-5dlmQ4ZDpScrrJut3M82HatbpZNUlNe/view?usp=drive_link" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
-    <!-- Python Programming -->
     <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up"> <div class="certificate-icon"><i class="fa-brands fa-python"></i></div> <h3 class="certificate-title" data-en="Python Programming" data-ar="برمجة بايثون">Python Programming</h3> <p class="certificate-issuer" data-en="Information Technology Institute (ITI)" data-ar="معهد تكنولوجيا المعلومات (ITI)">Information Technology Institute (ITI)</p> <a href="https://drive.google.com/file/d/1VyuJeBnt8uEr3u1RtUcvdnd6Ui91OUqH/view?usp=drive_link" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
-    <!-- Introduction to Programming with Python -->
     <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="100"> <div class="certificate-icon"><i class="fa-solid fa-laptop-code"></i></div> <h3 class="certificate-title" data-en="Introduction to Programming with Python" data-ar="مقدمة في البرمجة باستخدام بايثون">Introduction to Programming with Python</h3> <p class="certificate-issuer" data-en="Ministry of Youth and Sports" data-ar="وزارة الشباب والرياضة">Ministry of Youth and Sports</p> <a href="https://drive.google.com/file/d/15xFNWSv1ASuLD0LBIP745IM4xhZBAVNZ/view?usp=drive_link" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
-    <!-- Python Programming Language - Intermediate Level -->
     <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="200"> <div class="certificate-icon"><i class="fa-brands fa-python"></i></div> <h3 class="certificate-title" data-en="Python Programming Language - Intermediate Level" data-ar="لغة برمجة بايثون - المستوى المتوسط">Python Programming Language - Intermediate Level</h3> <p class="certificate-issuer" data-en="Ministry of Youth and Sports" data-ar="وزارة الشباب والرياضة">Ministry of Youth and Sports</p> <a href="https://drive.google.com/file/d/15ygt91DX5dT_luCMBGwrvjsVO0pq5Bt1/view?usp=drive_link" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
-    <!-- SQL Certificate -->
     <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="300"> <div class="certificate-icon"><i class="fas fa-database"></i></div> <h3 class="certificate-title" data-en="SQL Certificate" data-ar="شهادة SQL">SQL Certificate</h3> <p class="certificate-issuer" data-en="Sololearn" data-ar="Sololearn">Sololearn</p> <a href="https://drive.google.com/file/d/162VLZv4L-LST2U4XvVqDsX419tOZhJDh/view" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
-    <!-- Digital Transformation -->
     <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="400"> <div class="certificate-icon"><i class="fa-solid fa-sync-alt"></i></div> <h3 class="certificate-title" data-en="Digital Transformation" data-ar="التحول الرقمي">Digital Transformation</h3> <p class="certificate-issuer" data-en="Ministry of Youth and Sports" data-ar="وزارة الشباب والرياضة">Ministry of Youth and Sports</p> <a href="https://drive.google.com/file/d/162NyMHjAM8eGiCWLxG7xVbkvI1MhC2yB/view?usp=drive_link" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
-    <!-- Cloud Computing -->
     <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="500"> <div class="certificate-icon"><i class="fa-brands fa-aws"></i></div> <h3 class="certificate-title" data-en="Cloud Computing" data-ar="الحوسبة السحابية">Cloud Computing</h3> <p class="certificate-issuer" data-en="Amazon Web Services (AWS)" data-ar="خدمات أمازون ويب (AWS)">Amazon Web Services (AWS)</p> <a href="https://www.credly.com/badges/c7231a6e-bd65-4c6c-8595-3a7ad2cfa7ab" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Badge" data-ar="عرض الشارة">View Badge</a> </div> </div>
-    <!-- AWS Storage -->
     <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up"> <div class="certificate-icon"><i class="fa-solid fa-database"></i></div> <h3 class="certificate-title" data-en="AWS Storage" data-ar="التخزين السحابي AWS">AWS Storage</h3> <p class="certificate-issuer" data-en="Amazon Web Services (AWS)" data-ar="خدمات أمازون ويب (AWS)">Amazon Web Services (AWS)</p> <a href="https://www.credly.com/badges/8a57c051-b746-4ebe-923b-ad39e9802fd2" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Badge" data-ar="عرض الشارة">View Badge</a> </div> </div>
-    <!-- Innovation and Entrepreneurship -->
     <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="100"> <div class="certificate-icon"><i class="fa-solid fa-lightbulb"></i></div> <h3 class="certificate-title" data-en="Innovation and Entrepreneurship" data-ar="الابتكار وريادة الأعمال">Innovation and Entrepreneurship</h3> <p class="certificate-issuer" data-en="ITIDA" data-ar="هيئة تنمية صناعة تكنولوجيا المعلومات (ITIDA)">ITIDA</p> <a href="https://drive.google.com/file/d/1Xd_ePweUd19NcnNeOpjreTDyGEyJulmD/view" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
  </div>
  </div>
  </section>
 
- <!-- Honors Section -->
-<section id="honors-awards" class="bg-light">
+ <section id="honors-awards" class="bg-light">
   <div class="container">
   <h2 class="section-title" data-en="Honors" data-ar="التكريمات">Honors</h2>
  
-  <!-- Awards Cards Row -->
   <div class="row justify-content-center gy-4 mb-4">
   <div class="col-md-6 d-flex">
   <div class="award-card w-100" data-aos="fade-up">
@@ -897,34 +933,19 @@
   </div>
   </div>
   </div>
-  </div> <!-- End of Awards Cards Row -->
- 
-<!-- Honors Media Row (Centered Group) -->
-<div class="row justify-content-center align-items-center gy-4 mt-4 honors-media"> <!-- justify-content-center will now center the col-md-5 pair -->
-
-  <!-- GIF Column (Narrower) -->
-  <div class="col-md-5" data-aos="zoom-in-right" data-aos-delay="200"> <!-- Changed from col-md-6 to col-md-5 -->
-      <!-- ====> تأكد من أن مسار GIF هذا صحيح <==== -->
-      <img src="images/honors-animation.gif"
+  </div> <div class="row justify-content-center align-items-center gy-4 mt-4 honors-media"> <div class="col-md-5" data-aos="zoom-in-right" data-aos-delay="200"> <img src="images/honors-animation.gif"
            class="img-fluid rounded shadow-sm"
            alt="Animation showing honors and awards"
            loading="lazy">
   </div>
 
-  <!-- Static Image Column (Narrower) -->
-  <div class="col-md-5" data-aos="zoom-in-left" data-aos-delay="300"> <!-- Changed from col-md-6 to col-md-5 -->
-      <!-- TODO: استبدل رابط الصورة الثابتة هنا -->
-      <img src="images/honor-image.webp"
+  <div class="col-md-5" data-aos="zoom-in-left" data-aos-delay="300"> <img src="images/honor-image.webp"
            class="img-fluid rounded shadow-sm"
            alt="Image related to honors"
            loading="lazy">
   </div>
 
-</div> <!-- End of Honors Media Row -->
- </section> <!-- End of Honors Section -->
-
- <!-- Contact Section -->
- <section id="contact">
+</div> </section> <section id="contact">
  <div class="container">
  <h2 class="section-title" data-en="Contact Me" data-ar="تواصل معي">Contact Me</h2>
  <div class="contact-container" data-aos="fade-up">
@@ -990,11 +1011,9 @@
  </div>
  </section>
 
- <!-- Footer -->
  <footer>
  <div class="container">
  <div class="footer-content text-center">
- <!-- Replaced text with placeholder image -->
  <div class="footer-logo">
      <img src="images/logo.png" alt="Ahmed Azouz Logo" style="width: 100px; height: 100px; margin-bottom: 2px;">
  </div>
@@ -1012,14 +1031,11 @@
  </div>
  </footer>
 
- <!-- Scroll to Top Button -->
  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
  <i class="fas fa-arrow-up"></i>
  </button>
 
- <!-- Bootstrap 5 JS Bundle with Popper -->
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
- <!-- AOS Animation Library -->
  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
  <script>
