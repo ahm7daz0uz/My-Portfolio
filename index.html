@@ -148,9 +148,16 @@
  .about-content { background-color: var(--card-bg); border-radius: 20px; padding: 50px; box-shadow: 0 15px 40px var(--shadow-color); position: relative; z-index: 1; border: 1px solid var(--card-border); }
  .about-text { font-size: 1.1rem; line-height: 1.9; color: var(--text-color); text-align: justify; margin-bottom: 40px; }
  .video-container { border-radius: 10px; }
+ 
+ /* Education Section Additions */
+ .education-details { margin-top: 15px; }
+ .education-details ul { list-style: none; padding-left: 0; }
+ .education-details li { position: relative; padding-left: 25px; margin-bottom: 10px; font-size: 1rem; color: var(--text-color-light); }
+ .education-details li::before { content: '\f00c'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--primary-color); position: absolute; left: 0; top: 4px; }
+ [dir="rtl"] .education-details li { padding-left: 0; padding-right: 25px; }
+ [dir="rtl"] .education-details li::before { right: 0; left: auto; }
 
- /* Education & Training Sections (Timeline) */
- #training { /* Uses default bg */ }
+ /* Experience & Training Sections (Timeline) */
  .timeline { position: relative; max-width: 900px; margin: 0 auto; }
  .timeline::after { content: ''; position: absolute; width: 4px; background-color: var(--timeline-line); top: 0; bottom: 0; left: 50%; margin-left: -2px; border-radius: 2px; z-index: 0; }
  [dir="rtl"] .timeline::after { right: 50%; left: auto; margin-right: -2px; margin-left: 0; }
@@ -175,6 +182,11 @@
  .timeline-date { font-size: 0.9rem; color: var(--primary-color); font-weight: 600; margin-bottom: 10px; display: block; }
  .timeline-title { font-size: 1.25rem; font-weight: 600; margin-bottom: 10px; color: var(--text-color); }
  .timeline-text { font-size: 1rem; color: var(--text-color-light); line-height: 1.7; }
+ .timeline-text ul { list-style: none; padding-left: 0; margin-top: 15px; }
+ .timeline-text li { position: relative; padding-left: 20px; margin-bottom: 8px; }
+ .timeline-text li::before { content: '•'; color: var(--primary-color); position: absolute; left: 0; font-weight: bold; }
+ [dir="rtl"] .timeline-text li { padding-left: 0; padding-right: 20px; }
+ [dir="rtl"] .timeline-text li::before { right: 0; left: auto; }
 
  /* Projects Section */
  #projects { background-color: var(--bg-color-alt); }
@@ -188,48 +200,51 @@
  .project-tech { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; }
  .tech-tag { padding: 6px 14px; background-color: var(--bg-color-alt); color: var(--secondary-color); border-radius: 20px; font-size: 0.8rem; font-weight: 500; border: 1px solid var(--card-border); transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; }
  .tech-tag:hover { background-color: var(--secondary-color); color: white; transform: translateY(-2px); }
+ .project-description ul { list-style: none; padding-left: 0; margin-top: 15px; }
+ .project-description li { position: relative; padding-left: 20px; margin-bottom: 8px; font-size: 0.95rem; }
+ .project-description li::before { content: '✓'; color: var(--primary-color); position: absolute; left: 0; font-weight: bold; }
+ [dir="rtl"] .project-description li { padding-left: 0; padding-right: 20px; }
+ [dir="rtl"] .project-description li::before { right: 0; left: auto; }
+ 
+ /* Publications Section */
+ #publications { background-color: var(--bg-color); }
+ .publication-card { background-color: var(--card-bg); border-radius: 15px; padding: 35px; box-shadow: 0 10px 30px var(--shadow-color); border: 1px solid var(--card-border); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; align-items: flex-start; }
+ .publication-card:hover { transform: translateY(-8px); box-shadow: 0 18px 45px var(--shadow-color-hover); }
+ .publication-icon { font-size: 2.5rem; color: var(--primary-color); margin-right: 25px; flex-shrink: 0; width: 60px; height: 60px; background: linear-gradient(135deg, rgba(var(--gradient-start-rgb), 0.1), rgba(var(--gradient-end-rgb), 0.1)); border-radius: 12px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease; }
+ .publication-card:hover .publication-icon { transform: scale(1.1) rotate(5deg); }
+ [dir="rtl"] .publication-icon { margin-left: 25px; margin-right: 0; }
+ .publication-details { flex-grow: 1; }
+ .publication-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 8px; color: var(--text-color); }
+ .publication-meta { font-size: 0.95rem; color: var(--text-color-light); margin-bottom: 15px; }
+ .publication-meta .conference { font-weight: 500; color: var(--secondary-color); }
+ .publication-meta .date { display: block; margin-top: 5px; font-size: 0.9rem; }
+ .publication-description { font-size: 1rem; color: var(--text-color-light); line-height: 1.7; }
+ 
 
  /* Skills Section */
- #skills { background-color: var(--bg-color); }
- /* Skill Category Selector */
+ #skills { background-color: var(--bg-color-alt); }
  .skill-category-selector { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
  .skill-category-selector .btn { font-weight: 500; border-radius: 20px; padding: 8px 20px; transition: all 0.3s ease; border: 1px solid var(--timeline-line); background-color: var(--card-bg); color: var(--text-color-light); }
- .skill-category-selector .btn:hover { background-color: var(--bg-color-alt); color: var(--primary-color); border-color: var(--primary-color); transform: translateY(-2px); }
+ .skill-category-selector .btn:hover { background-color: #e9ecef; color: var(--primary-color); border-color: var(--primary-color); transform: translateY(-2px); }
  .skill-category-selector .btn.active { background: linear-gradient(to right, var(--gradient-start), var(--gradient-end)); color: white !important; border-color: transparent; box-shadow: 0 5px 15px rgba(var(--gradient-start-rgb), 0.2); }
- /* Skills Container and Categories */
- .skills-container { margin-top: 40px; /* Add space below selector */ }
- .skill-category {
-    background-color: var(--card-bg);
-    border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0 10px 30px var(--shadow-color);
-    border: 1px solid var(--card-border);
-    display: none; /* Hide categories by default */
-    animation: fadeIn 0.5s ease-out; /* Simple fade-in animation */
- }
- .skill-category.active-skills { display: block; /* Show the active category */ }
+ .skills-container { margin-top: 40px; }
+ .skill-category { background-color: var(--card-bg); border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px var(--shadow-color); border: 1px solid var(--card-border); display: none; animation: fadeIn 0.5s ease-out; }
+ .skill-category.active-skills { display: block; }
  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
  .category-title { font-size: 1.4rem; font-weight: 600; margin-bottom: 25px; color: var(--primary-color); position: relative; padding-bottom: 12px; }
  .category-title::after { content: ''; position: absolute; width: 60px; height: 3px; background: linear-gradient(to right, var(--gradient-start), var(--gradient-end)); bottom: 0; left: 0; border-radius: 2px; }
  [dir="rtl"] .category-title::after { right: 0; left: auto; }
- .skill-item { margin-bottom: 10px; padding: 10px 5px; border-bottom: 1px solid var(--bg-color-alt); transition: background-color 0.2s ease; } /* Adjusted padding */
+ .skill-item { margin-bottom: 10px; padding: 10px 5px; border-bottom: 1px solid var(--bg-color-alt); transition: background-color 0.2s ease; }
  .skill-item:hover { background-color: rgba(var(--gradient-start-rgb), 0.03); }
  .skill-item:last-child { margin-bottom: 0; border-bottom: none; }
  .skill-info { display: flex; align-items: center; }
  .skill-name { font-weight: 500; font-size: 1rem; }
- .skill-item i.fa-check-circle {
-     font-size: 1.1em;
-     color: var(--primary-color); /* Changed color */
-     opacity: 0.85; /* Slightly increased opacity */
-     transition: color 0.3s ease, opacity 0.3s ease, transform 0.2s ease;
-     margin-right: 0.5rem; /* LTR spacing */
- }
- [dir="rtl"] .skill-item i.fa-check-circle { margin-left: 0.5rem; margin-right: 0; } /* RTL spacing */
- .skill-item:hover i.fa-check-circle { transform: scale(1.1); opacity: 1; } /* Hover effect */
-
+ .skill-item i.fa-check-circle { font-size: 1.1em; color: var(--primary-color); opacity: 0.85; transition: color 0.3s ease, opacity 0.3s ease, transform 0.2s ease; margin-right: 0.5rem; }
+ [dir="rtl"] .skill-item i.fa-check-circle { margin-left: 0.5rem; margin-right: 0; }
+ .skill-item:hover i.fa-check-circle { transform: scale(1.1); opacity: 1; }
 
  /* Certificates Section */
- #certificates { background-color: var(--bg-color-alt); }
+ #certificates { background-color: var(--bg-color); }
  .certificates-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
  .certificate-card { background-color: var(--card-bg); border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px var(--shadow-color); border: 1px solid var(--card-border); transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; overflow: hidden; display: flex; flex-direction: column; height: 100%; }
  .certificate-card::before { content: '\f0a3'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; top: -20px; right: -15px; font-size: 80px; color: var(--gradient-start); opacity: 0.05; z-index: 0; transform: rotate(-15deg); transition: transform 0.4s ease; }
@@ -245,7 +260,7 @@
  .certificate-link:not(.disabled):hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 8px 20px rgba(var(--gradient-start-rgb), 0.25); color: white !important; }
 
  /* Honors Section */
- #honors-awards { background-color: var(--bg-color); }
+ #honors-awards { background-color: var(--bg-color-alt); }
  .award-card { background-color: var(--card-bg); border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px var(--shadow-color); border: 1px solid var(--card-border); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; align-items: center; height: 100%; }
  .award-card:hover { transform: translateY(-8px); box-shadow: 0 18px 45px var(--shadow-color-hover); }
  .award-icon { font-size: 2.5rem; color: var(--primary-color); margin-right: 20px; flex-shrink: 0; width: 60px; height: 60px; background: linear-gradient(135deg, rgba(var(--gradient-start-rgb), 0.1), rgba(var(--gradient-end-rgb), 0.1)); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease; }
@@ -258,9 +273,8 @@
  .honors-images img { transition: transform 0.3s ease, box-shadow 0.3s ease; }
  .honors-images img:hover { transform: scale(1.03); box-shadow: 0 10px 25px var(--shadow-color-hover); }
 
-
  /* Contact Section */
- #contact { background-color: var(--bg-color-alt); }
+ #contact { background-color: var(--bg-color); }
  .contact-container { background-color: var(--card-bg); border-radius: 20px; padding: 50px; box-shadow: 0 15px 40px var(--shadow-color); position: relative; z-index: 1; border: 1px solid var(--card-border); }
  .contact-info { margin-bottom: 40px; }
  .contact-item { display: flex; align-items: center; margin-bottom: 25px; }
@@ -272,38 +286,28 @@
  .contact-value { font-size: 1.1rem; font-weight: 500; color: var(--text-color); word-break: break-all; }
  .contact-value a { color: var(--text-color); text-decoration: none; transition: color 0.3s ease, border-bottom 0.3s ease; border-bottom: 1px solid transparent; }
  .contact-value a:hover { color: var(--primary-color); border-bottom: 1px solid var(--primary-color); }
- .contact-buttons { /* Container for the new button layout */ }
- .contact-btn { /* Shared button styles */ display: flex; align-items: center; justify-content: center; padding: 14px 25px; /* Slightly increased padding */ border-radius: 30px; /* More rounded */ color: white !important; font-weight: 500; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); border: none; text-align: center; }
+ .contact-buttons { }
+ .contact-btn { display: flex; align-items: center; justify-content: center; padding: 14px 25px; border-radius: 30px; color: white !important; font-weight: 500; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); border: none; text-align: center; }
  .contact-btn i { margin-right: 10px; font-size: 1.3rem; transition: transform 0.3s ease; }
  [dir="rtl"] .contact-btn i { margin-left: 10px; margin-right: 0; }
  .contact-btn.whatsapp { background: linear-gradient(135deg, #25D366, #128C7E); }
  .contact-btn.telegram { background: linear-gradient(135deg, #0088cc, #005f99); }
  .contact-btn.email { background: linear-gradient(135deg, #EA4335, #c4302b); }
  .contact-btn:hover { transform: translateY(-6px) scale(1.03); box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18); color: white !important; }
- .contact-btn:hover i { transform: scale(1.15) rotate(5deg); } /* Added rotate */
+ .contact-btn:hover i { transform: scale(1.15) rotate(5deg); }
 
  /* Footer */
  footer { background-color: var(--footer-bg); color: var(--footer-text); padding: 50px 0 25px; position: relative; overflow: hidden; }
  .footer-content { position: relative; z-index: 1; }
- .footer-logo {
-     font-size: 2rem; /* Kept for potential fallback or sizing reference */
-     font-weight: 700;
-     margin-bottom: 25px;
-     display: inline-block;
-     /* Removed text gradient styles */
-     color: var(--footer-text); /* Set a fallback color */
- }
- .footer-logo img { /* Style for the logo image */
-     display: block; /* Prevents extra space below image */
-     max-width: 100%; /* Ensure responsiveness */
- }
+ .footer-logo { font-size: 2rem; font-weight: 700; margin-bottom: 25px; display: inline-block; color: var(--footer-text); }
+ .footer-logo img { display: block; max-width: 100%; }
  .social-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; margin-bottom: 35px; }
  .social-link { width: 45px; height: 45px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.1); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.3rem; transition: all 0.3s ease; text-decoration: none; }
  .social-link:hover { background-color: var(--primary-color); transform: translateY(-4px) scale(1.1); color: white; box-shadow: 0 5px 15px rgba(var(--primary-color-rgb, 37, 99, 235), 0.3); }
  .copyright { font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); text-align: center; margin-top: 30px; }
 
  /* Reading Progress Bar */
- #reading-progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 4px; background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end), var(--accent-color)); /* Added accent */ z-index: 1031; transition: width 0.15s ease-out; box-shadow: 0 1px 4px rgba(var(--gradient-start-rgb), 0.2); }
+ #reading-progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 4px; background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end), var(--accent-color)); z-index: 1031; transition: width 0.15s ease-out; box-shadow: 0 1px 4px rgba(var(--gradient-start-rgb), 0.2); }
 
  /* Custom Scrollbar */
  ::-webkit-scrollbar { width: 10px; height: 10px; }
@@ -324,7 +328,7 @@
  [dir="rtl"] .timeline-item { padding-right: 70px; padding-left: 25px; }
  [dir="rtl"] .timeline-item::after { right: 20px !important; left: auto !important; }
  [dir="rtl"] .timeline-content { padding-right: 20px; padding-left: 0; }
- .skills-container { grid-template-columns: 1fr; } /* Stack skill categories on smaller screens */
+ .skills-container { grid-template-columns: 1fr; } 
  .certificates-container { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
  .award-card { flex-direction: column; align-items: flex-start; text-align: left; }
  .award-icon { margin-bottom: 15px; margin-right: 0; margin-left: 0;}
@@ -336,14 +340,13 @@
  section { padding: 80px 0; }
  .section-title { font-size: 2rem; margin-bottom: 50px; }
  .hero-title { font-size: 2.8rem; }
- .hero-subtitle { font-size: 1.3rem; min-height: 60px; } /* Increased min-height for longer titles */
+ .hero-subtitle { font-size: 1.3rem; min-height: 60px; } 
  .about-content, .contact-container { padding: 30px; }
  .about-text { text-align: left; }
  [dir="rtl"] .about-text { text-align: right; }
  .profile-img-container { width: 280px; height: 280px; }
- /* Contact button layout on small screens */
- .contact-buttons .row.g-3 { flex-direction: column; align-items: center; margin-bottom: 0 !important; } /* Stack top row */
- .contact-buttons .col-sm-6 { width: 100%; max-width: 300px; margin-bottom: 1rem; } /* Full width for stacked buttons */
+ .contact-buttons .row.g-3 { flex-direction: column; align-items: center; margin-bottom: 0 !important; } 
+ .contact-buttons .col-sm-6 { width: 100%; max-width: 300px; margin-bottom: 1rem; } 
  .contact-buttons .col-sm-8 { width: 100%; max-width: 300px; }
  .navbar-nav { background-color: rgba(255, 255, 255, 0.97); padding: 15px; margin-top: 10px; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
  .navbar-nav .nav-item { margin-bottom: 5px; }
@@ -351,19 +354,19 @@
  .lang-toggle { margin: 10px auto; }
  #honors-awards .honors-images .col-md-6 { flex-basis: 100%; max-width: 100%; }
  #honors-awards .honors-images .col-md-6:last-child img { margin-bottom: 0; }
- .skill-category-selector .btn { font-size: 0.9rem; padding: 6px 15px; } /* Smaller buttons on mobile */
+ .skill-category-selector .btn { font-size: 0.9rem; padding: 6px 15px; } 
  }
  @media (max-width: 575px) {
  section { padding: 60px 0; }
  .section-title { font-size: 1.8rem; margin-bottom: 40px; }
  .hero-title { font-size: 2.2rem; }
  .hero-title::after { width: 80px; bottom: 0;}
- .hero-subtitle { font-size: 1.1rem; min-height: 50px; } /* Adjust if needed */
+ .hero-subtitle { font-size: 1.1rem; min-height: 50px; } 
  .profile-img-container { width: 220px; height: 220px; }
  .timeline-content { padding: 20px; }
  .contact-item { flex-direction: column; align-items: flex-start; text-align: left; }
  .contact-icon { margin-right: 0; margin-left:0; margin-bottom: 15px; }
- .footer-logo img { width: 50px !important; margin: 0 auto 20px; } /* Center logo on small screens */
+ .footer-logo img { width: 50px !important; margin: 0 auto 20px; } 
  .social-link { width: 40px; height: 40px; font-size: 1.1rem; }
  .award-card { padding: 25px; }
  .award-icon { width: 50px; height: 50px; font-size: 2rem; }
@@ -431,10 +434,13 @@
  <a class="nav-link" href="#education" data-en="Education" data-ar="التعليم">Education</a>
  </li>
  <li class="nav-item">
- <a class="nav-link" href="#training" data-en="Training" data-ar="التدريب">Training</a>
+ <a class="nav-link" href="#experience" data-en="Experience" data-ar="الخبرة">Experience</a>
  </li>
  <li class="nav-item">
  <a class="nav-link" href="#projects" data-en="Projects" data-ar="المشاريع">Projects</a>
+ </li>
+ <li class="nav-item">
+    <a class="nav-link" href="#publications" data-en="Publications" data-ar="المنشورات">Publications</a>
  </li>
  <li class="nav-item">
  <a class="nav-link" href="#skills" data-en="Skills" data-ar="المهارات">Skills</a>
@@ -466,14 +472,14 @@
  <div class="col-lg-7 hero-content" data-aos="fade-right">
  <h1 class="hero-title" data-en="Ahmed Azouz" data-ar="أحمد عزوز">Ahmed Azouz</h1>
  <div class="hero-subtitle" id="typingText"
-      data-en-phrases='["Microsoft Machine Learning Engineer", "Deep Learning Specialist", "NLP & Computer Vision Developer"]'
-      data-ar-phrases='["مهندس تعلم آلة من مايكروسوفت", "متخصص في التعلم العميق", "مطور معالجة لغات طبيعية ورؤية حاسوبية"]'>
+      data-en-phrases='["Data Scientist", "Machine Learning Engineer", "AI Researcher"]'
+      data-ar-phrases='["عالم بيانات", "مهندس تعلم آلة", "باحث في الذكاء الاصطناعي"]'>
  </div>
  <p class="hero-text" data-en="Ambitious and dedicated Artificial Intelligence professional with a strong foundation in machine learning, data analysis, and programming." data-ar="محترف طموح ومتفاني في مجال الذكاء الاصطناعي مع أساس قوي في تعلم الآلة وتحليل البيانات والبرمجة.">
  </p>
  <div class="hero-buttons">
  <a href="#contact" class="hero-btn" data-en="Contact Me" data-ar="تواصل معي">Contact Me</a>
- <a href="https://drive.google.com/file/d/1L3n2bETw83fecudW0i8JWECZCJcqilKh/view?usp=sharing" class="hero-btn" target="_blank" rel="noopener noreferrer">
+ <a href="https://drive.google.com/file/d/1lPPp39Hn0ACMCATSrAalAbhmmnhRnofh/view?usp=sharing" class="hero-btn" target="_blank" rel="noopener noreferrer">
      <i class="fas fa-eye me-2"></i> <span data-en="View CV" data-ar="عرض السيرة الذاتية">View CV</span>
  </a>
  </div>
@@ -493,7 +499,7 @@
  <div class="container">
  <h2 class="section-title" data-en="About Me" data-ar="نبذة عني">About Me</h2>
  <div class="about-content" data-aos="fade-up">
- <p class="about-text" data-en="Passionate about technology and innovation with proven abilities in problem-solving, teamwork, and rapid adaptation to new challenges. Eager to apply hands-on experience from academic projects in developing and implementing AI models in a professional setting. Committed to contributing to cutting-edge AI solutions and driving technological advancements." data-ar="شغوف بالتكنولوجيا والابتكار مع قدرات مثبتة في حل المشكلات والعمل الجماعي والتكيف السريع مع التحديات الجديدة. متحمس لتطبيق الخبرة العملية من المشاريع الأكاديمية في تطوير وتنفيذ نماذج الذكاء الاصطناعي في بيئة احترافية. ملتزم بالمساهمة في حلول الذكاء الاصطناعي المتطورة ودفع التقدم التكنولوجي.">
+ <p class="about-text" data-en="Ambitious and dedicated Artificial Intelligence professional with a strong foundation in machine learning, data analysis, and programming. Passionate about technology and innovation with proven abilities in problem-solving, teamwork, and rapid adaptation to new challenges. Eager to apply hands-on experience from academic projects in developing and implementing AI models in a professional setting. Committed to contributing to cutting-edge AI solutions and driving technological advancements." data-ar="محترف طموح ومتفاني في مجال الذكاء الاصطناعي مع أساس قوي في تعلم الآلة وتحليل البيانات والبرمجة. شغوف بالتكنولوجيا والابتكار مع قدرات مثبتة في حل المشكلات والعمل الجماعي والتكيف السريع مع التحديات الجديدة. متحمس لتطبيق الخبرة العملية من المشاريع الأكاديمية في تطوير وتنفيذ نماذج الذكاء الاصطناعي في بيئة احترافية. ملتزم بالمساهمة في حلول الذكاء الاصطناعي المتطورة ودفع التقدم التكنولوجي.">
  </p>
  <div class="ratio ratio-16x9 mt-4 rounded shadow-sm overflow-hidden video-container" data-aos="zoom-in" data-aos-delay="100">
     <iframe src="https://www.youtube.com/embed/ETW1lSdU6n4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
@@ -508,43 +514,59 @@
  <div class="timeline">
  <div class="timeline-item" data-aos="fade-up">
  <div class="timeline-content">
- <span class="timeline-date" data-en="Sep 2021 - Jun 2025" data-ar="سبتمبر 2021 - يونيو 2025">Sep 2021 - Jun 2025 (Expected)</span>
+ <span class="timeline-date" data-en="Sep 2021 - Jul 2025" data-ar="سبتمبر 2021 - يوليو 2025">Sep 2021 - Jul 2025</span>
  <h3 class="timeline-title" data-en="Bachelor's Degree in Artificial Intelligence" data-ar="بكالوريوس في الذكاء الاصطناعي">Bachelor's Degree in Artificial Intelligence</h3>
  <p class="timeline-text" data-en="Egyptian Russian University" data-ar="الجامعة المصرية الروسية">Egyptian Russian University</p>
+ <div class="education-details">
+    <ul data-en='<li>Graduated with Honors distinction.</li><li>Achieved an "Excellent" grade on the capstone project, demonstrating practical application of advanced AI concepts.</li><li>Curriculum included: Machine Learning, Deep Learning, Statistical Analysis, Data Mining, Big Data Analytics, Computer Vision, and NLP.</li>' 
+        data-ar='<li>التخرج بمرتبة الشرف.</li><li>حصل على تقدير "ممتاز" في مشروع التخرج، مما يثبت التطبيق العملي لمفاهيم الذكاء الاصطناعي المتقدمة.</li><li>شمل المنهج الدراسي: تعلم الآلة، التعلم العميق، التحليل الإحصائي، استخراج البيانات، تحليلات البيانات الضخمة، رؤية الحاسوب، ومعالجة اللغات الطبيعية.</li>'>
+    </ul>
+</div>
  </div>
  </div>
  </div>
  </div>
  </section>
 
- <section id="training" class="bg-light">
+ <section id="experience" class="bg-light">
  <div class="container">
- <h2 class="section-title" data-en="Training" data-ar="التدريب">Training</h2>
+ <h2 class="section-title" data-en="Professional Experience" data-ar="الخبرة المهنية">Professional Experience</h2>
  <div class="timeline">
- <div class="timeline-item" data-aos="fade-up">
- <div class="timeline-content">
- <span class="timeline-date" data-en="October 2024 – Present" data-ar="أكتوبر 2024 - حالي">October 2024 – Present</span>
- <h3 class="timeline-title" data-en="Space Technology AI Researcher | EgSA" data-ar="باحث ذكاء اصطناعي في تكنولوجيا الفضاء | وكالة الفضاء المصرية">Space Technology AI Researcher | Egyptian Space Agency (EgSA)</h3>
- </div>
- </div>
- <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
- <div class="timeline-content">
- <span class="timeline-date" data-en="October 2024 – May 2025" data-ar="أكتوبر 2024 - مايو 2025">October 2024 – May 2025</span>
- <h3 class="timeline-title" data-en="Trainee | DEPI" data-ar="متدرب | DEPI">Trainee | DEPI</h3>
- </div>
- </div>
- <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
- <div class="timeline-content">
- <span class="timeline-date" data-en="June 2024 - September 2024" data-ar="يونيو 2024 - سبتمبر 2024">June 2024 - September 2024</span>
- <h3 class="timeline-title" data-en="Trainee | Zewail City" data-ar="متدرب | مدينة زويل">Trainee | Zewail City</h3>
- </div>
- </div>
- <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
- <div class="timeline-content">
- <span class="timeline-date" data-en="June 2023 - September 2023" data-ar="يونيو 2023 - سبتمبر 2023">June 2023 - September 2023</span>
- <h3 class="timeline-title" data-en="Trainee | Huawei" data-ar="متدرب | هواوي">Trainee | Huawei</h3>
- </div>
- </div>
+    <div class="timeline-item" data-aos="fade-up">
+        <div class="timeline-content">
+        <span class="timeline-date" data-en="September 2025 – Present" data-ar="سبتمبر 2025 - حالي">September 2025 – Present</span>
+        <h3 class="timeline-title" data-en="Data Analysis Intern | Raly Company" data-ar="متدرب تحليل بيانات | شركة Raly">Data Analysis Intern | Raly Company</h3>
+        <div class="timeline-text" data-en="<ul><li>Contributing to data analysis processes to extract actionable insights that support strategic decision-making.</li><li>Participating in data cleaning and preprocessing to ensure data accuracy and quality.</li><li>Utilizing tools such as Python and SQL for data collection, processing, and analysis.</li><li>Assisting in the creation of reports and dashboards to visualize data clearly.</li></ul>" data-ar="<ul><li>المساهمة في عمليات تحليل البيانات لاستخلاص رؤى قابلة للتنفيذ تدعم اتخاذ القرارات الاستراتيجية.</li><li>المشاركة في تنظيف البيانات ومعالجتها مسبقًا لضمان دقة وجودة البيانات.</li><li>استخدام أدوات مثل Python و SQL لجمع البيانات ومعالجتها وتحليلها.</li><li>المساعدة في إنشاء التقارير ولوحات المعلومات لتصوير البيانات بوضوح.</li></ul>"></div>
+        </div>
+    </div>
+    <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+        <div class="timeline-content">
+        <span class="timeline-date" data-en="October 2024 – Present" data-ar="أكتوبر 2024 - حالي">October 2024 – Present</span>
+        <h3 class="timeline-title" data-en="Space Technology AI Researcher | Egyptian Space Agency (EgSA)" data-ar="باحث ذكاء اصطناعي في تكنولوجيا الفضاء | وكالة الفضاء المصرية">Space Technology AI Researcher | Egyptian Space Agency (EgSA)</h3>
+        <div class="timeline-text" data-en="<ul><li>Contributed to a project aligned with Egypt Vision 2030, applying advanced AI and computer vision techniques for sustainable orbital operations.</li><li>Managed key aspects of the software development lifecycle, from technical design and implementation to system integration and hardware deployment on edge-computing systems.</li></ul>" data-ar="<ul><li>المساهمة في مشروع يتماشى مع رؤية مصر 2030، وتطبيق تقنيات الذكاء الاصطناعي المتقدمة ورؤية الحاسوب لعمليات مدارية مستدامة.</li><li>إدارة الجوانب الرئيسية لدورة حياة تطوير البرمجيات، من التصميم الفني والتنفيذ إلى تكامل النظام ونشر الأجهزة على أنظمة الحوسبة الطرفية.</li></ul>"></div>
+        </div>
+    </div>
+    <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+        <div class="timeline-content">
+        <span class="timeline-date" data-en="October 2024 – May 2025" data-ar="أكتوبر 2024 - مايو 2025">October 2024 – May 2025</span>
+        <h3 class="timeline-title" data-en="Trainee | DEPI" data-ar="متدرب | DEPI">Trainee | DEPI</h3>
+        <div class="timeline-text" data-en="<ul><li>Completed practical training focused on developing end-to-end AI solutions using Microsoft Azure.</li><li>Gained hands-on experience in deploying AI models on Azure Cloud and managing scalable data pipelines.</li><li>Specialized in Deep Learning, NLP with Attention Models, Computer Vision, and Prompt Engineering.</li></ul>" data-ar="<ul><li>إتمام تدريب عملي يركز على تطوير حلول ذكاء اصطناعي متكاملة باستخدام Microsoft Azure.</li><li>اكتساب خبرة عملية في نشر نماذج الذكاء الاصطناعي على سحابة Azure وإدارة خطوط أنابيب البيانات القابلة للتطوير.</li><li>التخصص في التعلم العميق، معالجة اللغات الطبيعية بنماذج الانتباه، رؤية الحاسوب، وهندسة الأوامر النصية.</li></ul>"></div>
+        </div>
+    </div>
+    <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+        <div class="timeline-content">
+        <span class="timeline-date" data-en="June 2024 - September 2024" data-ar="يونيو 2024 - سبتمبر 2024">June 2024 - September 2024</span>
+        <h3 class="timeline-title" data-en="Trainee | Zewail City" data-ar="متدرب | مدينة زويل">Trainee | Zewail City</h3>
+        <div class="timeline-text" data-en="<ul><li>Completed a professional course in Artificial Intelligence and Python Programming.</li><li>Covered AI fundamentals, machine learning (regression, classification, clustering), deep learning architectures, and reinforcement learning.</li></ul>" data-ar="<ul><li>إتمام دورة احترافية في الذكاء الاصطناعي وبرمجة بايثون.</li><li>تغطية أساسيات الذكاء الاصطناعي، تعلم الآلة (الانحدار، التصنيف، التجميع)، معماريات التعلم العميق، والتعلم المعزز.</li></ul>"></div>
+        </div>
+    </div>
+    <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+        <div class="timeline-content">
+        <span class="timeline-date" data-en="June 2023 - September 2023" data-ar="يونيو 2023 - سبتمبر 2023">June 2023 - September 2023</span>
+        <h3 class="timeline-title" data-en="Trainee | Huawei" data-ar="متدرب | هواوي">Trainee | Huawei</h3>
+        <div class="timeline-text" data-en="<ul><li>Completed a training program focused on Python programming fundamentals and data manipulation using Pandas and NumPy.</li></ul>" data-ar="<ul><li>إتمام برنامج تدريبي يركز على أساسيات برمجة بايثون ومعالجة البيانات باستخدام Pandas و NumPy.</li></ul>"></div>
+        </div>
+    </div>
  </div>
  </div>
  </section>
@@ -569,9 +591,9 @@
                         </div>
                     </div>
                     <div class="project-body">
-                        <p class="project-description description-justified"  
-                           data-en="Engineered an autonomous on-board camera system to detect, track, and analyze space debris in real-time. Developed in collaboration with the Egyptian Space Agency (EgSA), this capstone project aligns with Egypt's Vision 2030. It utilized curated datasets and optimized YOLOv12 model for 98.8% accuracy, deployed on a Raspberry Pi 4 prototype to simulate an edge computing environment for space applications."
-                           data-ar="تم تصميم نظام كاميرا مدمج ومستقل لكشف وتتبع وتحليل الحطام الفضائي في الوقت الفعلي. تم تطوير هذا المشروع بالتعاون مع وكالة الفضاء المصرية (EgSA)، ويتوافق مع رؤية مصر 2030. استخدم المشروع مجموعات بيانات مُعدة خصيصًا ونموذج YOLOv12 المحسّن لتحقيق دقة 98.8%، وتم نشره على نموذج أولي Raspberry Pi 4 لمحاكاة بيئة الحوسبة الطرفية للتطبيقات الفضائية.">
+                        <p class="project-description"  
+                           data-en="Engineered an autonomous on-board camera system to detect, track, and analyze space debris in real-time. Developed in collaboration with the Egyptian Space Agency (EgSA), this capstone project aligns with Egypt's Vision 2030. <ul><li>Developed and benchmarked deep learning models (YOLOv5, v8, v12), achieving 98.8% mAP@0.5 with YOLOv12.</li><li>Deployed on a Raspberry Pi 4 prototype to simulate an edge computing environment for space applications.</li><li>Built a robust backend with FastAPI and an interactive frontend with Streamlit.</li></ul>"
+                           data-ar="تم تصميم نظام كاميرا مدمج ومستقل لكشف وتتبع وتحليل الحطام الفضائي في الوقت الفعلي. تم تطوير هذا المشروع بالتعاون مع وكالة الفضاء المصرية (EgSA)، ويتوافق مع رؤية مصر 2030. <ul><li>تطوير ومقارنة نماذج تعلم عميق (YOLOv5, v8, v12)، وتحقيق دقة 98.8% (mAP@0.5) باستخدام YOLOv12.</li><li>تم نشره على نموذج أولي Raspberry Pi 4 لمحاكاة بيئة الحوسبة الطرفية للتطبيقات الفضائية.</li><li>بناء خلفية قوية باستخدام FastAPI وواجهة أمامية تفاعلية باستخدام Streamlit.</li></ul>">
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">Deep Learning</span>
@@ -599,9 +621,9 @@
                         </div>
                     </div>
                     <div class="project-body">
-                        <p class="project-description description-justified"  
-                           data-en="Developed an automated land cover classification system for Egypt using deep learning (VGG16 CNN) with Sentinel-2 satellite imagery. Adapted EuroSAT for 5 key Egyptian classes, optimized via Bayesian tuning, achieving 97.65% accuracy. Features an intuitive UI for geospatial analysis, supporting Egypt’s Vision 2030."
-                           data-ar="تم تطوير نظام آلي لتصنيف الغطاء الأرضي في مصر باستخدام التعلم العميق (VGG16 CNN) وصور الأقمار الصناعية Sentinel-2. تم تكييف مجموعة بيانات EuroSAT لخمس فئات مصرية رئيسية، مع تحسين النموذج باستخدام الضبط البايزي، مما أدى إلى دقة 97.65%. يتميز بواجهة مستخدم سهلة الاستخدام للتحليل الجغرافي المكاني، ويدعم رؤية مصر 2030.">
+                        <p class="project-description"  
+                           data-en="Developed an automated land cover classification system for Egypt using deep learning (VGG16 CNN) with Sentinel-2 satellite imagery. <ul><li>Adapted EuroSAT for 5 key Egyptian classes.</li><li>Optimized the model via Bayesian tuning, achieving 97.65% accuracy.</li><li>Features an intuitive UI for geospatial analysis, supporting Egypt’s Vision 2030.</li></ul>"
+                           data-ar="تم تطوير نظام آلي لتصنيف الغطاء الأرضي في مصر باستخدام التعلم العميق (VGG16 CNN) وصور الأقمار الصناعية Sentinel-2. <ul><li>تم تكييف مجموعة بيانات EuroSAT لخمس فئات مصرية رئيسية.</li><li>تحسين النموذج باستخدام الضبط البايزي، مما أدى إلى دقة 97.65%.</li><li>يتميز بواجهة مستخدم سهلة للتحليل الجغرافي المكاني، ويدعم رؤية مصر 2030.</li></ul>">
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">Deep Learning</span>
@@ -609,7 +631,6 @@
                             <span class="tech-tag">Satellite Imagery</span>
                             <span class="tech-tag">Geospatial Analysis</span>
                             <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Sustainable Development</span>
                         </div>
                     </div>
                 </div>
@@ -624,11 +645,11 @@
                         <div class="project-date" data-en="Oct 2024 - Jan 2025" data-ar="أكتوبر 2024 - يناير 2025">Oct 2024 - Jan 2025</div>
                     </div>
                     <div class="project-body">
-                        <p class="project-description" data-en="Developed a real-time automated system using CNNs to detect face masks in live video streams or images, achieving 99% accuracy." data-ar="تطوير نظام آلي فوري باستخدام شبكات CNN لكشف أقنعة الوجه في بث الفيديو المباشر أو الصور، محققًا دقة 99%."></p>
+                        <p class="project-description" data-en="Developed a real-time automated system using a fine-tuned MobileNetV2 CNN to detect face masks in live video streams or images, achieving 99% accuracy, precision, recall, and F1-score." data-ar="تطوير نظام آلي فوري باستخدام شبكة MobileNetV2 CNN مُحسَّنة لكشف أقنعة الوجه في بث الفيديو المباشر أو الصور، محققًا دقة و precision و recall و F1-score بنسبة 99%."></p>
                         <div class="project-tech">
                             <span class="tech-tag">Computer Vision</span>
-                            <span class="tech-tag">Deep Learning</span>
                             <span class="tech-tag">CNN</span>
+                            <span class="tech-tag">MobileNetV2</span>
                             <span class="tech-tag">Real-time</span>
                         </div>
                     </div>
@@ -656,7 +677,7 @@
                 <div class="project-card w-100" data-aos="fade-up" data-aos-delay="300">
                     <div class="project-header">
                         <h3 class="project-title" data-en="Lung Cancer Prediction" data-ar="التنبؤ بسرطان الرئة">Lung Cancer Prediction</h3>
-                        <div class="project-date" data-en="Feb 2024 - May 2024" data-ar="فبراير 2024 - مايو 2024">Feb 2024 - May 2024</div>
+                        <div class="project-date" data-en="Oct 2023 - Jan 2024" data-ar="أكتوبر 2023 - يناير 2024">Oct 2023 - Jan 2024</div>
                     </div>
                     <div class="project-body">
                         <p class="project-description" data-en="AI system analyzing X-ray images for lung cancer detection and classification, achieving 97% accuracy." data-ar="نظام ذكاء اصطناعي يحلل صور الأشعة السينية لكشف وتصنيف سرطان الرئة، محققًا دقة 97%."></p>
@@ -673,7 +694,7 @@
                 <div class="project-card w-100" data-aos="fade-up">
                     <div class="project-header">
                     <h3 class="project-title" data-en="Real-time Object Detection" data-ar="كشف الأجسام في الوقت الفعلي">Real-time Object Detection</h3>
-                    <div class="project-date" data-en="Oct 2023 - Jan 2024" data-ar="أكتوبر 2023 - يناير 2024">Oct 2023 - Jan 2024</div>
+                    <div class="project-date" data-en="Feb 2024 - May 2024" data-ar="فبراير 2024 - مايو 2024">Feb 2024 - May 2024</div>
                     </div>
                     <div class="project-body">
                     <p class="project-description" data-en="Implemented an AI-based system using models like YOLO for real-time identification and localization of multiple objects within images or video streams." data-ar="تطبيق نظام قائم على الذكاء الاصطناعي يستخدم نماذج مثل YOLO للتعرف وتحديد مواقع أجسام متعددة في الوقت الفعلي ضمن الصور أو بث الفيديو."></p>
@@ -709,11 +730,10 @@
                     <div class="project-date" data-en="Oct 2024 - Jan 2025" data-ar="أكتوبر 2024 - يناير 2025">Oct 2024 - Jan 2025</div>
                     </div>
                     <div class="project-body">
-                    <p class="project-description" data-en="Developed a machine learning-based fraud detection system for financial transactions using a Random Forest Classifier. The project involved data preprocessing, feature engineering, and graph-based analysis to identify key transaction entities." data-ar="تم تطوير نظام للكشف عن الاحتيال في المعاملات المالية باستخدام التعلم الآلي وتصنيف Random Forest. تضمن المشروع معالجة البيانات الأولية، وهندسة الميزات، والتحليل القائم على الرسوم البيانية لتحديد كيانات المعاملات الرئيسية."></p>
+                    <p class="project-description" data-en="Developed a machine learning-based fraud detection system using a Random Forest Classifier. The project involved data preprocessing, feature engineering, and graph-based analysis (NetworkX) to identify key transaction entities." data-ar="تم تطوير نظام للكشف عن الاحتيال في المعاملات المالية باستخدام التعلم الآلي وتصنيف Random Forest. تضمن المشروع معالجة البيانات الأولية، وهندسة الميزات، والتحليل القائم على الرسوم البيانية (NetworkX) لتحديد كيانات المعاملات الرئيسية."></p>
                     <div class="project-tech">
                     <span class="tech-tag">Machine Learning</span>
                     <span class="tech-tag">Random Forest</span>
-                    <span class="tech-tag">Data Preprocessing</span>
                     <span class="tech-tag">Graph Analysis</span>
                     </div>
                     </div>
@@ -723,10 +743,10 @@
                 <div class="project-card w-100" data-aos="fade-up">
                     <div class="project-header">
                     <h3 class="project-title" data-en="E-Commerce Clothes Mobile App" data-ar="تطبيق جوال لبيع الملابس">E-Commerce Clothes Mobile App</h3>
-                    <div class="project-date" data-en="Sep 2022 - Jan 2023" data-ar="سبتمبر 2022 - يناير 2023">Sep 2022 - Jan 2023</div>
+                    <div class="project-date" data-en="Oct 2022 - Jan 2023" data-ar="أكتوبر 2022 - يناير 2023">Oct 2022 - Jan 2023</div>
                     </div>
                     <div class="project-body">
-                    <p class="project-description" data-en="User-friendly mobile app for Browse and purchasing clothes, focusing on intuitive UI/UX design." data-ar="تطبيق جوال سهل الاستخدام لتصفح وشراء الملابس، يركز على تصميم واجهة مستخدم وتجربة مستخدم بديهية."></p>
+                    <p class="project-description" data-en="User-friendly mobile app for browsing and purchasing clothes, focusing on intuitive UI/UX design." data-ar="تطبيق جوال سهل الاستخدام لتصفح وشراء الملابس، يركز على تصميم واجهة مستخدم وتجربة مستخدم بديهية."></p>
                     <div class="project-tech">
                     <span class="tech-tag">Mobile Development</span>
                     <span class="tech-tag">UI/UX Design</span>
@@ -740,7 +760,7 @@
                 <div class="project-card w-100" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-header">
                     <h3 class="project-title" data-en="Pharmaceutical Company System" data-ar="نظام شركة أدوية">Pharmaceutical Company System</h3>
-                    <div class="project-date" data-en="Sep 2021 - May 2022" data-ar="سبتمبر 2021 - مايو 2022">Sep 2021 - May 2022</div>
+                    <div class="project-date" data-en="Oct 2021 - May 2022" data-ar="أكتوبر 2021 - مايو 2022">Oct 2021 - May 2022</div>
                     </div>
                     <div class="project-body">
                     <p class="project-description" data-en="Internal communication platform (Java, OOP, Data Structures) for better coordination and secure data management." data-ar="منصة اتصال داخلية (Java، OOP، هياكل بيانات) لتحسين التنسيق وإدارة البيانات الآمنة."></p>
@@ -758,6 +778,30 @@
     </div>
 </section>
 
+<section id="publications">
+    <div class="container">
+        <h2 class="section-title" data-en="Publications" data-ar="المنشورات العلمية">Publications</h2>
+        <div class="row justify-content-center">
+            <div class="col-lg-10" data-aos="fade-up">
+                <div class="publication-card">
+                    <div class="publication-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="publication-details">
+                        <h3 class="publication-title" data-en="Face Mask Detection for Real-Time Monitoring Using MobileNetV2: A Bias-Aware, Cross-Validated, and Efficient Deep Learning Framework" data-ar="كشف قناع الوجه للمراقبة في الوقت الفعلي باستخدام MobileNetV2: إطار عمل للتعلم العميق فعال ومدرك للتحيز ومعتمد على التحقق المتقاطع">Face Mask Detection for Real-Time Monitoring Using MobileNetV2...</h3>
+                        <div class="publication-meta">
+                            <span class="conference" data-en="2025 4th International Conference on Electronic Engineering (ICEEM)" data-ar="المؤتمر الدولي الرابع للهندسة الإلكترونية 2025 (ICEEM)">2025 4th International Conference on Electronic Engineering (ICEEM)</span>
+                            <span class="date" data-en="Published: Sep 2025" data-ar="تاريخ النشر: سبتمبر 2025">Published: Sep 2025</span>
+                        </div>
+                        <p class="publication-description" data-en="A research paper documenting an AI-based system for real-time face mask detection. The system utilizes a fine-tuned MobileNetV2 CNN model that achieved a high accuracy of 99% on the validation set. This work was accepted and published at the conference." data-ar="ورقة بحثية توثق نظامًا قائمًا على الذكاء الاصطناعي للكشف عن أقنعة الوجه في الوقت الفعلي. يستخدم النظام نموذج MobileNetV2 CNN مُحسَّنًا حقق دقة عالية بنسبة 99٪ على مجموعة التحقق. تم قبول هذا العمل ونشره في المؤتمر."></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
  <section id="skills" class="bg-light">
   <div class="container">
   <h2 class="section-title" data-en="Skills" data-ar="المهارات">Skills</h2>
@@ -769,6 +813,7 @@
      <button class="btn btn-outline-primary mx-1" data-target="#web-mobile-dev" data-en="Web & Mobile Development" data-ar="تطوير الويب والجوال">Web & Mobile Development</button>
      <button class="btn btn-outline-primary mx-1" data-target="#tools-environments" data-en="Tools & Environments" data-ar="الأدوات والبيئات">Tools & Environments</button>
      <button class="btn btn-outline-primary mx-1" data-target="#core-programming" data-en="Software Engineering" data-ar="هندسة البرمجيات">Software Engineering</button>
+     <button class="btn btn-outline-primary mx-1" data-target="#it-fundamentals" data-en="IT Fundamentals" data-ar="أساسيات تكنولوجيا المعلومات">IT Fundamentals</button>
      <button class="btn btn-outline-primary mx-1" data-target="#productivity-tools" data-en="Productivity Tools" data-ar="أدوات الإنتاجية">Productivity Tools</button>
      <button class="btn btn-outline-primary mx-1" data-target="#soft-skills" data-en="Soft Skills" data-ar="المهارات الشخصية">Soft Skills</button>
   </div>
@@ -777,8 +822,7 @@
      <div class="skill-category active-skills" id="core-ai-ml" data-aos="fade-up">
         <h3 class="category-title visually-hidden" data-en="AI & Machine Learning" data-ar="الذكاء الاصطناعي وتعلم الآلة">AI & Machine Learning</h3>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Linear Algebra" data-ar="الجبر الخطي">Linear Algebra</span></div></div>
-        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Probability" data-ar="الاحتمالات">Probability</span></div></div>
-        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Statistics" data-ar="الإحصاء">Statistics</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Probability & Statistics" data-ar="الاحتمالات والإحصاء">Probability & Statistics</span></div></div>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Data Preprocessing" data-ar="المعالجة المسبقة للبيانات">Data Preprocessing</span></div></div>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Data Visualization" data-ar="تصور البيانات">Data Visualization</span></div></div>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Machine Learning (ML)" data-ar="تعلم الآلة (ML)">Machine Learning (ML)</span></div></div>
@@ -788,27 +832,21 @@
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Computer Vision" data-ar="رؤية الحاسوب">Computer Vision</span></div></div>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Transfer Learning" data-ar="التعلم بالنقل">Transfer Learning</span></div></div>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Speech Recognition" data-ar="التعرف على الكلام">Speech Recognition</span></div></div>
-        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Intelligence Algorithms" data-ar="خوارزميات الذكاء">Intelligence Algorithms</span></div></div>
-        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Multi-Agent Systems" data-ar="الأنظمة متعددة الوكلاء">Multi-Agent Systems</span></div></div>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Model Deployment" data-ar="نشر النماذج">Model Deployment</span></div></div>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Azure AI Fundamentals" data-ar="أساسيات الذكاء الاصطناعي في Azure">Azure AI Fundamentals</span></div></div>
-        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Cloud Computing" data-ar="الحوسبة السحابية">Cloud Computing</span></div></div>
-     </div>
+
+    </div>
   
      <div class="skill-category" id="data-science-frameworks" data-aos="fade-up">
         <h3 class="category-title visually-hidden" data-en="Frameworks & Libraries" data-ar="الأطر والمكتبات">Frameworks & Libraries</h3>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Pandas" data-ar="Pandas">Pandas</span></div></div>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="NumPy" data-ar="NumPy">NumPy</span></div></div>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Scikit-Learn" data-ar="Scikit-Learn">Scikit-Learn</span></div></div>
-        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="TensorFlow" data-ar="TensorFlow">TensorFlow</span></div></div>
-        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Keras" data-ar="Keras">Keras</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="TensorFlow & Keras" data-ar="TensorFlow & Keras">TensorFlow & Keras</span></div></div>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="PyTorch" data-ar="PyTorch">PyTorch</span></div></div>
-        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="NLTK" data-ar="NLTK">NLTK</span></div></div>
-        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="spaCy" data-ar="spaCy">spaCy</span></div></div>
-        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Gensim" data-ar="Gensim">Gensim</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="NLTK & spaCy" data-ar="NLTK & spaCy">NLTK & spaCy</span></div></div>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Transformers" data-ar="Transformers">Transformers</span></div></div>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="OpenCV" data-ar="OpenCV">OpenCV</span></div></div>
-        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Pillow (PIL)" data-ar="Pillow (PIL)">Pillow (PIL)</span></div></div>
      </div>
   
      <div class="skill-category" id="programming-languages" data-aos="fade-up">
@@ -817,14 +855,12 @@
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="SQL" data-ar="SQL">SQL</span></div></div>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="C++" data-ar="C++">C++</span></div></div>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Java" data-ar="Java">Java</span></div></div>
-        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Dart" data-ar="Dart">Dart</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="JavaScript" data-ar="JavaScript">JavaScript</span></div></div>
      </div>
   
      <div class="skill-category" id="web-mobile-dev" data-aos="fade-up">
         <h3 class="category-title visually-hidden" data-en="Web & Mobile Dev" data-ar="تطوير الويب والجوال">Web & Mobile Dev</h3>
-        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="HTML" data-ar="HTML">HTML</span></div></div>
-        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="CSS" data-ar="CSS">CSS</span></div></div>
-        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="JavaScript" data-ar="JavaScript">JavaScript</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="HTML & CSS" data-ar="HTML & CSS">HTML & CSS</span></div></div>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Flask" data-ar="Flask">Flask</span></div></div>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="FastAPI" data-ar="FastAPI">FastAPI</span></div></div>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Streamlit" data-ar="Streamlit">Streamlit</span></div></div>
@@ -834,14 +870,12 @@
   
      <div class="skill-category" id="tools-environments" data-aos="fade-up">
         <h3 class="category-title visually-hidden" data-en="Tools & Environments" data-ar="الأدوات والبيئات">Tools & Environments</h3>
-        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Visual Studio Community" data-ar="Visual Studio Community">Visual Studio Community</span></div></div>
-        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Visual Studio Code" data-ar="Visual Studio Code">Visual Studio Code</span></div></div>
-        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Spyder" data-ar="Spyder">Spyder</span></div></div>
-        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Jupyter" data-ar="Jupyter">Jupyter</span></div></div>
-        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Google Colab" data-ar="Google Colab">Google Colab</span></div></div>
-        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Kaggle" data-ar="Kaggle">Kaggle</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Jupyter & Google Colab" data-ar="Jupyter & Google Colab">Jupyter & Google Colab</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="VS Code" data-ar="VS Code">VS Code</span></div></div>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Postman" data-ar="Postman">Postman</span></div></div>
-        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="NetBeans" data-ar="NetBeans">Postman</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Power BI" data-ar="Power BI">Power BI</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Tableau" data-ar="Tableau">Tableau</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Excel" data-ar="Excel">Excel</span></div></div>
      </div>
   
      <div class="skill-category" id="core-programming" data-aos="fade-up">
@@ -851,20 +885,23 @@
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Data Structures" data-ar="هياكل البيانات">Data Structures</span></div></div>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Algorithms" data-ar="الخوارزميات">Algorithms</span></div></div>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Databases" data-ar="قواعد البيانات">Databases</span></div></div>
-        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Software Testing & Quality Assurance" data-ar="اختبار البرمجيات وضمان الجودة">Software Testing & Quality Assurance</span></div></div>      </div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Software Testing & Quality Assurance" data-ar="اختبار البرمجيات وضمان الجودة">Software Testing & Quality Assurance</span></div></div>
+     </div>
+
+     <div class="skill-category" id="it-fundamentals" data-aos="fade-up">
+        <h3 class="category-title visually-hidden" data-en="IT Fundamentals" data-ar="أساسيات تكنولوجيا المعلومات">IT Fundamentals</h3>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="IT Fundamentals" data-ar="أساسيات تكنولوجيا المعلومات">IT Fundamentals</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Network Fundamentals" data-ar="أساسيات الشبكات">Network Fundamentals</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Security Fundamentals" data-ar="أساسيات الأمان">Security Fundamentals</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Cloud Computing" data-ar="الحوسبة السحابية">Cloud Computing</span></div></div>
+    </div>
   
      <div class="skill-category" id="productivity-tools" data-aos="fade-up">
-        <h3 class="category-title visually-hidden" data-en="Productivity and Design Tools" data-ar="أدوات الإنتاجية والتصميم">Productivity and Design Tools</h3>
-        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Adobe Photoshop" data-ar="Adobe Photoshop">Adobe Photoshop</span></div></div>
-        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Adobe Premiere" data-ar="Adobe Premiere">Adobe Premiere</span></div></div>
-        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="CapCut" data-ar="CapCut">CapCut</span></div></div>
+        <h3 class="category-title visually-hidden" data-en="Productivity Tools" data-ar="أدوات الإنتاجية">Productivity Tools</h3>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Microsoft Office (Word, PowerPoint, Excel)" data-ar="Microsoft Office (Word, PowerPoint, Excel)">MS Office</span></div></div>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Canva" data-ar="Canva">Canva</span></div></div>
-        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Microsoft PowerPoint" data-ar="Microsoft PowerPoint">Microsoft PowerPoint</span></div></div>
-        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Microsoft Word" data-ar="Microsoft Word">Microsoft Word</span></div></div>
-        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Microsoft Excel" data-ar="Microsoft Excel">Microsoft Excel</span></div></div>
-        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Notion" data-ar="Notion">Notion</span></div></div>
-        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Miro" data-ar="Miro">Miro</span></div></div>
-        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Google Forms" data-ar="Google Forms">Google Forms</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Adobe Photoshop & Premiere" data-ar="Adobe Photoshop & Premiere">Adobe Suite</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Notion & Miro" data-ar="Notion & Miro">Notion & Miro</span></div></div>
      </div>
   
      <div class="skill-category" id="soft-skills" data-aos="fade-up">
@@ -874,7 +911,7 @@
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Scientific Thinking" data-ar="التفكير العلمي">Scientific Thinking</span></div></div>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Leadership" data-ar="القيادة">Leadership</span></div></div>
         <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Team Work" data-ar="العمل الجماعي">Team Work</span></div></div>
-        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Communication" data-ar="الاتصال">Communication</span></div></div>
+        <div class="skill-item"><div class="skill-info"><i class="fas fa-check-circle text-primary me-2"></i><span class="skill-name" data-en="Communication" data-ar="التواصل">Communication</span></div></div>
      </div>
   </div>
   </div>
@@ -885,9 +922,11 @@
  <div class="container">
  <h2 class="section-title" data-en="Certificates" data-ar="الشهادات">Certificates</h2>
  <div class="certificates-container">
+    <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="100"> <div class="certificate-icon"><i class="fa-brands fa-microsoft"></i></div> <h3 class="certificate-title" data-en="Microsoft Machine Learning Engineer" data-ar="مهندس تعلم آلة من مايكروسوفت">Microsoft Machine Learning Engineer</h3> <p class="certificate-issuer" data-en="Microsoft & DEPI" data-ar="مايكروسوفت و DEPI">Microsoft & DEPI</p> <a href="https://drive.google.com/file/d/1ipUN5j8k2oPzfVZkLy1M9mbRBTTN_WXo/view?usp=drive_link" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
+    <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="200"> <div class="certificate-icon"><i class="fas fa-briefcase"></i></div> <h3 class="certificate-title" data-en="Business English Track" data-ar="مسار اللغة الإنجليزية للأعمال">Business English Track</h3> <p class="certificate-issuer" data-en="Berlitz & DEPI" data-ar="Berlitz & DEPI">DEPI</p> <a href="https://drive.google.com/file/d/11xhUhwHv_gSWB_ZHVgG-l8qYlN8zzKe4/view?usp=drive_link" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
     <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up"> <div class="certificate-icon"><i class="fas fa-award"></i></div> <h3 class="certificate-title" data-en="AI Training Certificate - IAO Accredited" data-ar="شهادة تدريب ذكاء اصطناعي - اعتماد IAO">AI Training Certificate - IAO Accredited</h3> <p class="certificate-issuer" data-en="International Accreditation Organization (IAO)" data-ar="منظمة الاعتماد الدولية (IAO)">International Accreditation Organization (IAO)</p> <a href="https://drive.google.com/file/d/19qPRZZbz4_F8xPfUl9wqFa-mfGoxno7o/view?usp=sharing" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
-    <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="100"> <div class="certificate-icon"><i class="fa-brands fa-microsoft"></i></div> <h3 class="certificate-title" data-en="Microsoft Machine Learning Engineer - DEPI" data-ar="مهندس تعلم آلة من مايكروسوفت - DEPI">Microsoft Machine Learning Engineer - DEPI</h3> <p class="certificate-issuer" data-en="Microsoft & DEPI" data-ar="مايكروسوفت و DEPI">Microsoft & DEPI</p> <a href="#" class="certificate-link disabled" target="_blank" rel="noopener noreferrer" data-en="View Certificate (Soon)" data-ar="عرض الشهادة (قريباً)">View Certificate (Soon)</a> </div> </div>
-    <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="200"> <div class="certificate-icon"><i class="fas fa-flask"></i></div> <h3 class="certificate-title" data-en="AI Training Certificate - Zewail City" data-ar="شهادة تدريب ذكاء اصطناعي - مدينة زويل">AI Training Certificate - Zewail City</h3> <p class="certificate-issuer" data-en="Zewail City of Science and Technology" data-ar="مدينة زويل للعلوم والتكنولوجيا">Zewail City of Science and Technology</p> <a href="https://drive.google.com/file/d/1-eTLjmR93hQTowWtgKoPtDNTrfvONHfn/view?usp=drive_link" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
+    <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="300"> <div class="certificate-icon"><i class="fas fa-id-card"></i></div> <h3 class="certificate-title" data-en="AI Certified Trainee Card" data-ar="بطاقة متدرب معتمد في الذكاء الاصطناعي">AI Certified Trainee Card</h3> <p class="certificate-issuer" data-en="IAO" data-ar="IAO">IAO</p> <a href="https://drive.google.com/file/d/1HQHXDUXojSSkk0-vp_oVPouWzTFnZ74m/view?usp=sharing" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Card" data-ar="عرض البطاقة">View Card</a> </div> </div>
+    <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="400"> <div class="certificate-icon"><i class="fas fa-flask"></i></div> <h3 class="certificate-title" data-en="AI Training Certificate - Zewail City" data-ar="شهادة تدريب ذكاء اصطناعي - مدينة زويل">AI Training Certificate - Zewail City</h3> <p class="certificate-issuer" data-en="Zewail City of Science and Technology" data-ar="مدينة زويل للعلوم والتكنولوجيا">Zewail City of Science and Technology</p> <a href="https://drive.google.com/file/d/1-eTLjmR93hQTowWtgKoPtDNTrfvONHfn/view?usp=drive_link" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
     <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up"> <div class="certificate-icon"><i class="fas fa-chalkboard-teacher"></i></div> <h3 class="certificate-title" data-en="AI Career Essentials – ALX" data-ar="أساسيات مهنة الذكاء الاصطناعي – ALX">AI Career Essentials – ALX</h3> <p class="certificate-issuer" data-en="ALX" data-ar="ALX">ALX</p> <a href="https://drive.google.com/file/d/1n3mEB_79YKVNyYtQa95S7f9gWJVB_23J/view?usp=drive_link" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
     <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="100"> <div class="certificate-icon"><i class="fas fa-brain"></i></div> <h3 class="certificate-title" data-en="One Million AI Prompters" data-ar="مليون محفز للذكاء الاصطناعي">One Million AI Prompters</h3> <p class="certificate-issuer" data-en="Dubai Center for Artificial Intelligence" data-ar="مركز دبي للذكاء الاصطناعي">Dubai Center for Artificial Intelligence</p> <a href="https://drive.google.com/file/d/1PTpGNaoNXhS1MqdQfMVZuv9cML_U34ZH/view?usp=drive_link" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
     <div class="col d-flex"> <div class="certificate-card w-100" data-aos="fade-up" data-aos-delay="200"> <div class="certificate-icon"><i class="fas fa-network-wired"></i></div> <h3 class="certificate-title" data-en="IT Essential Certificate" data-ar="شهادة أساسيات تكنولوجيا المعلومات">IT Essential Certificate</h3> <p class="certificate-issuer" data-en="Cisco Networking Academy" data-ar="أكاديمية سيسكو للشبكات">Cisco Networking Academy</p> <a href="https://drive.google.com/file/d/1iZq5rAqz97RlQdL5RlYFKF4oUdM8ztXU/view?usp=drive_link" class="certificate-link" target="_blank" rel="noopener noreferrer" data-en="View Certificate" data-ar="عرض الشهادة">View Certificate</a> </div> </div>
@@ -908,7 +947,7 @@
 
  <section id="honors-awards" class="bg-light">
   <div class="container">
-  <h2 class="section-title" data-en="Honors" data-ar="التكريمات">Honors</h2>
+  <h2 class="section-title" data-en="Honors & Awards" data-ar="التكريمات والجوائز">Honors & Awards</h2>
  
   <div class="row justify-content-center gy-4 mb-4">
   <div class="col-md-6 d-flex">
@@ -945,7 +984,10 @@
            loading="lazy">
   </div>
 
-</div> </section> <section id="contact">
+</div> 
+</section> 
+
+<section id="contact">
  <div class="container">
  <h2 class="section-title" data-en="Contact Me" data-ar="تواصل معي">Contact Me</h2>
  <div class="contact-container" data-aos="fade-up">
@@ -1041,7 +1083,6 @@
  <script>
  document.addEventListener('DOMContentLoaded', () => {
 
-  // --- DOM Elements ---
   const langToggle = document.getElementById('langToggle');
   const scrollTopBtn = document.getElementById('scrollTop');
   const preloader = document.querySelector('.preloader');
@@ -1050,10 +1091,9 @@
   const navbar = document.querySelector('.navbar');
   const particlesContainer = document.querySelector('.particles-container');
   const readingProgressBar = document.getElementById('reading-progress-bar');
-  const categoryButtons = document.querySelectorAll('.skill-category-selector .btn'); // Skill category buttons
-  const skillCategories = document.querySelectorAll('.skills-container .skill-category'); // Skill category content divs
+  const categoryButtons = document.querySelectorAll('.skill-category-selector .btn'); 
+  const skillCategories = document.querySelectorAll('.skills-container .skill-category'); 
 
-  // --- Initial Settings & Variables ---
   const defaultLang = 'en';
   let currentLang = localStorage.getItem('language') || defaultLang;
   let typingInterval;
@@ -1065,7 +1105,6 @@
   const pauseDuration = 1500;
   const particleCount = 35;
 
-  // --- Preloader ---
   function hidePreloader() {
     if (preloader) {
       preloader.classList.add('fade-out');
@@ -1073,17 +1112,15 @@
     }
   }
 
-  // --- Initialize AOS ---
   function initAOS() {
     AOS.init({
       duration: 800,
       offset: 120,
-      once: true, // Set to false if you want animations to repeat on scroll up/down
+      once: true, 
       easing: 'ease-out-cubic',
     });
   }
 
-  // --- Language Handling ---
   function setLanguage(lang) {
     currentLang = lang;
     document.documentElement.setAttribute('lang', lang);
@@ -1094,28 +1131,10 @@
     elements.forEach(el => {
       const text = el.getAttribute(`data-${lang}`);
       if (text !== null) {
-        // Handle specific elements like placeholders or value attributes
         if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
             if (el.placeholder) el.placeholder = text;
             else el.value = text;
-        }
-        // Handle elements where only text content should change (like skill names next to icons or category buttons)
-        else if ((el.classList.contains('skill-name') && el.previousElementSibling?.tagName === 'I') || el.closest('.skill-category-selector')) {
-             el.textContent = text; // Use textContent to avoid breaking the icon/button structure
-        }
-        // Handle certificate links where text might include "(Soon)" or similar
-        else if (el.classList.contains('certificate-link')) {
-             // Check if it's disabled, keep the '(Soon)' or similar text if it is.
-             if (el.classList.contains('disabled')) {
-                 const disabledTextEn = el.getAttribute('data-en');
-                 const disabledTextAr = el.getAttribute('data-ar');
-                 el.textContent = (lang === 'ar' ? disabledTextAr : disabledTextEn) || text;
-             } else {
-                  el.textContent = text; // Set normal text if not disabled
-             }
-        }
-        // Default case: Use innerHTML for elements that might contain other HTML (like titles)
-        else {
+        } else {
             el.innerHTML = text;
         }
       }
@@ -1133,8 +1152,8 @@
       stopTypingAnimation();
       initTypingAnimation();
     }
-     setTimeout(() => AOS.refresh(), 50); // Refresh AOS after language change
-     updateReadingProgress(); // Update progress bar after layout might change
+     setTimeout(() => AOS.refresh(), 50); 
+     updateReadingProgress(); 
   }
 
 
@@ -1149,40 +1168,33 @@
         }
       });
     });
-    setLanguage(currentLang); // Set initial language on load
+    setLanguage(currentLang); 
   }
 
-  // --- Typing Animation ---
   function typeEffect(phrases) {
     if (!phrases || phrases.length === 0 || !typingTextElement) return;
     const currentPhrase = phrases[currentPhraseIndex];
     let effectiveTypingSpeed = typingSpeed;
 
     if (isDeleting) {
-      // Deleting characters
       typingTextElement.textContent = currentPhrase.substring(0, currentCharIndex - 1);
       currentCharIndex--;
       effectiveTypingSpeed = deletingSpeed;
     } else {
-      // Typing characters
       typingTextElement.textContent = currentPhrase.substring(0, currentCharIndex + 1);
       currentCharIndex++;
       effectiveTypingSpeed = typingSpeed;
     }
 
-    // State transitions
     if (!isDeleting && currentCharIndex === currentPhrase.length) {
-      // Finished typing the phrase, start deleting after pause
       isDeleting = true;
       effectiveTypingSpeed = pauseDuration;
     } else if (isDeleting && currentCharIndex === 0) {
-      // Finished deleting, move to the next phrase
       isDeleting = false;
       currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
-      effectiveTypingSpeed = 500; // Short pause before typing next phrase
+      effectiveTypingSpeed = 500; 
     }
 
-    // Schedule next character action
     typingInterval = setTimeout(() => typeEffect(phrases), effectiveTypingSpeed);
   }
 
@@ -1197,12 +1209,12 @@
           console.error("Typing phrases are empty or not an array.");
           return;
       }
-      stopTypingAnimation(); // Clear any existing interval
-      typingTextElement.textContent = ''; // Clear existing text
+      stopTypingAnimation(); 
+      typingTextElement.textContent = ''; 
       currentPhraseIndex = 0;
       currentCharIndex = 0;
       isDeleting = false;
-      typeEffect(phrases); // Start the animation
+      typeEffect(phrases); 
     } catch (e) {
       console.error("Failed to parse typing phrases JSON:", e, `Attribute content: ${phrasesAttr}`);
     }
@@ -1211,83 +1223,68 @@
 
   function stopTypingAnimation() {
     clearTimeout(typingInterval);
-    typingInterval = null; // Reset interval ID
+    typingInterval = null; 
   }
 
-  // --- Reading Progress Bar ---
   function updateReadingProgress() {
       if (!readingProgressBar) return;
       const scrollTotal = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      // Prevent division by zero or negative percentage if content is shorter than viewport
       if (scrollTotal <= 0) {
-          readingProgressBar.style.width = '0%'; // Or '100%' if you prefer full bar when no scroll needed
+          readingProgressBar.style.width = '0%'; 
           return;
       }
       const scrollCurrent = document.documentElement.scrollTop || document.body.scrollTop;
-      const scrollPercent = Math.min( (scrollCurrent / scrollTotal) * 100, 100); // Cap at 100%
+      const scrollPercent = Math.min( (scrollCurrent / scrollTotal) * 100, 100); 
       readingProgressBar.style.width = `${scrollPercent}%`;
   }
 
-
-  // --- Scroll Animations & Navbar Handling ---
   function handleScroll() {
     const scrollY = window.scrollY;
 
-    // Toggle Scroll Top Button
     if (scrollTopBtn) {
       scrollTopBtn.classList.toggle('active', scrollY > 300);
     }
 
-    // Toggle Scrolled Class for Navbar Styling
     if (navbar) {
-       navbar.classList.toggle('navbar-scrolled', scrollY > 50); // Add class if scrolled more than 50px
+       navbar.classList.toggle('navbar-scrolled', scrollY > 50); 
     }
 
-    // Active Nav Link Highlighting
     let currentSectionId = '';
-    const navbarHeight = navbar?.offsetHeight || 70; // Get navbar height or use a default
-    const scrollBuffer = 80; // Increased buffer to activate link slightly earlier
+    const navbarHeight = navbar?.offsetHeight || 70; 
+    const scrollBuffer = 80; 
 
     document.querySelectorAll('section[id]').forEach(section => {
       const sectionTop = section.offsetTop - navbarHeight - scrollBuffer;
-      const sectionBottom = sectionTop + section.offsetHeight; // No need for bottom buffer usually
+      const sectionBottom = sectionTop + section.offsetHeight; 
 
-      // Check if current scroll position is within the section boundaries
        if (scrollY >= sectionTop && scrollY < sectionBottom) {
          currentSectionId = section.getAttribute('id');
        }
     });
 
-     // Handle edge case: bottom of the page might not trigger last section correctly
-     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) { // Check if near bottom
+     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) { 
         const lastSection = document.querySelector('section[id]:last-of-type');
         if(lastSection) {
              currentSectionId = lastSection.id;
          }
      }
 
-
-    // Update active class on nav links
     navLinks.forEach(link => {
-        // Clear existing active class first
         link.classList.remove('active');
-        // Add active class if the link's href matches the current section ID
         if (link.getAttribute('href') === `#${currentSectionId}`) {
             link.classList.add('active');
         }
     });
 
-    // Special case for the top of the page (Hero section)
     if (!currentSectionId && scrollY < 300) {
-        navLinks.forEach(link => link.classList.remove('active')); // Ensure others are inactive
+        navLinks.forEach(link => link.classList.remove('active')); 
         const homeLink = document.querySelector('.navbar-nav .nav-link[href="#hero"]');
         if (homeLink) homeLink.classList.add('active');
      }
 
-     updateReadingProgress(); // Update progress bar on scroll
+     updateReadingProgress(); 
   }
 
-  // --- Scroll to Top Button ---
   function setupScrollTop() {
     if (!scrollTopBtn) return;
     scrollTopBtn.addEventListener('click', () => {
@@ -1295,24 +1292,21 @@
     });
   }
 
-  // --- Smooth Scrolling for Nav Links ---
   function setupSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         const targetId = this.getAttribute('href');
-        // Ensure it's a valid internal link
         if (!targetId || targetId === '#' || targetId.startsWith('#!') ) return;
 
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
-          e.preventDefault(); // Prevent default jump
+          e.preventDefault(); 
 
-          const navbarHeight = navbar?.offsetHeight || 70; // Get current navbar height
+          const navbarHeight = navbar?.offsetHeight || 70; 
           let targetPosition = targetElement.offsetTop - navbarHeight;
 
-          // Optional: Add a small offset for non-hero sections for better spacing
           if (targetId !== '#hero') {
-              targetPosition += 5; // Adjust as needed
+              targetPosition += 5; 
           }
 
           window.scrollTo({
@@ -1320,7 +1314,6 @@
             behavior: 'smooth'
           });
 
-          // Close mobile navbar menu if open and the link clicked is inside the nav
           const navbarCollapseElement = document.querySelector('.navbar-collapse');
           if (navbarCollapseElement && navbarCollapseElement.classList.contains('show') && this.closest('.navbar-nav')) {
              const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapseElement);
@@ -1331,31 +1324,25 @@
     });
   }
 
-  // --- Skill Category Switching ---
   function setupSkillTabs() {
      if (!categoryButtons || categoryButtons.length === 0 || !skillCategories || skillCategories.length === 0) return;
 
      categoryButtons.forEach(button => {
          button.addEventListener('click', () => {
-             // Remove active class from all buttons and categories
              categoryButtons.forEach(btn => btn.classList.remove('active'));
              skillCategories.forEach(cat => cat.classList.remove('active-skills'));
 
-             // Add active class to the clicked button
              button.classList.add('active');
 
-             // Add active-skills class to the target category
              const targetId = button.dataset.target;
              const targetCategory = document.querySelector(targetId);
              if (targetCategory) {
                  targetCategory.classList.add('active-skills');
-                 // Refresh AOS to trigger animations for newly displayed elements
                  AOS.refresh();
              }
          });
      });
 
-     // Ensure the first category is active on load (redundant if HTML is set correctly, but safe)
      if (!document.querySelector('.skill-category-selector .btn.active')) {
          categoryButtons[0]?.classList.add('active');
      }
@@ -1367,50 +1354,44 @@
      }
  }
 
-
- // --- Dynamic Particle Background ---
  function createParticles() {
     if (!particlesContainer) return;
-    particlesContainer.innerHTML = ''; // Clear existing particles
+    particlesContainer.innerHTML = ''; 
     for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
-        particle.className = 'particle-js'; // Use a class for potential shared styling
-        const size = Math.random() * 3.5 + 1; // Random size between 1px and 4.5px
-        const startOpacity = Math.random() * 0.25 + 0.05; // Random opacity between 0.05 and 0.3
+        particle.className = 'particle-js'; 
+        const size = Math.random() * 3.5 + 1; 
+        const startOpacity = Math.random() * 0.25 + 0.05; 
         particle.style.width = `${size}px`;
         particle.style.height = `${size}px`;
-        // Use CSS variable for color, fallback if needed
         particle.style.background = `rgba(var(--primary-color-rgb, 59, 130, 246), ${Math.random() * 0.35 + 0.15})`;
-        particle.style.position = 'absolute'; // Needed for positioning
-        particle.style.left = `${Math.random() * 100}vw`; // Random horizontal start
-        particle.style.top = `${Math.random() * 100}vh`; // Random vertical start
-        particle.style.setProperty('--start-opacity', startOpacity); // Set custom property for animation
-        const duration = Math.random() * 45 + 30; // Random duration between 30s and 75s
-        const delay = Math.random() * 20; // Random delay up to 20s
+        particle.style.position = 'absolute'; 
+        particle.style.left = `${Math.random() * 100}vw`; 
+        particle.style.top = `${Math.random() * 100}vh`; 
+        particle.style.setProperty('--start-opacity', startOpacity); 
+        const duration = Math.random() * 45 + 30; 
+        const delay = Math.random() * 20; 
         particle.style.animation = `float-particle ${duration}s linear ${delay}s infinite`;
         particlesContainer.appendChild(particle);
     }
 }
 
- // --- Initialization ---
  function init() {
     hidePreloader();
-    setupLangToggle(); // Must run before things that depend on language text
+    setupLangToggle(); 
     setupScrollTop();
     setupSmoothScroll();
-    setupSkillTabs(); // Initialize the skill category switching logic
+    setupSkillTabs(); 
     createParticles();
-    window.addEventListener('scroll', handleScroll, { passive: true }); // Use passive listener for scroll performance
-    handleScroll(); // Initial call to set navbar state and active link
-    updateReadingProgress(); // Initial progress bar state
-    // Delay AOS initialization slightly to ensure elements are ready
+    window.addEventListener('scroll', handleScroll, { passive: true }); 
+    handleScroll(); 
+    updateReadingProgress(); 
     setTimeout(() => {
         initAOS();
-        initTypingAnimation(); // Initialize typing animation after language is set
+        initTypingAnimation(); 
     }, 50);
  }
 
- // Run initialization
  init();
 
  });
